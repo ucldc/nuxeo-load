@@ -18,6 +18,6 @@ while IFS= read -r -u3 -d $'\0' file; do
     extension="${filename##*.}"
     newfile=$(basename "$dx")
     set -x
-    echo ln "$file" $newdir/$newfile.$extension
+    ln "$file" $newdir/$newfile.$extension
     set +x
 done 3< <(find /apps/content/raw_files/UCI/$project/ -name "*.pdf" -type f -print0)
