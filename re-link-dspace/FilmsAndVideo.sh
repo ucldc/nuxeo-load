@@ -4,7 +4,7 @@ set -o errtrace  # trace ERR through 'time command' and other functions
 set -o nounset   ## set -u : exit the script if you try to use an uninitialised variable
 set -o errexit   ## set -e : exit the script if any statement returns a non-true return value
 
-project="Rorty"
+project="UCIHistoryFilmsAndVideos"
 
 newdir="/apps/content/new_path/UCI/$project"
 
@@ -20,4 +20,4 @@ while IFS= read -r -u3 -d $'\0' file; do
     set -x
     ln "$file" $newdir/$newfile.$extension
     set +x
-done 3< <(find /apps/content/raw_files/UCI/$project/ -name "*.pdf" -type f -print0)
+done 3< <(find /apps/content/raw_files/UCI/UCIHistory/FilmsAndVideos -name "*.mp4" -type f -print0)
