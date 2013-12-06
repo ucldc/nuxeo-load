@@ -2,7 +2,7 @@
 
 Change the default password for the `Administrator` account.  Then, to use the command line API wrapper 
 ```bash
-set export NUXEO_ADMIN_PASS="my_new_password"
+export NUXEO_ADMIN_PASS="my_new_password"
 ```
 
 to run a command
