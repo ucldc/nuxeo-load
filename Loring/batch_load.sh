@@ -8,6 +8,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # http://stackoverflow.c
 . $DIR/../nuxeo-fileImporter-api.sh
 
 api_get "logActivate"
-api_get "run?leafType=CustomVideo&inputPath=/apps/content/new_path/UCI/Loring&targetPath=asset-library/UCI/Loring&skipRootContainerCreation=true"
+api_get "run?leafType=CustomVideo&inputPath=/apps/content/new_path/UCI/L2&targetPath=asset-library/UCI&folderishType=Organization"
 api_get "status"
 api_get "log"
