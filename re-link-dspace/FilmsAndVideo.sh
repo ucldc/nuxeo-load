@@ -17,7 +17,9 @@ while IFS= read -r -u3 -d $'\0' file; do
     filename=$(basename "$file")
     extension="${filename##*.}"
     newfile=$(basename "$dx")
-    set -x
-    ln "$file" $newdir/$newfile.$extension
-    set +x
+    hdl=$(xmllint --xpath "/dublin_core/dcvalue[@element='identifier'][1]/text()" $dx/dublin_core.xml)
+    basename $hdl
+    #set -x
+    # ln "$file" $newdir/$newfile.$extension
+    #set +x
 done 3< <(find /apps/content/raw_files/UCI/UCIHistory/FilmsAndVideos -name "*.mp4" -type f -print0)
