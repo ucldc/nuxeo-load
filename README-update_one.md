@@ -14,7 +14,7 @@ optional arguments:
   --path PATH  update specific nuxeo path
 ```
 
-## sample `application/json-nxentity` json
+## sample `application/json+nxentity` json
 
 ```json
 {
@@ -36,6 +36,10 @@ export NUXEO_API_PASS="Administrator"
 don't keep credentials in revision control
 
 ## uid of file must be specified in one of 4 ways
+
+updating a nuxeo document's properties must specify a uid of the document.  If you don't know
+the uid; this can be looked up from the document path.  Nuxeo document uid or path can be specified in the 
+json or on the command line.
 
 ### `"uid":` in json file
 if a uid is in the json file; this will be used 
