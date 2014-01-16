@@ -18,3 +18,12 @@ to load a collection
 ```
 bash loader.sh campus collection leafType
 ```
+
+```
+  841  ./loader.sh UCR UniversityArchivesPhotographs SampleCustomPicture
+  847  ./loader.sh UCR TuskegeeAirmenArchive SampleCustomPicture
+  932  ./loader.sh UCR SabinoOsunaPapers SampleCustomPicture
+  952  bash loader.sh UCI UCIHistoryEarlyCampusPhotoAlbums SampleCustomPicture
+  982  bash loader.sh UCI UCIHistorySlides SampleCustomPicture
+ 1011  bash loader.sh UCI UCIHistoryStaffPhotographerImages SampleCustomPicture
+```
