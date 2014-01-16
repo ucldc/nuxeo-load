@@ -69,8 +69,6 @@ def nuxeo_get_path_metadata(api_base, api_auth, path, local):
                        json.dumps(out_json, sort_keys=True, indent=4, separators=(',', ': '))
                        )
     
-    ## pp(json.loads(res.text))
-
 def print_document_summary(documents):
     for document in documents:
         pp((document['uid'], document['path']))
@@ -78,13 +76,6 @@ def print_document_summary(documents):
 def copy_metadata_to_local(documents, base, auth, local):
     for document in documents:
         nuxeo_get_path_metadata(base, auth, document['path'], local)
-
-def pull_metadata(api_base, api_auth, path, local_path):
-    true
-
-def update_metadata(api_base, api_auth, path, local_path):
-    true
-
 
 # main() idiom for importing into REPL for debugging 
 if __name__ == "__main__":
