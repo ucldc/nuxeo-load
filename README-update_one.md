@@ -30,14 +30,16 @@ sample `application/json-nxentity`
 
 ## uid of file must be specified in one of 4 ways
 
-### `uid` in json file
+### `"uid":` in json file
 if a uid is in the json file; this will be used 
 
 ### `--uid` on command line
-supplying on the command line will override what is in the json file
+uid supplied on command line will override `"uid":` or `"path":`
+in the json file
 
-### `path` in json
-docuent path in nuxeo may also be used, in this case, the uid will be looked up for you
+### `"path":` in json
+if no uid is supplied, path can be used to look up the uid
 
 ### `--path` on command line
-path supplied on command line will override what is in the json file
+path supplied on command line will override `"uid":` or `"path":`
+in the json file
