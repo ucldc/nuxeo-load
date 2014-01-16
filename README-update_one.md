@@ -14,6 +14,12 @@ optional arguments:
   --path PATH  update specific nuxeo path
 ```
 
+## success
+json on `STDOUT` will be response of `PUT` from nuxeo REST API and exit code will be 0.
+
+## failure
+sould exit with a non-zero exit code, relevent error message should be near the end of the output
+
 ## sample `application/json+nxentity` json
 
 ```json
@@ -27,6 +33,8 @@ optional arguments:
   "path": "/asset-library/UCI/Rorty/1000.pdf"
 }
 ```
+
+Only the properties part of the json object is taken into account for update.  
 
 ## authentication
 ```bash
