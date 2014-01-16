@@ -14,7 +14,7 @@ optional arguments:
   --path PATH  update specific nuxeo path
 ```
 
-sample `application/json-nxentity`
+## sample `application/json-nxentity` json
 
 ```json
 {
@@ -27,6 +27,13 @@ sample `application/json-nxentity`
   "path": "/asset-library/UCI/Rorty/1000.pdf"
 }
 ```
+
+## authentication
+```bash
+export NUXEO_API_PASS="Administrator"
+```
+
+don't keep credentials in revision control
 
 ## uid of file must be specified in one of 4 ways
 
