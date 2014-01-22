@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+
+import sys
+import argparse
+import os
+import requests
+import json
+import shutil
+from pprint import pprint as pp
+
+def main(argv=None):
+
+    parser = argparse.ArgumentParser( description='nuxeo metadata via REST API')
+    if argv is None:
+        argv = parser.parse_args()
+
+    # http://demo.nuxeo.com/nuxeo/api/v1/path/default-domain/@search\?query\=SELECT%20\*%20FROM%20Document\&pageSize\=2\&currentPageIndex\=1 | jq .
+    # todo; add these defaults as parameters as well as env
+    api_base = os.environ.get('NUXEO_REST_API', "http://localhost:8080/nuxeo/site/api/v1")
+    api_auth = ( os.environ.get('NUXEO_API_USER', "Administrator"), 
+                 os.environ.get('NUXEO_API_PASS', "Administrator") )
+    documents = []
+    nuxeo_all_documents(api_base, api_auth, documents, 1)
+    print_document_summary(documents)
+
+def nuxeo_all_documents(api_base, api_auth, documents, current_page_index):
+    """get child documents of a path"""
+    url = api_base + "/path/@search"
+    params={
+             'pageSize':'100',
+             'query':'SELECT * FROM Document',
+             'currentPageIndex': current_page_index,
+           }
+    res = requests.get(url, params=params, auth=api_auth)
+    # todo; check that we got a good result
+    result_dict = json.loads(res.text)
+    out_list = result_dict['entries']
+    documents.extend(out_list)
+    if result_dict['isNextPageAvailable']:
+        nuxeo_all_documents(api_base, api_auth, documents, current_page_index + 1)
+    return 
+
+def print_document_summary(documents):
+    for document in documents:
+        print "{0}\t{1}".format(document['path'], document['uid'])
+
+# main() idiom for importing into REPL for debugging 
+if __name__ == "__main__":
+    sys.exit(main())
