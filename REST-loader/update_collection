@@ -1,0 +1,94 @@
+#!/usr/bin/env python
+"""update nuxeo"""
+import sys
+import argparse
+import os
+import requests
+import json
+import urlparse
+from lxml import etree
+from pprint import pprint as pp
+
+def main(argv=None):
+    """main"""
+    parser = argparse.ArgumentParser( \
+                          description='nuxeo metadata via REST API, from <REST> xml')
+    parser.add_argument('file', nargs=1, help="YTH REST xml talnd export")
+
+    if argv is None:
+        argv = parser.parse_args()
+
+    # todo; add these defaults as parameters as well as env
+    api_base = os.environ.get('NUXEO_REST_API', \
+                              "http://localhost:8080/nuxeo/site/api/v1")
+    api_auth = (os.environ.get('NUXEO_API_USER', "Administrator"),
+                os.environ.get('NUXEO_API_PASS', "Administrator"))
+
+    tree = etree.parse(argv.file[0])
+    root = tree.getroot()
+    documents = root.xpath('/REST/document')
+
+    for document in documents:
+        update_nuxeo_properties(api_base, api_auth, xml_to_json(document))
+
+def xml_to_json(document):
+    # print(etree.tostring(document, pretty_print=True))
+    properties = {}
+    for property in document.xpath("schema/*"):
+        key = property.xpath('name()')
+        if not property.xpath('boolean(*)'):
+            val = property.xpath('normalize-space()')
+            if not val == '' and key != 'dc:filepath':
+                properties[key] = val
+        elif property.xpath('item/text()') and not property.xpath('item/*'):
+            val = []
+            for item in property.xpath('item'):
+                v = item.xpath('normalize-space()')
+                if not v == '':
+                    val.append(v)
+            if len(val) > 0:
+                properties[key] = val
+        elif property.xpath('item/*/text()'):
+            val = []
+            for item in property.xpath('item'):
+                v = {}
+                for el in item.xpath('*'):
+                    k = el.xpath('name()')
+                    v[k] = el.xpath('normalize-space()')
+                val.append(v)
+            properties[key] = val
+                    
+        else:
+            #print(etree.tostring(property, pretty_print=True))
+            true
+    
+    # copy what we want from the input json into the payload
+    payload = {}
+    payload['path'] = "/" + document.xpath('schema/*[local-name()="filepath"]')[0].xpath('normalize-space()')
+    payload['properties'] = properties
+    return payload
+
+def update_nuxeo_properties(api_base, api_auth, item_dict):
+    """update nuxeo document properties"""
+    use_uid = get_uid(item_dict['path'], api_base, api_auth)
+    url = api_base + "/id/" + use_uid + "/"
+    headers = {'X-NXDocumentProperties':'ucldc_schema,dublincore',
+               'Content-Type': 'application/json+nxentity'}
+    item_dict['uid'] = use_uid
+    res = requests.put(url,
+                       data=json.dumps(item_dict),
+                       auth=api_auth,
+                       headers=headers)
+    res.raise_for_status()
+    print res.text
+
+def get_uid(path, api_base, api_auth):
+    """look up uid from the path"""
+    url = urlparse.urljoin(api_base + "/", "path") + path
+    res = requests.get(url, auth=api_auth)
+    res.raise_for_status()
+    return json.loads(res.text)['uid']
+
+# main() idiom for importing into REPL for debugging
+if __name__ == "__main__":
+    sys.exit(main())
