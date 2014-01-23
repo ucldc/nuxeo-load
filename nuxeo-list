@@ -32,7 +32,7 @@ def nuxeo_all_documents(api_base, api_auth, documents, current_page_index):
              'currentPageIndex': current_page_index,
            }
     res = requests.get(url, params=params, auth=api_auth)
-    # todo; check that we got a good result
+    res.raise_for_status()
     result_dict = json.loads(res.text)
     out_list = result_dict['entries']
     documents.extend(out_list)
