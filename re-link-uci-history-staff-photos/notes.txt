@@ -1,0 +1,2 @@
+nuxeo@nuxeo-stg:~/code/nuxeo-load/re-link-uci-history-staff-photos> xml sel -t -m "//*[local-name()='Items']//*[@uid='{ac1ad0c7-b731-49da-b75d-18c47d41ed05}']/text()" -c "." -n /apps/content/raw_files/UCI/UCIHistory/Photographs/StaffPhotographerImages/Metadata/StaffPhotographers_4_UCDAMS.xml  > documents.txt
+cat documents.txt | xargs -I {} ./process_document {}
