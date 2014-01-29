@@ -1,0 +1,86 @@
+#!/usr/bin/env python
+"""trigger bulk import
+
+ ./complex_object_bulk_importer --indir /apps/content/new_path/UCI/UCIHistoryPublications/complex/ --project UCIHistoryPublications --campus UCI --leafType CustomFile --folderishType CustomFile
+
+"""
+import sys
+import argparse
+import os
+import requests
+import json
+import urlparse
+from time import sleep
+from pprint import pprint as pp
+
+def main(argv=None):
+    """main"""
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--indir', required=True)
+    parser.add_argument('--campus', required=True)
+    parser.add_argument('--project', required=True)
+    parser.add_argument('--leafType', required=True)
+    parser.add_argument('--folderishType', required=True)
+
+    if argv is None:
+        argv = parser.parse_args()
+
+    # todo; add these defaults as parameters as well as env
+    api_base = os.environ.get('NUXEO_FILEIMPORTER_API', \
+                              "http://localhost:8080/nuxeo/site/fileImporter")
+    api_auth = (os.environ.get('NUXEO_API_USER', "Administrator"),
+                os.environ.get('NUXEO_API_PASS', "Administrator"))
+
+    #print call_api(api_base, api_auth, "logActivate", {})
+    #print call_api(api_base, api_auth, "log", {})
+    for document in get_immediate_subdirectories(argv.indir):
+        input_path = os.path.join(argv.indir, document)
+        target_path = os.path.join("asset-library", argv.campus, argv.project)
+        run_one_folder(api_base, api_auth, argv.leafType, input_path, target_path, argv.folderishType )
+    
+# api_get "logActivate"
+# api_get "status"
+# api_get "run?leafType=$leafType&inputPath=/apps/content/new_path/$campus/$collection&targetPath=asset-library/$campus&folderishType=Organization"
+# api_get "log"
+
+def get_immediate_subdirectories(dir):
+    """ get all of the immediate subdirectories in python http://stackoverflow.com/a/800201/1763984 """
+    return [name for name in os.listdir(dir)
+            if os.path.isdir(os.path.join(dir, name))]
+
+def call_api(api_base, api_auth, verb, params):
+    """generic wrapper to make GET calls to this API"""
+    url = "{0}/{1}".format(api_base, verb)
+    pp((url, params))
+    res = requests.get(url, params=params, auth=api_auth)
+    res.raise_for_status()
+    return res.text
+
+def run_one_folder(api_base, api_auth, leaf_type, input_path, target_path, folderish_type):
+    """trigger an import and wait for it to finish"""
+    params = {
+               "leafType": leaf_type,
+               "inputPath": input_path,
+               "targetPath": target_path,
+               "folderishType": folderish_type,
+             }
+    print call_api(api_base, api_auth, "run", params)
+    # an import should now be running, only one import can run at a time
+    # poll the api to and wait for the run to finish... 
+    return wait_for_run(api_base, api_auth)
+
+def wait_for_run(api_base, api_auth):
+    url = "{0}/{1}".format(api_base, "status")
+    res = requests.get(url, auth=api_auth)
+    res.raise_for_status()
+    if res.text == 'Not Running':
+        return True
+    else:
+        sleep(20)
+        sys.stdout.write('.'); sys.stdout.flush()
+        wait_for_run(api_base, api_auth)
+
+# main() idiom for importing into REPL for debugging
+if __name__ == "__main__":
+    sys.exit(main())
