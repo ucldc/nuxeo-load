@@ -24,7 +24,7 @@ while IFS= read -r -u3 -d $'\0' file; do
 
     while IFS= read -r -u3 -d $'\0' file2; do
         # echo $file2
-        filename2=$(echo $file2 | tr '[:upper:]' '[:lower:]')
+        filename2=$(echo $file2 | tr '[:upper:]' '[:lower:]' | tr -d ' ')
         filename2=$(basename "$filename2")
         # echo $filename2
         #set -x
