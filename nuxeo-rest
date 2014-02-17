@@ -3,9 +3,8 @@
 import sys
 import argparse
 import os
-import requests
 import json
-import shutil
+from pynux import utils
 from pprint import pprint as pp
 
 def main(argv=None):
@@ -21,9 +20,11 @@ def main(argv=None):
     api_auth = ( os.environ.get('NUXEO_API_USER', "Administrator"), 
                  os.environ.get('NUXEO_API_PASS', "Administrator") )
 
-    documents = nuxeo_get_path_children(api_base, api_auth, argv.path[0])
+    nx = utils.Nuxeo()
+
+    documents = nx.children(argv.path[0])
     if argv.outdir:
-        copy_metadata_to_local(documents, api_base, api_auth, argv.outdir)
+        copy_metadata_to_local(documents, argv.outdir, nx)
     else:
          print_document_summary(documents)
 
@@ -42,40 +43,25 @@ def is_dir(dirname):
     else:
         return dirname
 
-def nuxeo_get_path_children(api_base, api_auth, path):
-    """get child documents of a path"""
-    url = api_base + "/path/" + path + "/@children"
-    params={'pageSize':'10000'}
-    res = requests.get(url, params=params, auth=api_auth)
-    res.raise_for_status()
-    result_dict = json.loads(res.text)
-    return result_dict['entries']
-
-def nuxeo_get_path_metadata(api_base, api_auth, path, local):
-    """get metadata for a path"""
-    url = api_base + "/path" + path + "/"
-    headers = {'X-NXDocumentProperties':'ucldc_schema,dublincore'}
-    res = requests.get(url, headers=headers, auth=api_auth)
-    # todo; check that we got a good result
-    # http://stackoverflow.com/a/18043472/1763984 
-    with open(local + path, 'w') as json_file:
-        py_json = json.loads(res.text)
-        out_json = {}
-        out_json['uid']=py_json['uid']
-        out_json['path']=py_json['path']
-        out_json["entity-type"]=py_json["entity-type"]
-        out_json['properties']=py_json['properties']
-        json_file.write(
-                       json.dumps(out_json, sort_keys=True, indent=4, separators=(',', ': '))
-                       )
-    
 def print_document_summary(documents):
     for document in documents:
         pp((document['uid'], document['path']))
 
-def copy_metadata_to_local(documents, base, auth, local):
+def copy_metadata_to_local(documents, local, nx):
     for document in documents:
-        nuxeo_get_path_metadata(base, auth, document['path'], local)
+        path = document['path']
+        # http://stackoverflow.com/a/18043472/1763984 
+        with open(local + path, 'w') as json_file:
+            py_json = nx.get_metadata(path=path);
+            out_json = {}
+            out_json['uid']=py_json['uid']
+            out_json['path']=py_json['path']
+            out_json["entity-type"]=py_json["entity-type"]
+            out_json['properties']=py_json['properties']
+            json_file.write(
+                       json.dumps(out_json, sort_keys=True, indent=4, separators=(',', ': '))
+                       )
+
 
 # main() idiom for importing into REPL for debugging 
 if __name__ == "__main__":
