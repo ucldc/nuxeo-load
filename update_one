@@ -2,7 +2,6 @@
 """update nuxeo"""
 import sys
 import argparse
-import os
 import requests
 import json
 import urlparse
@@ -24,10 +23,7 @@ def main(argv=None):
         argv = parser.parse_args()
 
     # todo; add these defaults as parameters as well as env
-    nx = utils.Nuxeo({
-        "user": os.environ.get('NUXEO_API_USER', "Administrator"),
-        "password": os.environ.get('NUXEO_API_PASS', "Administrator"),
-    })
+    nx = utils.Nuxeo()
     pp(argv.file[0])
     jfile = argv.file[0]
     uid = argv.uid
