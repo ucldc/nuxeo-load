@@ -22,10 +22,7 @@ def main(argv=None):
     if argv is None:
         argv = parser.parse_args()
 
-    nx = utils.Nuxeo({
-        "user": os.environ.get('NUXEO_API_USER', 'Administrator'),
-        "password": os.environ.get('NUXEO_API_PASS', 'Administrator')
-    })
+    nx = utils.Nuxeo()
 
     #print call_api(api_base, api_auth, "logActivate", {})
     #print call_api(api_base, api_auth, "log", {})

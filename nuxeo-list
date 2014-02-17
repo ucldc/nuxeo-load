@@ -2,7 +2,6 @@
 
 import sys
 import argparse
-import os
 from pynux import utils
 
 
@@ -13,10 +12,7 @@ def main(argv=None):
 
     # http://demo.nuxeo.com/nuxeo/api/v1/path/default-domain/@search\?query\=SELECT%20\*%20FROM%20Document\&pageSize\=2\&currentPageIndex\=1 | jq .
     # todo; add these defaults as parameters as well as env
-    nx = utils.Nuxeo({
-        "user": os.environ.get('NUXEO_API_USER', 'Administrator'),
-        "password": os.environ.get('NUXEO_API_PASS', 'Administrator')
-    })
+    nx = utils.Nuxeo()
     documents = nx.all()
     print_document_summary(documents)
 
