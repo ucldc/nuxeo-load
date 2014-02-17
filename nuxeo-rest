@@ -16,11 +16,10 @@ def main(argv=None):
         argv = parser.parse_args()
 
     # todo; add these defaults as parameters as well as env
-    api_base = os.environ.get('NUXEO_REST_API', "http://localhost:8080/nuxeo/site/api/v1")
-    api_auth = ( os.environ.get('NUXEO_API_USER', "Administrator"), 
-                 os.environ.get('NUXEO_API_PASS', "Administrator") )
-
-    nx = utils.Nuxeo()
+    nx = utils.Nuxeo({
+        "user": os.environ.get('NUXEO_API_USER', "Administrator"),
+        "password": os.environ.get('NUXEO_API_PASS', "Administrator")
+    })
 
     documents = nx.children(argv.path[0])
     if argv.outdir:
