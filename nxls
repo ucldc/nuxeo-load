@@ -10,15 +10,14 @@ from pprint import pprint as pp
 def main(argv=None):
 
     parser = argparse.ArgumentParser( description='nuxeo metadata via REST API')
-    parser.add_argument('path', nargs=1, help="URL or path to source EAD XML file" )
+    parser.add_argument('path', nargs=1, help="nuxeo document path" )
     parser.add_argument('--outdir', action=FullPaths, type=is_dir)
     if argv is None:
         argv = parser.parse_args()
 
-    # todo; add these defaults as parameters as well as env
     nx = utils.Nuxeo()
-
     documents = nx.children(argv.path[0])
+
     if argv.outdir:
         copy_metadata_to_local(documents, argv.outdir, nx)
     else:
@@ -41,11 +40,14 @@ def is_dir(dirname):
 
 def print_document_summary(documents):
     for document in documents:
-        pp((document['uid'], document['path']))
+        print "{0}\t{1}".format(document['uid'], document['path'])
 
 def copy_metadata_to_local(documents, local, nx):
     for document in documents:
         path = document['path']
+        file = os.path.join(local, path.strip("/"))
+        dir = os.path.dirname(file)
+        _mkdir(dir)
         # http://stackoverflow.com/a/18043472/1763984 
         with open(local + path, 'w') as json_file:
             py_json = nx.get_metadata(path=path);
@@ -57,6 +59,26 @@ def copy_metadata_to_local(documents, local, nx):
             json_file.write(
                        json.dumps(out_json, sort_keys=True, indent=4, separators=(',', ': '))
                        )
+
+def _mkdir(newdir):
+    """works the way a good mkdir should :)
+        - already exists, silently complete
+        - regular file in the way, raise an exception
+        - parent directory(ies) does not exist, make them as well
+    """
+    # http://code.activestate.com/recipes/82465-a-friendly-mkdir/
+    if os.path.isdir(newdir):
+        pass
+    elif os.path.isfile(newdir):
+        raise OSError("a file with the same name as the desired " \
+                      "dir, '%s', already exists." % newdir)
+    else:
+        head, tail = os.path.split(newdir)
+        if head and not os.path.isdir(head):
+            _mkdir(head)
+        #print "_mkdir %s" % repr(newdir)
+        if tail:
+            os.mkdir(newdir)
 
 
 # main() idiom for importing into REPL for debugging 
