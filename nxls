@@ -3,14 +3,14 @@
 import sys
 import argparse
 import os
-import json
 from pynux import utils
 from pprint import pprint as pp
 
+
 def main(argv=None):
 
-    parser = argparse.ArgumentParser( description='nuxeo metadata via REST API')
-    parser.add_argument('path', nargs=1, help="nuxeo document path" )
+    parser = argparse.ArgumentParser(description='nuxeo metadata via REST API')
+    parser.add_argument('path', nargs=1, help="nuxeo document path")
     parser.add_argument('--outdir', action=FullPaths, type=is_dir)
     if argv is None:
         argv = parser.parse_args()
@@ -19,16 +19,20 @@ def main(argv=None):
     documents = nx.children(argv.path[0])
 
     if argv.outdir:
-        copy_metadata_to_local(documents, argv.outdir, nx)
+        nx.copy_metadata_to_local(documents, argv.outdir)
     else:
-         print_document_summary(documents)
+        nx.print_document_summary(documents)
+
 
 class FullPaths(argparse.Action):
     """Expand user- and relative-paths"""
     # https://gist.github.com/brantfaircloth/1443543
     def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, os.path.abspath(os.path.expanduser(values)))
- 
+        setattr(namespace,
+                self.dest,
+                os.path.abspath(os.path.expanduser(values)))
+
+
 def is_dir(dirname):
     """Checks if a path is an actual directory"""
     # https://gist.github.com/brantfaircloth/1443543
@@ -38,49 +42,6 @@ def is_dir(dirname):
     else:
         return dirname
 
-def print_document_summary(documents):
-    for document in documents:
-        print "{0}\t{1}".format(document['uid'], document['path'])
-
-def copy_metadata_to_local(documents, local, nx):
-    for document in documents:
-        path = document['path']
-        file = os.path.join(local, path.strip("/"))
-        dir = os.path.dirname(file)
-        _mkdir(dir)
-        # http://stackoverflow.com/a/18043472/1763984 
-        with open(local + path, 'w') as json_file:
-            py_json = nx.get_metadata(path=path);
-            out_json = {}
-            out_json['uid']=py_json['uid']
-            out_json['path']=py_json['path']
-            out_json["entity-type"]=py_json["entity-type"]
-            out_json['properties']=py_json['properties']
-            json_file.write(
-                       json.dumps(out_json, sort_keys=True, indent=4, separators=(',', ': '))
-                       )
-
-def _mkdir(newdir):
-    """works the way a good mkdir should :)
-        - already exists, silently complete
-        - regular file in the way, raise an exception
-        - parent directory(ies) does not exist, make them as well
-    """
-    # http://code.activestate.com/recipes/82465-a-friendly-mkdir/
-    if os.path.isdir(newdir):
-        pass
-    elif os.path.isfile(newdir):
-        raise OSError("a file with the same name as the desired " \
-                      "dir, '%s', already exists." % newdir)
-    else:
-        head, tail = os.path.split(newdir)
-        if head and not os.path.isdir(head):
-            _mkdir(head)
-        #print "_mkdir %s" % repr(newdir)
-        if tail:
-            os.mkdir(newdir)
-
-
-# main() idiom for importing into REPL for debugging 
+# main() idiom for importing into REPL for debugging
 if __name__ == "__main__":
     sys.exit(main())

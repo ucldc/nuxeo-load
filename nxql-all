@@ -14,12 +14,8 @@ def main(argv=None):
     # todo; add these defaults as parameters as well as env
     nx = utils.Nuxeo()
     documents = nx.all()
-    print_document_summary(documents)
+    nx.print_document_summary(documents)
 
-
-def print_document_summary(documents):
-    for document in documents:
-        print "{0}\t{1}".format(document['path'], document['uid'])
 
 # main() idiom for importing into REPL for debugging
 if __name__ == "__main__":

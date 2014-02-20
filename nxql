@@ -15,12 +15,7 @@ def main(argv=None):
     nx = utils.Nuxeo()
     pprint.pprint(argv.nxql[0])
     documents = nx.nxql(argv.nxql[0])
-    print_document_summary(documents)
-
-
-def print_document_summary(documents):
-    for document in documents:
-        print "{0}\t{1}".format(document['uid'], document['path'])
+    nx.print_document_summary(documents)
 
 
 # main() idiom for importing into REPL for debugging
