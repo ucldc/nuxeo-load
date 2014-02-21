@@ -47,14 +47,6 @@ def main(argv=None):
     pp(ret)
 
 
-def get_uid(path, api_base, api_auth):
-    """look up uid from the path"""
-    url = urlparse.urljoin(api_base + "/", "path") + path
-    res = requests.get(url, auth=api_auth)
-    res.raise_for_status()
-    return json.loads(res.text)['uid']
-
-
 # main() idiom for importing into REPL for debugging
 if __name__ == "__main__":
     sys.exit(main())
