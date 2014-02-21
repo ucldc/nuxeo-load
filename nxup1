@@ -35,7 +35,13 @@ def main(argv=None):
         ret = nx.update_nuxeo_properties(data, uid=uid)
     elif path:				# use path supplied at command line
         ret = nx.update_nuxeo_properties(data, path=path)
+    # if no uid nor path was specified on the command line, then
+    # prefer "path": to "uid": when importing files because the file may have
+    # come from another machine where the uuids are different
     else:
+        uid = nx.get_uid(data.get('path')) or data.get('uid')
+        ret = nx.update_nuxeo_properties(data, uid=uid)
+    if not ret:
         print "no uid found, specify --uid or --path"
         exit(1)
     pp(ret)
