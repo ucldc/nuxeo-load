@@ -2,20 +2,28 @@
 
 import sys
 import argparse
+import os
 from pynux import utils
-import pprint
+from pprint import pprint as pp
 
 
 def main(argv=None):
+
     parser = argparse.ArgumentParser(description='nxql via REST API')
     parser.add_argument('nxql', nargs=1, help="nxql query")
+    parser.add_argument('--outdir')
     if argv is None:
         argv = parser.parse_args()
 
     nx = utils.Nuxeo()
-    pprint.pprint(argv.nxql[0])
+
     documents = nx.nxql(argv.nxql[0])
-    nx.print_document_summary(documents)
+
+    if argv.outdir:
+        outdir = os.path.abspath(os.path.expanduser(argv.outdir)) # Expand user- and relative-paths
+        nx.copy_metadata_to_local(documents, outdir)
+    else:
+        nx.print_document_summary(documents)
 
 
 # main() idiom for importing into REPL for debugging

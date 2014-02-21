@@ -11,7 +11,7 @@ def main(argv=None):
 
     parser = argparse.ArgumentParser(description='nuxeo metadata via REST API')
     parser.add_argument('path', nargs=1, help="nuxeo document path")
-    parser.add_argument('--outdir', action=FullPaths, type=is_dir)
+    parser.add_argument('--outdir')
     if argv is None:
         argv = parser.parse_args()
 
@@ -19,28 +19,11 @@ def main(argv=None):
     documents = nx.children(argv.path[0])
 
     if argv.outdir:
-        nx.copy_metadata_to_local(documents, argv.outdir)
+        outdir = os.path.abspath(os.path.expanduser(argv.outdir)) # Expand user- and relative-paths
+        nx.copy_metadata_to_local(documents, outdir)
     else:
         nx.print_document_summary(documents)
 
-
-class FullPaths(argparse.Action):
-    """Expand user- and relative-paths"""
-    # https://gist.github.com/brantfaircloth/1443543
-    def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace,
-                self.dest,
-                os.path.abspath(os.path.expanduser(values)))
-
-
-def is_dir(dirname):
-    """Checks if a path is an actual directory"""
-    # https://gist.github.com/brantfaircloth/1443543
-    if not os.path.isdir(dirname):
-        msg = "{0} is not a directory".format(dirname)
-        raise argparse.ArgumentTypeError(msg)
-    else:
-        return dirname
 
 # main() idiom for importing into REPL for debugging
 if __name__ == "__main__":
