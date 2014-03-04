@@ -1,45 +1,42 @@
 #!/usr/bin/env python
-"""update nuxeo"""
+"""update nuxeo from ucldc REST.xml file"""
 import sys
 import argparse
-import os
-import requests
-import json
-import urlparse
 from lxml import etree
-from pprint import pprint as pp
+from pynux import utils
+
 
 def main(argv=None):
-    """main"""
-    parser = argparse.ArgumentParser( \
-                          description='nuxeo metadata via REST API, from <REST> xml')
+    parser = argparse.ArgumentParser(
+        description='nuxeo metadata via REST API, from <REST> xml')
     parser.add_argument('file', nargs=1, help="YTH REST xml talnd export")
 
     if argv is None:
         argv = parser.parse_args()
 
-    # todo; add these defaults as parameters as well as env
-    api_base = os.environ.get('NUXEO_REST_API', \
-                              "http://localhost:8080/nuxeo/site/api/v1")
-    api_auth = (os.environ.get('NUXEO_API_USER', "Administrator"),
-                os.environ.get('NUXEO_API_PASS', "Administrator"))
-
     tree = etree.parse(argv.file[0])
     root = tree.getroot()
     documents = root.xpath('/REST/document')
+    assert(documents), "%r should have an xpath '/REST/document' " \
+        "containing ucldc metadata" % argv.file[0]
+    nx = utils.Nuxeo()
 
     for document in documents:
-        update_nuxeo_properties(api_base, api_auth, xml_to_json(document))
+        item_dict = xml_to_dict(document)
+        nx.update_nuxeo_properties(item_dict, path=item_dict['path'])
 
-def xml_to_json(document):
-    # print(etree.tostring(document, pretty_print=True))
+
+def xml_to_dict(document):
+    """convert XML to pyhon dict that matches the json"""
     properties = {}
     for property in document.xpath("schema/*"):
         key = property.xpath('name()')
+        # simple value
         if not property.xpath('boolean(*)'):
             val = property.xpath('normalize-space()')
             if not val == '' and key != 'dc:filepath':
                 properties[key] = val
+        # array of simple
         elif property.xpath('item/text()') and not property.xpath('item/*'):
             val = []
             for item in property.xpath('item'):
@@ -48,6 +45,7 @@ def xml_to_json(document):
                     val.append(v)
             if len(val) > 0:
                 properties[key] = val
+        # array of dict
         elif property.xpath('item/*/text()'):
             val = []
             for item in property.xpath('item'):
@@ -57,37 +55,16 @@ def xml_to_json(document):
                     v[k] = el.xpath('normalize-space()')
                 val.append(v)
             properties[key] = val
-                    
-        else:
-            #print(etree.tostring(property, pretty_print=True))
-            true
-    
+
     # copy what we want from the input json into the payload
     payload = {}
-    payload['path'] = "/" + document.xpath('schema/*[local-name()="filepath"]')[0].xpath('normalize-space()')
+    payload['path'] = "".join([
+        "/",
+        document.xpath('schema/*[local-name()="filepath"]')[0]
+                .xpath('normalize-space()')
+    ])
     payload['properties'] = properties
     return payload
-
-def update_nuxeo_properties(api_base, api_auth, item_dict):
-    """update nuxeo document properties"""
-    use_uid = get_uid(item_dict['path'], api_base, api_auth)
-    url = api_base + "/id/" + use_uid + "/"
-    headers = {'X-NXDocumentProperties':'ucldc_schema,dublincore',
-               'Content-Type': 'application/json+nxentity'}
-    item_dict['uid'] = use_uid
-    res = requests.put(url,
-                       data=json.dumps(item_dict),
-                       auth=api_auth,
-                       headers=headers)
-    res.raise_for_status()
-    print res.text
-
-def get_uid(path, api_base, api_auth):
-    """look up uid from the path"""
-    url = urlparse.urljoin(api_base + "/", "path") + path
-    res = requests.get(url, auth=api_auth)
-    res.raise_for_status()
-    return json.loads(res.text)['uid']
 
 # main() idiom for importing into REPL for debugging
 if __name__ == "__main__":
