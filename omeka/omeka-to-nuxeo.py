@@ -3,6 +3,8 @@
 import requests
 import json
 import math
+import sys
+from pynux import utils
 
 #############################################################################
 #############################################################################
@@ -30,10 +32,13 @@ class OmekaNuxeoImport:
       # treat image collections differently than text collection?
       collection_metadata = self.getCollectionMetadata(collectionId)
       print '\nNumber of items in collection', str(collectionId), ':', collection_metadata["items"]["count"] 
+
+      # get fieldnames for collection metadata
       for key in collection_metadata:
         if key not in collectionFields:
           collectionFields.append(key)
       
+      # get element_set names
       for element_text in collection_metadata["element_texts"]:
         if element_text["element_set"]["name"] not in collectionElementSets:
           collectionElementSets.append(element_text["element_set"]["name"])
@@ -51,9 +56,12 @@ class OmekaNuxeoImport:
 
       # for each item, get filename info
       for item_meta in items_metadata:
-        #itemFilenames = self.getItemFilenames(item_meta) # FIXME
-        #print 'itemFilenames:', itemFilenames
-        # get item field names
+        itemFilenames = self.getItemFilenames(item_meta) # FIXME
+#        print 'itemFilenames:', itemFilenames
+        item_meta.update({'filenames': itemFilenames}) 
+
+      # get fieldnames for item metadata
+      for item_meta in items_metadata:
         for key in item_meta:
           if key not in itemFields:
             itemFields.append(key)
@@ -68,6 +76,80 @@ class OmekaNuxeoImport:
       for er in item_meta["extended_resources"]:
         print 'we have an extended resource!'
 
+    #compile dict_of_field_info 
+    #self.printFieldInfo(dict_of_field_info)
+    payload = self.omeka_to_nuxeo_dict(items_metadata)
+    # return payload
+
+#############################################################################
+  def omeka_to_nuxeo_dict (self, omeka_dict):
+    """ transform dict of metadata from omeka api into json-esque nuxeo-friendly dict """
+    properties = {}
+    for item in omeka_dict:
+      print '\n'
+      for key in item:
+        #print '\n'
+        #print key, item[key]    
+
+        # get metadata out of 'element_texts' node
+        #if key == 'element_texts':
+          #print 'text:', item[key][0]['text']
+          #print 'element name:', item[key][0]['element']['name']
+          # if it's DC metadata, then get that
+          #'dc:title'
+          # we seem to have DC Title, Description, Publisher, Date, Contributor, Rights, Format
+          # we also have 'Item Type Metadata: name', e.g. "Original Format"
+
+        # Rights Status (hardcoded)
+          #'ucldc_schema:rightsstatus': 'copyrighted',
+          # DC Rights, e.g. "Regents of the University of California"
+
+        # Physical Description
+          #'ucldc_schema:physdesc': 'Photographic print',
+          # DC Description, e.g. ""Black and White Photograph\r\nUniversity of California, San Francisco, School of Nursing\r\n1923\r\n""
+
+        # Collection ID
+          #'ucldc_schema:collection': ['https://registry.cdlib.org/api/v1/collection/19/'],
+          # item['collection']['id'] --> translate this to UCLDC collection ID
+
+        # Campus Unit ID
+          #'ucldc_schema:campusunit': ['https://registry.cdlib.org/api/v1/repository/16/'],
+          # need to find UCSF campusunit ID
+
+        # Local Identifier (what's this and do we need it?)
+          #'ucldc_schema:localidentifier': ['2'],
+          # item['id'] (this is the Omeka item ID. Don't think we want this.
+
+        # Type
+          #'ucldc_schema:type': 'image', 
+          # Dublin Core 'Type', e.g. 'still image'
+          # Dublin Core 'Format', e.g. 'photograph'
+          # Item Type Metadata 'Original Format', e.g. 'Black and White Photograph'
+
+        # Subject Topic
+          #'ucldc_schema:subjecttopic': [{'headingtype': 'topic', 'heading': 'Laguna Beach (Calif.) -- Photographs'}],
+          # DC Description, e.g. "Black and White Photograph\r\nUniversity of California, San Francisco, School of Nursing\r\n1923\r\n"
+
+        # Date
+          #'ucldc_schema:date': [{'inclusivestart': '1919', 'date': '1919 - 1949', 'datetype': 'created', 'inclusiveend': '1949'}],
+          # DC Date, e.g. "1923"
+
+        # Rights Statement
+          #'ucldc_schema:rightsstatement': 'This material is provided for private study, scholarship, or research. Transmission or reproduction of any material protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. The creators of the material or their heirs may retain copyright to this material.', 
+
+        # Place
+          #'ucldc_schema:place': [{'name': 'Laguna Beach (Calif.)'}], 
+
+        # Creator
+          #'ucldc_schema:creator': [{'nametype': 'persname', 'role': 'Photographer', 'name': 'Cochems, Edward W. (Edward William), 1874-1949'}], 
+
+        # Physical Location
+          #'ucldc_schema:physlocation': 'Box 1 : Folder 1'
+      
+#############################################################################
+  def printFieldInfo(self, dict_of_field_info):
+    """ Print information on the metadata fields we have  """
+    # FIXME - this doesn't work yet.
     print '\n# collectionFields #'
     for field in collectionFields:
       print field
@@ -93,6 +175,8 @@ class OmekaNuxeoImport:
       print element
  
     # return metadata in one big dict. or just load collection right into Nuxeo?
+    print collection_metadata
+    print items_metadata
 
 #############################################################################
   def getItemFilenames(self, metadata):
@@ -183,8 +267,8 @@ class OmekaNuxeoImport:
 def runImport():
   """ import content from Omeka instance into Nuxeo """
   omekaNuxeoImport = OmekaNuxeoImport()
-  omekaNuxeoImport.getOmekaMetadata() 
-  #omekaNuxeoImport.loadBatchIntoNuxeo()
+  payload = omekaNuxeoImport.getOmekaMetadata() 
+  #omekaNuxeoImport.loadBatchIntoNuxeo(payload)
   
 #############################################################################
 if __name__ == '__main__':
