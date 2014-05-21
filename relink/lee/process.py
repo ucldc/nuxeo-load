@@ -36,8 +36,10 @@ def file_or_dir(file, junk):
 def process_dir(file, junk):
     print "{} -> {}".format(file, file.upper())
     file = file.rstrip("/")
-    files_md = [x for x in junk['files_with_metadata'] if x.startswith(file)]
-    files_no = [x for x in junk['files_no_metadata'] if x.startswith(file)]
+    files_md = [x for x in junk['files_with_metadata'] if startswith_cc(x, file)]
+    files_no = [x for x in junk['files_no_metadata']   if startswith_cc(x, file)]
+    files_md = [x for x in files_md if correct_case(x).endswith('K.tif') or correct_case(x).endswith('G.mov')]
+    files_no = [x for x in files_no if correct_case(x).endswith('K.tif') or correct_case(x).endswith('G.mov')]
     if bool(files_md):
         print BASE1
         print files_md
@@ -50,8 +52,11 @@ def process_file(file, junk):
     print "{} -> {}".format(file, correct)
 
 def correct_case(file):
-    front, back = file.split('.')
-    return "{}.{}".format(front.upper(), back.lower())
+    front, back = os.path.splitext(file)
+    return "{}{}".format(front.upper(), back.lower())
+
+def startswith_cc(string, start):
+    return bool(string.upper().startswith(start.upper()))
 
 if __name__ == "__main__":
     sys.exit(main())
