@@ -1,0 +1,90 @@
+    {
+        "element_texts":{
+            "element_set":{
+                "Dublin Core":{
+                    "Citation":{
+                        "name": "do_not_map"
+                    },
+                    "Collection":{
+                        "name": "do_not_map"
+                    },
+                    "Contributor":{
+                        "name": "ucldc_schema:contributor",
+                        "type": "repeatable"
+                    }, 
+                    "Coverage":{
+                        "name": "ucldc_schema:subjecttopic",
+                        "type": "repeatable"
+                    },
+                    "Creator":{ 
+                        "name": "ucldc_schema:creator", 
+                        "type": "repeatable"
+                    },
+                    "Date":{
+                        "name": "ucldc_schema:date",
+                        "type": "repeatable"
+                    },
+                    "Description":{
+                        "name": "ucldc_schema:description",
+                        "type": "single"
+                    },
+                    "Format":{ 
+                        "name": "ucldc_schema:formgenre",
+                        "type": "repeatable"
+                    },
+                    "Identifier":{
+                        "name": "ucldc_schema:localidentifier",
+                        "type": "repeatable"
+                    },
+                    "Language":{
+                        "name": "ucldc_schema:language",
+                        "type": "repeatable"
+                    },
+                    "Publisher":{
+                        "name": "ucldc_schema:publisher",
+                        "type": "repeatable"
+                    },
+                    "Relation":{
+                        "name": "ucldc_schema:relatedresource",
+                        "type": "repeatable"
+                    },
+                    "Rights":{
+                        "name": "ucldc_schema:rightsholder",
+                        "type": "repeatable"
+                    },
+                    "Source":{
+                        "name": "ucldc_schema:source",
+                        "type": "single"
+                    },
+                    "Subject":{ 
+                        "name": "ucldc_schema:subjecttopic",
+                        "type": "repeatable"
+                    },
+                    "Tags":{
+                        "name": "ucldc_schema:subjecttopic",
+                        "type": "repeatable"
+                    },
+                    "Title":{
+                        "name": "dc:title",
+                        "type": "single"
+                    },
+                    "Type":{
+                        "name": "do_not_map"
+                    }
+                },
+                "Item Type Metadata": {
+                    "Original Format":{
+                       "name" : "ucldc_schema:physdesc",
+                       "type": "single"
+                    },
+                    "Text":{
+                       "name" : "do_not_map"
+                    },
+                    "Physical Dimensions":{
+                       "name" : "ucldc_schema:physdesc",
+                       "type" : "single"
+                    }
+                }
+            }
+        }
+    }
