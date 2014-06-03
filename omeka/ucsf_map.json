@@ -2,37 +2,43 @@
         "collection": {
            "13":{
                "ucldc_id" : "198",
-               "path" : "/asset-library/UCSF/30th_General_Hospital/",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "30th_General_Hospital",
                "type" : "image",
                "campusunit" : "25"
            },
            "10":{
                "ucldc_id" : "199",
-               "path" : "/asset-library/UCSF/A_History_of_UCSF",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "A_History_of_UCSF",
                "type" : "image",
                "campusunit" : "25"
            },
            "6":{
                "ucldc_id" : "105",
-               "path" : "Photograph_collection",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "Photograph_collection",
                "type" : "image",
                "campusunit" : "25"
            },
            "9":{
                "ucldc_id" : "200",
-               "path" : "School_of_Dentistry_130th_Anniversary",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "School_of_Dentistry_130th_Anniversary",
                "type" : "image",
                "campusunit" : "25"
            },
            "14":{
                "ucldc_id" : "197",
-               "path" : "Day_Robert_L_Collection",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "Day_Robert_L_Collection",
                "type" : "image",
                "campusunit" : "25"
            },
            "8":{
                "ucldc_id" : "104",
-               "path" : "Speck_cholera_collection",
+               "nuxeo_folder" : "/asset-library/UCSF/",
+               "name" : "Speck_cholera_collection",
                "type" : "text",
                "campusunit" : "25"
            }

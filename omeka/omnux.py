@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import requests, json, math, sys
+import requests, json, math, sys, os
 from pynux import utils
 from collections import defaultdict
 
@@ -121,10 +121,10 @@ def get_collection_property(collection_mapping_data, collection_id, property_nam
 
 def get_path(omeka_item_dict, collection_mapping_data, collection_id):
   filename = get_item_filename(omeka_item_dict)
-  basepath = get_collection_property(collection_mapping_data, collection_id, "path")
-  path = ''.join([basepath, filename])
+  basepath = get_collection_property(collection_mapping_data, collection_id, "nuxeo_folder")
+  collection_name = get_collection_property(collection_mapping_data, collection_id, "name")
+  path = os.path.join(basepath, collection_name, filename)
   return path
-
 
 def get_item_filename(omeka_item_dict):
   """ Get filename for a given item. Assumes one file. """
