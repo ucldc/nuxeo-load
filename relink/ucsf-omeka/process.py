@@ -30,7 +30,7 @@ def main(argv=None):
 
 def process_collection(filename_list, raw_listings, collection):
     missing = []
-    links = {}
+    linked = {}
     shortname_count = {}
     for filename in filename_list:
         filename = filename.rstrip('\n\r')
@@ -59,8 +59,13 @@ def process_collection(filename_list, raw_listings, collection):
 
             topath = os.path.join(BASE3, collection, shortname)
             link_file(rawpath, topath)
-
-    with open("missing_files", "a+") as f:
+            linked[rawpath] = topath
+    
+    with open("hardlinks.txt", "a+") as h:
+        for k, v in linked.iteritems():
+            h.write(' '.join([k,v]) + '\n')
+ 
+    with open("missing_files.txt", "a+") as f:
         f.write("\n## " + collection + " ##\n")
         for m in missing:
             f.write(m + '\n')
