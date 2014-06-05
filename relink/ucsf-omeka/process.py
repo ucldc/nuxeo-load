@@ -8,6 +8,8 @@ import sys, os, pprint
 BASE1 = u"/apps/content/raw_files/UCSF/omeka/omeka-files/files/"
 BASE2 = u"/apps/content/raw_files/UCSF/omeka/omeka-fullsize/fullsize/"
 BASE3 = u"/apps/content/new_path/UCSF/omeka/"
+hardlinks_file = u"./hardlinks.txt"
+missing_file = u"./missing.txt"
 
 nuxeo_limit = 24
 
@@ -23,6 +25,16 @@ def main(argv=None):
 
     omeka_listings = [files for root, dirs, files in os.walk("./paths/")][0]
 
+    try:
+        os.remove(hardlinks_file)
+    except OSError:
+        pass
+
+    try:
+        os.remove(missing_file)
+    except OSError:
+        pass
+
     for collection in omeka_listings:
         with open(os.path.join("./paths/", collection)) as lf:
             print "\n## ", collection, " ##\n"
@@ -31,7 +43,6 @@ def main(argv=None):
 def process_collection(filename_list, raw_listings, collection):
     missing = []
     linked = {}
-    shortname_count = {}
     for filename in filename_list:
         filename = filename.rstrip('\n\r')
         rawpath = ''
@@ -48,64 +59,46 @@ def process_collection(filename_list, raw_listings, collection):
             else:
                 shortname = filename
 
-            # deal with duplicate shortened filenames. Must be a better way?!
-            if shortname in shortname_count:
-                count = shortname_count[shortname]
-                shortname_count[shortname] = count + 1
-            else:
-                shortname_count[shortname] = 0
-            if shortname_count[shortname] > 0:
-                shortname = add_count(shortname, shortname_count[shortname])
-
             topath = os.path.join(BASE3, collection, shortname)
             link_file(rawpath, topath)
-            linked[rawpath] = topath
+            linked[filename] = shortname 
     
-    with open("hardlinks.txt", "a+") as h:
+    with open(hardlinks_file, "a+") as h:
         for k, v in linked.iteritems():
-            h.write(' '.join([k,v]) + '\n')
+            h.write(' '.join([k,v]) + "\n")
  
-    with open("missing_files.txt", "a+") as f:
+    with open(missing_file, "a+") as f:
         f.write("\n## " + collection + " ##\n")
         for m in missing:
             f.write(m + '\n')
 
-
-
-def add_count(filename, count):
-    countstr = str(count)
-    newname = shorten_filename(filename, nuxeo_limit, countstr)
-    return newname
 
 def link_file(fullpath_from, fullpath_to):
     print "link {} {}".format(fullpath_from, fullpath_to)
     _mkdir(os.path.dirname(fullpath_to))
     os.link(fullpath_from, fullpath_to)
 
-def shorten_filename(filename, limit, id=''):
+def shorten_filename(filename, limit):
     shortname = ''
     parts = filename.split('.')
     base = parts[0]
     ext = parts[-1]
     base_parts = base.split('_')
-    base_length = limit - len(ext)
-    if id:
-        id_len = len(id)
-        newlen = limit - id_len - 1
-        id = '_' + id
-        shortbase = '_'.join(base_parts)
-        shortbase = shortbase[:base_length]
-        shortname = '.'.join([shortbase.rstrip('_') + id, ext])
-    elif len(base_parts[-1]) == 10:
+    base_length = limit - len(ext) - 1
+    # e.g.: speck_un2_weisz_1783_2561633c66.pdf
+    if len(base_parts[-1]) == 10:
+        checksum = base_parts[-1]
         del base_parts[-1]
-        shortbase = '_'.join(base_parts)
-        shortbase = shortbase[:base_length]
-        shortname = '.'.join([shortbase.rstrip('_'), ext])
+        shortbase = '_'.join(base_parts)[:base_length - 11] 
+        shortbase = shortbase.rstrip('_') + '_' + checksum
+        shortname = '.'.join([shortbase, ext])
+    # e.g.: 5be4b558b2db9592c02f.jpg
     elif len(base_parts) == 1 and len(base_parts[0]) == 32:
         shortbase = base_parts[0][:base_length]
         shortname = '.'.join([shortbase, ext])
     else:
-        print "unrecognized filename format:", filename 
+        shortbase = base_parts[0][:base_length]
+        shortname = '.'.join([shortbase, ext])
 
     return shortname
 

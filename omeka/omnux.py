@@ -53,7 +53,7 @@ def extract_items(api_baseurl, collection_id):
   return metadata
 
 
-def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json_file, collection_json_file, corpnames=[]):
+def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json_file, collection_json_file, hardlinks={}, corpnames=[]):
   """ transform dict of items metadata from omeka api into nuxeo-friendly format """
   properties = {}
 
@@ -67,25 +67,25 @@ def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json
   collection_type = get_collection_property(collection_mapping_data, collection_id, "type")
   with open(omnux_fieldmap_json_file) as omf:
     omnux_mapping_data = json.load(omf)
-  item_properties = get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type)
+  item_properties = get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type, corpnames)
   properties.update(item_properties)
 
   # assemble payload
   payload = {} 
-  path = get_path(omeka_item_dict, collection_mapping_data, collection_id)
+  path = get_path(omeka_item_dict, collection_mapping_data, collection_id, hardlinks)
   payload['path'] = path 
   payload['properties'] = properties
 
   return payload
 
 
-def get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type):
+def get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type, corpnames=[]):
   """ extract item properties from omeka metadata """
   properties = {}
   # Extract metadata out of 'element_texts' object
   for key in omeka_item_dict:
     if key == 'element_texts':
-      metadata = transform_element_texts(omnux_mapping_data, omeka_item_dict[key], collection_id, collection_type)
+      metadata = transform_element_texts(omnux_mapping_data, omeka_item_dict[key], collection_id, collection_type, corpnames)
       properties.update(metadata)
   
   return properties
@@ -105,7 +105,7 @@ def get_collection_properties(collection_mapping_data, collection_id):
   properties['ucldc_schema:campusunit'] = [campusunit]
   # Type
   collection_type = get_collection_property(collection_mapping_data, collection_id, "type")
-  properties['ucldc_schema:type'] = collection_type # FIXME not taking locally
+  properties['ucldc_schema:type'] = collection_type 
   # Rights Status
   properties['ucldc_schema:rightsstatus'] = 'Copyrighted'
   # Rights Statement
@@ -119,18 +119,20 @@ def get_collection_property(collection_mapping_data, collection_id, property_nam
   return collection_mapping_data["collection"][str(collection_id)][property_name]
 
 
-def get_path(omeka_item_dict, collection_mapping_data, collection_id):
-  filename = get_item_filename(omeka_item_dict)
+def get_path(omeka_item_dict, collection_mapping_data, collection_id, hardlinks={}):
+  filename = get_item_filename(omeka_item_dict, hardlinks)
   basepath = get_collection_property(collection_mapping_data, collection_id, "nuxeo_folder")
   collection_name = get_collection_property(collection_mapping_data, collection_id, "name")
   path = os.path.join(basepath, collection_name, filename)
   return path
 
-def get_item_filename(omeka_item_dict):
+def get_item_filename(omeka_item_dict, hardlinks={}):
   """ Get filename for a given item. Assumes one file. """
-  # FIXME limit of 35 (?) chars for filename in path for Nuxeo. Need to translate Omeka filename into rationalized filename that we used for Nuxeo.
   # FIXME need to allow for more than one filename, or how to figure out definitive file for object.
   filename = omeka_item_dict['filenames'][0]
+  if filename in hardlinks:
+    filename = hardlinks[filename]
+
   return filename
 
 
@@ -138,7 +140,7 @@ def transform_element_texts(mapping_data, element_texts_object, collection_id, c
   """ transform 'element_texts' omeka metadata """
   metadata = {}
 
-  # FIXME. There has got to be a better way to do this?!
+  # There has got to be a better way to do this?!
   repeatables = defaultdict(list)
   singles = defaultdict(list)
   for item in element_texts_object:
@@ -152,22 +154,22 @@ def transform_element_texts(mapping_data, element_texts_object, collection_id, c
         singles[nuxeo_fieldname].append(text)
 
   for key, value in repeatables.iteritems():
-    formatted_item = get_formatted_value(key, value, 'repeatable', collection_type)
+    formatted_item = get_formatted_value(key, value, 'repeatable', collection_type, corpnames)
     metadata[key] = formatted_item
   for key, value in singles.iteritems():
-    formatted_item = get_formatted_value(key, value, 'single', collection_type)
+    formatted_item = get_formatted_value(key, value, 'single', collection_type, corpnames)
     metadata[key] = formatted_item
 
   return metadata
 
 
 
-def get_formatted_value(nuxeo_fieldname, value_list, item_type, collection_type):
+def get_formatted_value(nuxeo_fieldname, value_list, item_type, collection_type, corpnames=[]):
   """ format list of values for nuxeo """
   if item_type == 'repeatable':
     value = []
     for item in value_list:
-      formatted = format_fieldvalue(nuxeo_fieldname, item, collection_type)
+      formatted = format_fieldvalue(nuxeo_fieldname, item, collection_type, corpnames)
       value.append(formatted)
   else:
     value = ". ".join(value_list)
@@ -175,10 +177,10 @@ def get_formatted_value(nuxeo_fieldname, value_list, item_type, collection_type)
   return value
 
 
-def format_fieldvalue(nuxeo_fieldname, text, collection_type):
+def format_fieldvalue(nuxeo_fieldname, text, collection_type, corpnames=[]):
   """ format a value """
   if nuxeo_fieldname == 'ucldc_schema:subjecttopic':
-    value = {'headingtype': 'topic', 'heading': text} #FIXME headingtype isn't taking locally
+    value = {'headingtype': 'topic', 'heading': text}
   elif nuxeo_fieldname == 'ucldc_schema:contributor':
     value = {'name': text}
   elif nuxeo_fieldname == 'ucldc_schema:creator':
@@ -190,7 +192,6 @@ def format_fieldvalue(nuxeo_fieldname, text, collection_type):
   elif nuxeo_fieldname == 'ucldc_schema:rightsholder':
     value = {'name': text}
   elif nuxeo_fieldname == 'ucldc_schema:date':
-    # FIXME datetype doesn't seem to be taking?
     if collection_type == 'text':
       value = {'date': text, 'datetype': 'issued'}
     elif collection_type == 'image':
@@ -214,11 +215,6 @@ def get_element_text(element_text_object):
   element_set_name = element_text_object['element_set']['name']
   element_name = element_text_object['element']['name']
   return text, element_set_name, element_name
-
-
-def update_nuxeo(item_dict):
-  """ update nuxeo """
-  nx.update_nuxeo_properties(item_dict, path=item_dict['path'])
 
 
 if __name__ == '__main__':
