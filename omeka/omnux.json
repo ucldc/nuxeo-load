@@ -78,7 +78,8 @@
                        "type": "single"
                     },
                     "Text":{
-                       "name" : "do_not_map"
+                       "name" : "ucldc_schema:description",
+                       "type" : "single"
                     },
                     "Physical Dimensions":{
                        "name" : "ucldc_schema:physdesc",

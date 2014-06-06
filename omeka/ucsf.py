@@ -29,8 +29,7 @@ collection_mapping_json = u'./ucsf_map.json'
 hardlinks = u'../relink/ucsf-omeka/hardlinks.txt'
 
 def main():
-  #collection_ids = [13,10,6,9,14,8]
-  collection_ids = [13]
+  collection_ids = [13,10,6,9,14,8]
   nx = utils.Nuxeo()
   pp = pprint.PrettyPrinter()
 
@@ -49,7 +48,7 @@ def main():
       # transform and load
       for item in items_metadata:
         payload = omnux.transform_omeka_to_ucldc(item, collection_id, omnux_fieldmap_json, collection_mapping_json, links, corpnames)
-        pp.pprint(payload)
+        #pp.pprint(payload)
         try:
           uid = nx.get_uid(payload['path'])
           nx.update_nuxeo_properties(payload, path=payload['path'])
