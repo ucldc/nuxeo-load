@@ -1,4 +1,7 @@
     {
+        "tags":{
+            "name": "ucldc_schema:subjecttopic"
+        },
         "element_texts":{
             "element_set":{
                 "Dublin Core":{
@@ -9,64 +12,46 @@
                         "name": "do_not_map"
                     },
                     "Contributor":{
-                        "name": "ucldc_schema:contributor",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:contributor"
                     }, 
                     "Coverage":{
-                        "name": "ucldc_schema:subjecttopic",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:subjecttopic"
                     },
                     "Creator":{ 
-                        "name": "ucldc_schema:creator", 
-                        "type": "repeatable"
+                        "name": "ucldc_schema:creator" 
                     },
                     "Date":{
-                        "name": "ucldc_schema:date",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:date"
                     },
                     "Description":{
-                        "name": "ucldc_schema:description",
-                        "type": "single"
+                        "name": "ucldc_schema:description"
                     },
                     "Format":{ 
-                        "name": "ucldc_schema:formgenre",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:formgenre"
                     },
                     "Identifier":{
-                        "name": "ucldc_schema:localidentifier",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:localidentifier"
                     },
                     "Language":{
-                        "name": "ucldc_schema:language",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:language"
                     },
                     "Publisher":{
-                        "name": "ucldc_schema:publisher",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:publisher"
                     },
                     "Relation":{
-                        "name": "ucldc_schema:relatedresource",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:relatedresource"
                     },
                     "Rights":{
-                        "name": "ucldc_schema:rightsholder",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:rightsholder"
                     },
                     "Source":{
-                        "name": "ucldc_schema:source",
-                        "type": "single"
+                        "name": "ucldc_schema:source"
                     },
                     "Subject":{ 
-                        "name": "ucldc_schema:subjecttopic",
-                        "type": "repeatable"
-                    },
-                    "Tags":{
-                        "name": "ucldc_schema:subjecttopic",
-                        "type": "repeatable"
+                        "name": "ucldc_schema:subjecttopic"
                     },
                     "Title":{
-                        "name": "dc:title",
-                        "type": "single"
+                        "name": "dc:title"
                     },
                     "Type":{
                         "name": "do_not_map"
@@ -74,16 +59,13 @@
                 },
                 "Item Type Metadata": {
                     "Original Format":{
-                       "name" : "ucldc_schema:physdesc",
-                       "type": "single"
+                       "name" : "ucldc_schema:physdesc"
                     },
                     "Text":{
-                       "name" : "ucldc_schema:description",
-                       "type" : "single"
+                       "name" : "ucldc_schema:description"
                     },
                     "Physical Dimensions":{
-                       "name" : "ucldc_schema:physdesc",
-                       "type" : "single"
+                       "name" : "ucldc_schema:physdesc"
                     }
                 }
             }

@@ -6,7 +6,6 @@ from collections import defaultdict
 
 per_page = 50 # not sure if I can look this up somewhere
 
-
 def main():
   pass
   # try getting args. Figure out usage.
@@ -55,25 +54,29 @@ def extract_items(api_baseurl, collection_id):
 
 def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json_file, collection_json_file, hardlinks={}, corpnames=[]):
   """ transform dict of items metadata from omeka api into nuxeo-friendly format """
-  properties = {}
+  properties_raw = []
 
-  # GET COLLECTION-LEVEL METADATA 
+  # GET COLLECTION-LEVEL METADATA
   with open(collection_json_file) as cf:
     collection_mapping_data = json.load(cf)
   collection_properties = get_collection_properties(collection_mapping_data, collection_id)
-  properties.update(collection_properties)
-
+  properties_raw.extend(collection_properties)
+  
+  
   # GET ITEM-LEVEL METADATA
   collection_type = get_collection_property(collection_mapping_data, collection_id, "type")
   with open(omnux_fieldmap_json_file) as omf:
     omnux_mapping_data = json.load(omf)
   item_properties = get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type, corpnames)
-  properties.update(item_properties)
+  properties_raw.extend(item_properties)
 
-  # assemble payload
-  payload = {} 
+  # AGGREGATE AND FORMAT METADATA
+  properties = format_properties(properties_raw, collection_type, corpnames)
+
+  # ASSEMBLE PAYLOAD
+  payload = {}
   path = get_path(omeka_item_dict, collection_mapping_data, collection_id, hardlinks)
-  payload['path'] = path 
+  payload['path'] = path
   payload['properties'] = properties
 
   return payload
@@ -81,36 +84,39 @@ def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json
 
 def get_item_properties(omnux_mapping_data, omeka_item_dict, collection_id, collection_type, corpnames=[]):
   """ extract item properties from omeka metadata """
-  properties = {}
-  # Extract metadata out of 'element_texts' object
+  properties = [] 
+
   for key in omeka_item_dict:
     if key == 'element_texts':
-      metadata = transform_element_texts(omnux_mapping_data, omeka_item_dict[key], collection_id, collection_type, corpnames)
-      properties.update(metadata)
-  
+      element_text_properties = transform_element_texts(omnux_mapping_data, omeka_item_dict[key])
+      properties.extend(element_text_properties)
+    elif key == 'tags':
+      tag_properties = transform_tags(omnux_mapping_data, omeka_item_dict[key])
+      properties.extend(tag_properties)
+
   return properties
 
 
 def get_collection_properties(collection_mapping_data, collection_id):
   """ get collection-level properties """
-  properties = {}
-  
+  properties = [] 
+
   # Collection ID
   ucldc_collection_id = get_collection_property(collection_mapping_data, collection_id, "ucldc_id")
   ucldc_collection = ''.join(('https://registry.cdlib.org/api/v1/collection/', str(ucldc_collection_id), '/'))
-  properties['ucldc_schema:collection'] = [ucldc_collection]
+  properties.append([u'ucldc_schema:collection', ucldc_collection])
   # Campus unit
   campusunit = get_collection_property(collection_mapping_data, collection_id, "campusunit")
   campusunit = ''.join(('https://registry.cdlib.org/api/v1/repository/', str(campusunit), '/'))
-  properties['ucldc_schema:campusunit'] = [campusunit]
+  properties.append([u'ucldc_schema:campusunit', campusunit])
   # Type
   collection_type = get_collection_property(collection_mapping_data, collection_id, "type")
-  properties['ucldc_schema:type'] = collection_type 
+  properties.append([u'ucldc_schema:type', collection_type])
   # Rights Status
-  properties['ucldc_schema:rightsstatus'] = 'Copyrighted'
+  properties.append([u'ucldc_schema:rightsstatus', 'Copyrighted'])
   # Rights Statement
-  properties['ucldc_schema:rightsstatement'] = 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'
-  
+  properties.append([u'ucldc_schema:rightsstatement', 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'])
+
   return properties
 
 
@@ -126,6 +132,7 @@ def get_path(omeka_item_dict, collection_mapping_data, collection_id, hardlinks=
   path = os.path.join(basepath, collection_name, filename)
   return path
 
+
 def get_item_filename(omeka_item_dict, hardlinks={}):
   """ Get filename for a given item. Assumes one file. """
   # FIXME need to allow for more than one filename, or how to figure out definitive file for object.
@@ -136,55 +143,76 @@ def get_item_filename(omeka_item_dict, hardlinks={}):
   return filename
 
 
-def transform_element_texts(mapping_data, element_texts_object, collection_id, collection_type, corpnames=[]):
+def transform_element_texts(mapping_data, element_texts_object):
   """ transform 'element_texts' omeka metadata """
-  metadata = {}
+  metadata = []
 
-  # There has got to be a better way to do this?!
-  repeatables = defaultdict(list)
-  singles = defaultdict(list)
   for item in element_texts_object:
     text, element_set_name, element_name = get_element_text(item)
     nuxeo_fieldname = mapping_data["element_texts"]["element_set"][element_set_name][element_name]["name"]
     if nuxeo_fieldname != 'do_not_map':
-      nuxeo_fieldtype = mapping_data["element_texts"]["element_set"][element_set_name][element_name]["type"]
-      if nuxeo_fieldtype == 'repeatable':
-        repeatables[nuxeo_fieldname].append(text)
-      else:
-        singles[nuxeo_fieldname].append(text)
-
-  for key, value in repeatables.iteritems():
-    formatted_item = get_formatted_value(key, value, 'repeatable', collection_type, corpnames)
-    metadata[key] = formatted_item
-  for key, value in singles.iteritems():
-    formatted_item = get_formatted_value(key, value, 'single', collection_type, corpnames)
-    metadata[key] = formatted_item
+      metadata.append([nuxeo_fieldname, text])
 
   return metadata
 
 
+def transform_tags(mapping_data, tags_object):
+  metadata = [] 
+  nuxeo_fieldname = mapping_data["tags"]["name"]
+  if nuxeo_fieldname != 'do_not_map':
+    for item in tags_object: 
+      metadata.append([nuxeo_fieldname, item["name"]])
 
-def get_formatted_value(nuxeo_fieldname, value_list, item_type, collection_type, corpnames=[]):
+  return metadata
+
+
+def format_properties(properties_list, collection_type, corpnames=[]):
+  """ Take a list of [name, value] lists and return a dict of formatted values per property """
+  properties = {}
+
+  # get list of unique property names
+  property_names = [p[0] for p in properties_list]
+  property_names_set = set(property_names)
+  property_names_unique = list(property_names_set)
+
+  # aggregate and format values for each property name
+  for name in property_names_unique:
+    property_values = []
+    formatted_property = {}
+    for sublist in properties_list:
+      if sublist[0] == name:
+        property_values.append(sublist[1])
+    formatted_value = get_formatted_value(name, property_values, collection_type, corpnames)
+    formatted_property[name] = formatted_value
+    properties.update(formatted_property)
+
+  return properties
+
+
+def get_formatted_value(nuxeo_fieldname, value_list, collection_type="", corpnames=[]):
   """ format list of values for nuxeo """
-  if item_type == 'repeatable':
+  repeatables = ("ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:publisher", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder")
+
+  # format values
+  if nuxeo_fieldname in repeatables:
     value = []
     for item in value_list:
       formatted = format_fieldvalue(nuxeo_fieldname, item, collection_type, corpnames)
       value.append(formatted)
+  elif nuxeo_fieldname == "ucldc_schema:description":
+    value = "\r\n\r\n".join(value_list)
   else:
     value = ". ".join(value_list)
 
   return value
 
 
-def format_fieldvalue(nuxeo_fieldname, text, collection_type, corpnames=[]):
+def format_fieldvalue(nuxeo_fieldname, text, collection_type="", corpnames=[]):
   """ format a value """
   if nuxeo_fieldname == 'ucldc_schema:subjecttopic':
     value = {'headingtype': 'topic', 'heading': text}
-  elif nuxeo_fieldname == 'ucldc_schema:contributor':
-    value = {'name': text}
-  elif nuxeo_fieldname == 'ucldc_schema:creator':
-    if text in corpnames:
+  elif nuxeo_fieldname == 'ucldc_schema:creator' or nuxeo_fieldname == 'ucldc_schema:contributor':
+    if text.strip() in corpnames:
       nametype = 'corpname'
     else:
       nametype = 'persname'

@@ -9,6 +9,7 @@ import pprint
 api_url = u'https://digital.library.ucsf.edu/api/'
 campusunit = u'https://registry.cdlib.org/api/v1/repository/25/'
 corpnames = [
+  u'UCSF Archives and Special Collections',
   u'Bass Photo Co.',
   u'Bear Photo Service',
   u'Board of Health',
@@ -30,6 +31,10 @@ hardlinks = u'../relink/ucsf-omeka/hardlinks.txt'
 
 def main():
   collection_ids = [13,10,6,9,14,8]
+  #collection_ids = [14] # Bob Day
+  #collection_ids = [13] # 30th General Hospital
+  #collection_ids = [8] # speck
+  #collection_ids = [9] # School_of_Dentistry_130
   nx = utils.Nuxeo()
   pp = pprint.PrettyPrinter()
 
@@ -48,13 +53,13 @@ def main():
       # transform and load
       for item in items_metadata:
         payload = omnux.transform_omeka_to_ucldc(item, collection_id, omnux_fieldmap_json, collection_mapping_json, links, corpnames)
-        #pp.pprint(payload)
+        pp.pprint(payload)
         try:
           uid = nx.get_uid(payload['path'])
           nx.update_nuxeo_properties(payload, path=payload['path'])
           print 'updated:', payload['path']
         except:
-          print "No uid found. Not updating:", payload['path']
+          print "No uid found or there was a problem with the payload. Not updated:", payload['path']
 
 
 if __name__ == '__main__':
