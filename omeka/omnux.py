@@ -152,7 +152,7 @@ def transform_element_texts(mapping_data, element_texts_object):
     nuxeo_fieldname = mapping_data["element_texts"]["element_set"][element_set_name][element_name]["name"]
     if nuxeo_fieldname != 'do_not_map':
       metadata.append([nuxeo_fieldname, text])
-
+ 
   return metadata
 
 
@@ -230,7 +230,19 @@ def format_fieldvalue(nuxeo_fieldname, text, collection_type="", corpnames=[]):
   elif nuxeo_fieldname == 'ucldc_schema:formgenre':
     value = {'heading': text}
   elif nuxeo_fieldname == 'ucldc_schema:language':
-    value = {'language': text}
+    text = text.strip()
+    code = ''
+    if text == 'English':
+      code = 'eng'
+    elif text == 'Dutch':
+      code = 'dut'
+    elif text == 'French':
+      code = 'fre'
+    elif text == 'German':
+      code = 'ger'
+    elif text == 'Spanish':
+      code = 'spa'
+    value = {'language': text, 'languagecode': code}
   else:
     value = text
 
