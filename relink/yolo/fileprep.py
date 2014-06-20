@@ -5,7 +5,7 @@ from lxml import etree
 """ Unzip Yolo Aerial Photos zip files from Merritt. Create hardlinks to the files we want to upload """
 
 BASE1 = u"/apps/content/raw_files/UCD/yolo"
-BASE2 = u"/apps/content/new_path/UCD/yolo"
+BASE2 = u"/apps/content/new_path/UCD/YoloCountyAerial"
 BASE3 = u"/apps/content/metadata/UCD/yolo"
 
 def main(argv=None):
