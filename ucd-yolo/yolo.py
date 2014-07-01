@@ -15,7 +15,8 @@ def main(argv=None):
 
     for file in files:
         filepath = os.path.join(metadata_dir, file)
-
+        
+        print "##", filepath, "##"
         tree = etree.parse(filepath)
         root = tree.getroot()
         item_dict = xml_to_dict(root)
@@ -82,6 +83,7 @@ def extract_properties(document):
             if role == 'creator':
                 creator_properties = []
                 creator_properties.append(['role', 'creator'])
+                creator_properties.append(['nametype', 'corpname']) # all corporate
                 creator_properties.append(['source', roleTerm.get('authority')])
                 creator_properties.append(['name', name.find('mods:namePart', namespaces=nsmap).text])
                 properties_raw.append(['ucldc_schema:creator', creator_properties])
@@ -91,7 +93,8 @@ def extract_properties(document):
         for date in mods.iterfind('mods:originInfo/mods:dateIssued', namespaces=nsmap):
             date_properties = []   
             date_properties.append(['date', date.text])
-            date_properties.append(['dateype', 'issued']) 
+            date_properties.append(['datetype', 'issued']) 
+            date_properties.append(['single', date.text]) # all single
             properties_raw.append(['ucldc_schema:date',  date_properties]) 
         # language
         properties_raw.append(['ucldc_schema:language', [['language', 'English'], ['languagecode', 'eng']]])
