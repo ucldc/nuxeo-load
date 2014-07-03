@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+set -x
+set -eu
 docdir="/apps/content/new_path/UCI/UCIHistoryStaffPhotographerImages/$1"
 mkdir -p "$docdir"
 cd "$docdir"
 ls /apps/content/raw_files/UCI/UCIHistory/Photographs/StaffPhotographerImages/ContentFiles/*_"$1"_*.tif | \
-  xargs -I {} ln -s {}
+  xargs -I {} ln {}
