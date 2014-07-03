@@ -4,6 +4,8 @@ import sys
 import argparse
 from lxml import etree
 from pynux import utils
+from pprint import pprint as pp
+from requests.exceptions import HTTPError
 
 
 def main(argv=None):
@@ -23,7 +25,12 @@ def main(argv=None):
 
     for document in documents:
         item_dict = xml_to_dict(document)
-        nx.update_nuxeo_properties(item_dict, path=item_dict['path'])
+        pp(item_dict)
+        try:
+            pp(nx.update_nuxeo_properties(item_dict, path=item_dict['path']))
+        except HTTPError, e:
+            assert unicode(e).startswith('404'), e
+            print "{1} HTTPError: {0}".format(e, item_dict['path'])
 
 
 def xml_to_dict(document):
@@ -35,14 +42,14 @@ def xml_to_dict(document):
         if not property.xpath('boolean(*)'):
             val = property.xpath('normalize-space()')
             if not val == '' and key != 'dc:filepath':
-                properties[key] = val
+                properties[key] = property.text
         # array of simple
         elif property.xpath('item/text()') and not property.xpath('item/*'):
             val = []
             for item in property.xpath('item'):
                 v = item.xpath('normalize-space()')
                 if not v == '':
-                    val.append(v)
+                    val.append(item.text)
             if len(val) > 0:
                 properties[key] = val
         # array of dict
@@ -52,7 +59,8 @@ def xml_to_dict(document):
                 v = {}
                 for el in item.xpath('*'):
                     k = el.xpath('name()')
-                    v[k] = el.xpath('normalize-space()')
+                    if not el.xpath('normalize-space()') == '':
+                        v[k] = el.text
                 val.append(v)
             properties[key] = val
 
