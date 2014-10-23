@@ -1,0 +1,10 @@
+dirs=$(find /apps/content/new_path/UCR/HighlanderNewspaper/simple/* -type d)
+
+for folder in ${dirs[*]}
+do
+  echo pifolder \
+    --leaf_type SampleCustomPicture \
+    --input_path $folder \
+    --target_path asset-library/UCR/HighlanderNewspaper \
+    --folderish_type Organization 
+done

@@ -1,0 +1,4 @@
+echo pifolder --leaf_type SampleCustomPicture \
+  --input_path /apps/content/new_path/UCM/MercedMugbook \
+  --target_path /asset-library/UCM/ \
+  --folderish_type SampleCustomPicture

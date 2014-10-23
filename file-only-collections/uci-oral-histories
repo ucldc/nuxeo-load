@@ -1,0 +1,10 @@
+dirs=$(find /apps/content/new_path/UCI/UCIHistory/OralHistories/* -type d)
+
+for folder in ${dirs[*]}
+do
+  echo pifolder \
+    --leaf_type SampleCustomPicture \
+    --input_path $folder \
+    --target_path asset-library/UCI/UCIHistory/OralHistories \
+    --folderish_type SampleCustomPicture
+done
