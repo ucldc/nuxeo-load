@@ -1,0 +1,6 @@
+  pifolder \
+    --leaf_type SampleCustomPicture \
+    --input_path /apps/content/new_path/UCM/LIJA-no-md/simple/ \
+    --target_path asset-library/UCM/LIJA-no-metadata \
+    --skip_root_folder_creation \
+    --folderish_type Organization 

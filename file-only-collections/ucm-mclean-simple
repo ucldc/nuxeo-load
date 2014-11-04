@@ -1,0 +1,5 @@
+echo pifolder \
+  --leaf_type SampleCustomPicture \
+  --input_path /apps/content/new_path/UCM/McLean/simple/McLean/ \
+  --target_path asset-library/UCM \
+  --folderish_type Organization
