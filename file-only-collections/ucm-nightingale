@@ -1,9 +1,0 @@
-pifolder --leaf_type SampleCustomPicture \
-  --input_path /apps/content/new_path/UCM/Nightingale/1864_k_tiffs/1864 \
-  --target_path /asset-library/UCM/NightingaleDiaries \
-  --folderish_type SampleCustomPicture
-
-#pifolder --leaf_type SampleCustomPicture \
-#  --input_path /apps/content/new_path/UCM/Nightingale/1865 \
-#  --target_path /asset-library/UCM/NightingaleDiaries \
-#  --folderish_type SampleCustomPicture
