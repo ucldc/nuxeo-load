@@ -6,13 +6,12 @@ import argparse
 import os
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
-from pprint import pprint as pp
 import logging
 import time
 
 
 def main(argv=None):
-    _loglevel_='WARNING'
+    _loglevel_ = 'WARNING'
     parser = argparse.ArgumentParser(description='migrate nuxeo data to s3')
     parser.add_argument('--binaries_data',
                         required=True,
@@ -22,8 +21,11 @@ def main(argv=None):
                         help="s3 bucket on AWS")
     parser.add_argument(
         '--loglevel',
-        default= _loglevel_,
-        help=''.join(["CRITICAL ERROR WARNING INFO DEBUG NOTSET, default is ",_loglevel_])
+        default=_loglevel_,
+        help=''.join([
+            'CRITICAL ERROR WARNING INFO DEBUG NOTSET, default is ',
+            _loglevel_
+        ])
     )
 
     if argv is None:
@@ -34,10 +36,9 @@ def main(argv=None):
     if not isinstance(numeric_level, int):
         raise ValueError('Invalid log level: %s' % argv.loglevel)
     logging.basicConfig(level=numeric_level, )
-    # log some stuff
     logger = logging.getLogger(__name__)
-
-    # check that --binaries_data is a nuxeo dir? TODO?
+    # set up tuple to hold stats counters
+    state_for_stats = [0.0, 0]  # sum, counter
 
     # find all the files in the directory
     for (dirpath, ____, filenames) in os.walk(argv.binaries_data):
@@ -46,18 +47,11 @@ def main(argv=None):
             check_file(os.path.join(dirpath, filename),
                        filename,
                        argv.bucket,
-                       logger)
+                       logger,
+                       state_for_stats)
 
 
-class FileSizeMismatch(Exception):
-    pass
-
-
-class FixityCheckError(Exception):
-    pass
-
-
-def check_file(path, filename, bucket_name, logger):
+def check_file(path, filename, bucket_name, logger, state_for_stats):
     """check if file has been uploaded; if so, double checks size"""
     conn = S3Connection()
     bucket = conn.get_bucket(bucket_name)
@@ -73,12 +67,18 @@ def check_file(path, filename, bucket_name, logger):
         start = time.time()
         upload(path, filename, size, bucket)
         seconds = time.time() - start
+        rate = size//seconds
+        state_for_stats[0] = state_for_stats[0] + size
+        state_for_stats[1] = state_for_stats[1] + seconds
+        average = state_for_stats[0] // state_for_stats[1]
         logging.info(
-            '{0} uploaded {1:.2E} bytes in {2:.2E} seconds {3:.2E} bytes/second'.format(
+            '{0} uploaded {1:.2E} bytes in {2:.2E} '
+            'seconds {3:.2E} bytes/second {4:.2E}'.format(
                 filename,
                 size,
                 seconds,
-                size//seconds
+                rate,
+                average
             )
         )
 
@@ -91,9 +91,19 @@ def upload(path, filename, size, bucket):
     # double check the size
     if k.size != size:
         raise FileSizeMismatch('something is very wrong')
-    # check the md5
+    # check the md5, nuxeo uses the md5 as the filename
     if k.md5 != filename:
-        raise FixityCheckError('checksums mismatch {0}!={1}'.format(k.md5, filename))
+        raise FixityCheckError(
+            'checksums mismatch {0}!={1}'.format(k.md5, filename)
+        )
+
+
+class FileSizeMismatch(Exception):
+    pass
+
+
+class FixityCheckError(Exception):
+    pass
 
 
 # main() idiom for importing into REPL for debugging
