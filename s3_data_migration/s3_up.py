@@ -6,34 +6,77 @@ import argparse
 import os
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
+from pprint import pprint as pp
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description='migrate nuxeo data to s3')
-    parser.add_argument('--binaries',
+    parser.add_argument('--binaries_data',
                         required=True,
-                        help="path to Nuxeo's .../nxserver/data/binaries/")
+                        help="path to Nuxeo's .../nxserver/data/binaries/data")
     parser.add_argument('--bucket',
                         required=True,
                         help="s3 bucket on AWS")
     if argv is None:
         argv = parser.parse_args()
 
-    for (dirpath, ____, filenames) in os.walk(argv.binaries):
+    # check that --binaries_data is a nuxeo dir?
+
+    # find all the files in the directory
+    for (dirpath, ____, filenames) in os.walk(argv.binaries_data):
         for filename in filenames:
-            s3_up(os.path.join(dirpath, filename), argv.bucket)
+            # upload to s3
+            check_file(os.path.join(dirpath, filename),
+                       filename,
+                       argv.bucket)
 
 
-def s3_up(filename, bucket_name):
-    """upload a single file (if it does not exist)"""
-    print(filename)
+class FileSizeMismatch(Exception):
+    pass
+
+
+class FixityCheckError(Exception):
+    pass
+
+
+def check_file(path, filename, bucket_name):
+    """check if file has been uploaded; if so, double checks size"""
     conn = S3Connection()
     bucket = conn.get_bucket(bucket_name)
+    key = bucket.get_key(filename)
+    size = os.stat(path).st_size
+    # check if this one has been uploaded yet
+    if key:
+        # looks like it is here; let's double check the size
+        if os.stat(path).st_size != key.size:
+            raise FileSizeMismatch('key exists; but sizes mis-match')
+    else:
+        upload(path, filename, size, bucket)
+
+
+def upload(path, filename, size, bucket):
+    """upload file and double check size"""
+    k = Key(bucket)
+    k.key = filename
+    k.set_contents_from_filename(path, cb=percent_cb, num_cb=10)
+    # double check the size
+    if k.size != size:
+        raise FileSizeMismatch('something is very wrong')
+    # check the md5
+    if k.md5 != filename:
+        raise FixityCheckError('checksums mismatch {0}!={1}'.format(k.md5, filename))
+
+
+def percent_cb(complete, total):
+    #sys.stdout.write(complete)
+    sys.stdout.write("\r%d%%" % complete)
+    sys.stdout.flush()
 
 
 # main() idiom for importing into REPL for debugging
 if __name__ == "__main__":
     sys.exit(main())
+
 
 """
 Copyright © 2015, Regents of the University of California
