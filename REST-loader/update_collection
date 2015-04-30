@@ -12,9 +12,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         description='nuxeo metadata via REST API, from <REST> xml')
     parser.add_argument('file', nargs=1, help="YTH REST xml talnd export")
-    parser.add_argument('--rcfile',
-        default= '.pynuxrc',
-        help="path to ConfigParser compatible ini file")
+    utils.get_common_options(parser)
 
     if argv is None:
         argv = parser.parse_args()
@@ -25,7 +23,7 @@ def main(argv=None):
     assert(documents), "%r should have an xpath '/REST/document' " \
         "containing ucldc metadata" % argv.file[0]
 
-    nx = utils.Nuxeo(rcfile=argv.rcfile[0])
+    nx = utils.Nuxeo(rcfile=argv.rcfile, loglevel=argv.loglevel.upper())
 
     for document in documents:
         item_dict = xml_to_dict(document)
