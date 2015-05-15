@@ -1,0 +1,1620 @@
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009869.xml ##
+uid: f7edda29-c5cf-4880-b61d-f456b541c82d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035610a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009870.xml ##
+uid: a8996a27-ba0c-4389-bfbe-446f4f0352fe
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035611a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009871.xml ##
+uid: 9f5c675a-f7fc-4f08-aefe-b76d6a7774a1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035612a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009872.xml ##
+uid: add3cdf2-0f8d-4f38-90e1-cba0eab9558a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009872
+uid: 69f0ef07-cd34-4878-98c2-7d3b992c4536
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009872/cum_6_1_00035614a.tif
+uid: 67a10d1a-a462-4f79-b08d-877870a2ede3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009872/cum_6_1_00035615a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009873.xml ##
+uid: 7f8699e8-66ce-4aeb-ba4e-f3303413d789
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035616a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009874.xml ##
+uid: 01ccf1d6-a6a6-420e-9a5f-4dd970cc4e54
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035617a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009875.xml ##
+uid: 79c15cbd-bf18-478f-a744-bd0dffbe167f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035618a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009876.xml ##
+uid: 393cf33c-9ef0-402c-89b8-ba2c08332c12
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035619a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009877.xml ##
+uid: c12f5c25-b961-4f5e-b0cd-f838256a547a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035620a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009878.xml ##
+uid: b6fd6628-2a4b-4662-bff7-a3fe52099326
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035624a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009879.xml ##
+uid: 3d61496a-63d5-49f0-852b-9eb0f0c56625
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035626b.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009880.xml ##
+uid: 33f8dc2c-7824-4c66-8bf5-e0dab9dc3217
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035629a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009881.xml ##
+uid: b69ce611-1538-4826-aba3-e5e3277e7352
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035630a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009882.xml ##
+uid: 8f177c4f-2e8d-43d1-9f05-26e7e452bdb4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035631a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009195.xml ##
+uid: 06d4b398-776b-4d53-a191-7edf17aab2ed
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034800a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009196.xml ##
+uid: 6899dd60-29fe-4f11-b25f-a24e9649d75f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034801a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009197.xml ##
+uid: 49708e56-a020-46de-baad-88dee3b57790
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034802a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009198.xml ##
+uid: 5e90f179-0841-4bfc-9543-bd21f26c9969
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034803a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009199.xml ##
+uid: f7fa6469-c5d4-48cd-982b-207c418223d5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034804a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009200.xml ##
+uid: 144efc39-4feb-4902-b940-dc55effc9425
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034805a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009201.xml ##
+uid: 8b07463d-c603-4f64-afd4-16931388314c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034806a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009202.xml ##
+uid: 868bc5e6-f6f3-465a-992f-d82a26aabcda
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034807a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009203.xml ##
+uid: 9bf72558-aed7-411f-9c49-241ba020d1d2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034808a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009211.xml ##
+uid: 36c03fb8-625e-4637-8e83-6208256a01d7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034816a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009212.xml ##
+uid: b834aad9-afa9-436d-8697-75aace2d8563
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034817a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009213.xml ##
+uid: 272ce530-70b7-41b4-ba86-e8eebb06e12e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034818a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009214.xml ##
+uid: 53426355-8a96-4bd9-96a5-1bc41da437dd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034819a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009216.xml ##
+uid: 941801b3-ff00-4c9a-b3ea-43cb29088a09
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034821a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009217.xml ##
+uid: bc6a0b30-2acf-43b9-980b-92fea2ff9a99
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034822a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009218.xml ##
+uid: 80c42fab-2676-4c38-bff8-78bfbe7bceac
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034823a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009219.xml ##
+uid: 431582c6-ab52-4cfe-b62a-56fb89c49a8a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034824a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009220.xml ##
+uid: 8e9dffe2-823f-42e5-ad85-e6099b745141
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034825a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009221.xml ##
+uid: bac5dcae-6a10-436e-bb4b-1ffcdfb1f9a7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034826a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009222.xml ##
+uid: 37b62a0c-041e-45f8-8426-aecae7368e4a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034827a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009223.xml ##
+uid: 4e32b066-b4c9-4ab1-8b26-7540f875e7f1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034828a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009224.xml ##
+uid: c5bd474f-0e68-4e08-9fc3-e1abe5393c89
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034831a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009225.xml ##
+uid: c211460d-04b7-4c6f-8f9e-0dbc1334aafa
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034833a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009226.xml ##
+uid: 3685e92c-e99a-49d4-881a-df1969752b84
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034835a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009227.xml ##
+uid: f9890cd5-d803-44dc-b78e-acd97a485abd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034836a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009228.xml ##
+uid: d08d28cf-a7ba-40c9-9a91-80d1d7a73c7f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034840a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009229.xml ##
+uid: d2edab08-b969-490d-92df-86e3a8df6a16
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034838a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009230.xml ##
+uid: 211f047f-e329-4307-87af-2108833d041b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034839a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009231.xml ##
+uid: 12d6f40a-236b-4e88-85c1-d152e39ef632
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034842a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009232.xml ##
+uid: 8692bcaa-0e50-404b-831e-b59c466f6425
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034843a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00026689.xml ##
+uid: dcaf895a-c3ce-4498-a230-9a106003491c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00326192a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00026691.xml ##
+uid: 675d77e1-e64d-4a38-965a-408a0246b40c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034895_1a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00026692.xml ##
+uid: 32870f0e-fc38-452a-bf1c-5750319b87d4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034909_1a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009247.xml ##
+uid: 189b0a42-269a-4837-8032-f04715ac5cee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034858a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009249.xml ##
+uid: fe55c0ee-451f-4f68-94c2-714503a6cc41
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034860a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009250.xml ##
+uid: ce10799a-d3a3-4996-bb1c-9b945174470e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034861a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009252.xml ##
+uid: 73770cfe-bc32-46c4-9611-78676ae5d36f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034863a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009254.xml ##
+uid: 4886a6c6-089f-4ca5-866d-f05a18ad97d5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034865a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009256.xml ##
+uid: 23bd1874-b44e-457a-b1cc-6c89e2be3a34
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034867a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009257.xml ##
+uid: 5cd3411e-6617-46c6-b089-acc7d0bf9d8e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034868a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009259.xml ##
+uid: 04ea54f1-190e-443c-ab59-78b9edb553aa
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034870a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009261.xml ##
+uid: e045dd93-2d7f-40d9-920b-179eb19ea227
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034872a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009262.xml ##
+uid: bf196caf-27b6-4606-bbf1-187f61ef7c17
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034873a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009264.xml ##
+uid: 13dd1dcc-fff4-45cc-b0fd-08ce9976a1ad
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034875a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009266.xml ##
+uid: a93bd73b-e5e7-4f05-aedf-7818784a2ee5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034877a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009267.xml ##
+uid: 161b2015-859e-45f7-8a29-19f1c692d121
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034878a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009268.xml ##
+uid: 99cfc7ec-524c-42e1-abac-c566e7407be0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034879a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009269.xml ##
+uid: b0310257-7286-44b9-bdbd-6f8cbbaf72fd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034880a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009270.xml ##
+uid: eb687563-bd21-4fad-acc2-2c1590a6c303
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034881a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009271.xml ##
+uid: c8fb87a4-5ae1-4400-89e0-125bf9460223
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034882a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009272.xml ##
+uid: 8614621a-4bff-421a-9588-163c673f8d6f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034883a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009274.xml ##
+uid: f6423b70-b06e-46f4-8986-028436dee8ea
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034893a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009275.xml ##
+uid: 9816fd84-1f33-4e76-ab2f-d25a85ebb7e4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034895a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009276.xml ##
+uid: 999d04a4-b4e3-48f5-8a63-f0ec490bce61
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034901a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009277.xml ##
+uid: 6d8364df-02ab-481d-85e5-5370fd39a632
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034899a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009278.xml ##
+uid: b6e2b3a0-b356-4b63-9f30-b4c24048e450
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034900a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009279.xml ##
+uid: 5fe05aa6-331e-479c-9dba-513c41e8941a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034903a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009280.xml ##
+uid: e69c9c89-c90b-494f-af1c-dccce624b632
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034906a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009281.xml ##
+uid: fc4035b5-878e-44e2-bd80-f12fdffe0658
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034905a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009282.xml ##
+uid: 8bd62197-ae79-48e4-95d9-a09f65541fdb
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034908a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009283.xml ##
+uid: 040005da-3966-4e40-8502-f0810298ce0f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034909a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009284.xml ##
+uid: 35e399d8-b2e9-4231-9bef-4ac923b2f411
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034910a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009285.xml ##
+uid: 3ffbaa18-c6fd-47ea-aff0-79dfe88b8ca8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034911a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009286.xml ##
+uid: 0ca901e2-28e5-46d5-b938-cb3e8e64d2ca
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034912a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009287.xml ##
+uid: 49baac16-c93e-4b42-bfd9-7c6656951955
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034913a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009288.xml ##
+uid: d770cf86-7d0b-4a9e-bc10-f63e6eabfc22
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034914a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009289.xml ##
+uid: 634c78e7-2cf3-4365-8a81-e2abad3eec7a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034915a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009290.xml ##
+uid: 38320a16-7ea8-4727-9cce-491d9a976f2f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034916a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009291.xml ##
+uid: 4f7e6b1e-f801-43e3-b5f5-52e2b73cb542
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034917a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009294.xml ##
+uid: ef2eb2b3-2d16-4838-8666-d9c719d8f8c8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034920a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009295.xml ##
+uid: be9f0347-fde1-45d2-aa56-c05cb7edbc39
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034921a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009296.xml ##
+uid: 9095da39-388e-4950-a22b-92017ea74cef
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034922a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009297.xml ##
+uid: a0835411-657d-47e7-a4af-1248789328f6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034923a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009298.xml ##
+uid: ab3bd5fa-0f6e-4b8d-9f32-5dc09d22e583
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009298
+uid: b53befd5-375b-4037-975f-691d68786690
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009298/cum_6_1_00034925a.tif
+uid: 42b4a215-3162-49a7-a8b5-cc009d339aa4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009298/cum_6_1_00034926a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009299.xml ##
+uid: f01bd575-eb69-49f6-b729-37212d91e64c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034927a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008702.xml ##
+uid: 4b8e739b-2df8-4948-9d11-bfdf436a1d92
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034291a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008708.xml ##
+uid: ff31261f-92cb-435e-bffb-4d9b1ca1f7dc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034297a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009300.xml ##
+uid: 96e69182-973b-415c-a1ed-af69215b0e34
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034928a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008713.xml ##
+uid: d7748b16-2aa9-4386-85c6-53e9e5d4ef0d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034302a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009301.xml ##
+uid: de5218ab-8825-4624-8674-05ff60b3e039
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034929a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009302.xml ##
+uid: ca887be1-4c16-4aa7-a44e-7dd5c0a1df1f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034930a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009303.xml ##
+uid: 63d41b31-37ac-4889-bdcf-7ceeb94f2d23
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034931a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009304.xml ##
+uid: f80fe9c9-b78b-4262-93fc-79953cfb27e1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034932a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009305.xml ##
+uid: 13fb8c13-e29a-44a0-be07-629da2f0dade
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034933a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009306.xml ##
+uid: f7b1d299-22af-49b3-a809-b7dee96f3e7f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034934a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009307.xml ##
+uid: 0774167c-6fe3-4dc0-8992-016a23e851ad
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034935a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008720.xml ##
+uid: 55ebd088-0eb6-4daa-9e5c-70c62a900aee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034309a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009309.xml ##
+uid: fdc090ae-f2b3-4f26-b42e-8b34c39f7af7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034937a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009310.xml ##
+uid: 95acffe8-7607-47da-9997-d54785c5759e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034938a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009311.xml ##
+uid: 85c98930-c961-4ebb-9649-7c82e4f4b464
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034939a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009312.xml ##
+uid: 6265e5a9-4270-4d16-b685-171fde6b667f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034940a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009313.xml ##
+uid: 5927755d-3137-4005-ade8-db70ef403d79
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034941a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008726.xml ##
+uid: 9c12bae6-cfbd-48be-b4af-a95e947f9065
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034315a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009315.xml ##
+uid: 0b780606-73cd-4fa7-98a4-48b66ce0e83b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034943a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009316.xml ##
+uid: 08b98a4f-be7d-4f2e-b17b-b43c64704bcd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034944a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009317.xml ##
+uid: 3e0f5d6a-4a2c-48bf-8471-ce0ce1ad8093
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034945a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008042.xml ##
+uid: 8d047abe-8b41-48e6-bc8d-7b152181e583
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033614b.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009318.xml ##
+uid: 7dc44daa-8f53-400a-ad4f-7128cd94158e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034946a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009319.xml ##
+uid: 100582c7-a068-4c1b-95bd-16326f0477d4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034947a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009320.xml ##
+uid: 61db7f65-0e1a-449e-a715-0854c416c89e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034948a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009322.xml ##
+uid: 1867ece7-df98-4ba9-baad-cfce18b99e82
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009322
+uid: fcba4fdf-7eba-4f38-85d5-93494a86f706
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009322/cum_6_1_00034951a.tif
+uid: b8bee0a2-6433-412b-98f2-a9f0b5377e4c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009322/cum_6_1_00034952a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009323.xml ##
+uid: cd5211da-aaf4-45ab-82da-36757e0bb238
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009323
+uid: 38ef9bc1-9fe5-428a-99b7-921b09938cd3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009323/cum_6_1_00034954a.tif
+uid: 45b45afc-54bf-4831-a217-0a9647708732
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009323/cum_6_1_00034955a.tif
+uid: a38af96e-bd43-4289-a0f0-e45c464d620c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009323/cum_6_1_00034956a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009324.xml ##
+uid: 84e1df55-669f-41e5-a3aa-ca00187916a2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009324
+uid: ecb57523-9a2e-45d7-9a27-5266d455ff25
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009324/cum_6_1_00034958a.tif
+uid: b2ac68da-ddd5-4679-981b-04153de8bc47
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009324/cum_6_1_00034959a.tif
+uid: 7044feee-74cb-4f4f-9bd5-53e5935c38e8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009324/cum_6_1_00034960a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009325.xml ##
+uid: 749dcf7d-4c3c-41b8-94e5-14490eafc7a9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009325
+uid: f0952bd6-c5a0-49d8-a22f-4d6917db9cc9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009325/cum_6_1_00034962a.tif
+uid: 00aa4b4a-76e9-4270-a38c-f8ed0bf51164
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009325/cum_6_1_00034963a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009326.xml ##
+uid: 3452c4cd-e1b6-492d-919a-75178ff74070
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009326
+uid: 05122f04-063c-42cd-ba9a-c2b9fabc5c21
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009326/cum_6_1_00034965a.tif
+uid: b10b3d1e-effa-45de-8319-dcbd815737e6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009326/cum_6_1_00034966a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009327.xml ##
+uid: 4a30a827-f1a0-4e30-8d08-75fa1d493559
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034967a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008052.xml ##
+uid: 86262d1c-862d-42da-86c6-5216af8cedee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033622a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009328.xml ##
+uid: d8baa8e2-555e-4c7c-8f46-4b0eb8c747a5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034968a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009329.xml ##
+uid: 9b877863-eee9-431a-a4c7-0bf08471306a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034969a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009330.xml ##
+uid: 57c4b5e6-0e1d-4c4e-b559-95adb46b52b6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034970a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009331.xml ##
+uid: c90999a9-b9d5-4dc5-9931-c80d4be86e1b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034971a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008057.xml ##
+uid: a5b18885-3a72-4546-ac04-5987b3ef6795
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033627a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009333.xml ##
+uid: 95819ad0-554a-4e75-a6c1-71279f5ad39a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034973a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009334.xml ##
+uid: 9aeb675b-07e0-4e77-b1b7-6389a45ebeea
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034974a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009335.xml ##
+uid: e5776495-9bfb-4bae-835f-950304f8970e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034975a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009336.xml ##
+uid: d2748580-b30a-44ac-9b3c-a74995ee4882
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034976a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009337.xml ##
+uid: 2d63b264-83dc-4675-89b6-ad37ac2e1c38
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009337
+uid: c29c5c6a-26f3-47b7-9f42-f0675617d14d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009337/cum_6_1_00034978a.tif
+uid: 5c0b62e2-2dc8-4138-84c8-bf655575c7f7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009337/cum_6_1_00034979a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009338.xml ##
+uid: bdc57b45-5223-4661-9529-bf27eb4abe37
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009338
+uid: 79592c0f-ca9e-43cb-88be-bed569ceb84b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009338/cum_6_1_00034981a.tif
+uid: 2093f523-89c5-4035-8599-d9e12b47bbf2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009338/cum_6_1_00034982a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009339.xml ##
+uid: 1057a906-fa24-4f13-8030-38e7dd38a476
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009339
+uid: 4962686c-d78f-4723-b32c-802b5bba9163
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009339/cum_6_1_00034984a.tif
+uid: f317e8cf-2122-4f3f-a5a2-0183e8551cee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009339/cum_6_1_00034985a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008065.xml ##
+uid: 8a106285-8fd2-4af6-99a9-e9d437dd87ee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033635a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009340.xml ##
+uid: 717d5756-59c0-4f8c-93fe-8cd781324b27
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009340
+uid: 959b658a-27f0-4eb5-acb9-5cb4e212162f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009340/cum_6_1_00034987a.tif
+uid: 7d0aadb6-9e43-48b3-a25d-21ebe5371133
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009340/cum_6_1_00034988a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009350.xml ##
+uid: a18b7429-5c4d-4477-9dea-cff307df798f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034998a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009352.xml ##
+uid: 9a04cc47-dd95-441a-82bb-cec8feb302de
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035000a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009353.xml ##
+uid: 850558f8-842e-4e56-a6f0-f80871e94066
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035001a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009354.xml ##
+uid: 953bac20-ae33-41b7-8260-76043e42193c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035002a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009355.xml ##
+uid: 952b9168-ff44-4674-b698-d96feac085b9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035003a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009356.xml ##
+uid: b10fa854-b6d8-4bd3-ad33-516c7601273d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035004a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009358.xml ##
+uid: 0e292ee8-b963-4656-a61a-1622465d382a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035006a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009359.xml ##
+uid: 5806729a-24d7-419e-8a84-283ca5143105
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035007a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009360.xml ##
+uid: cc4b08b6-2664-4b2f-84ce-3373a314e66a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035008a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009361.xml ##
+uid: 6f4cf463-d379-46ba-b858-1499e6b0b8a0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035009a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009362.xml ##
+uid: f287d1eb-0427-41db-94bb-ac6e61b38219
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035010a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009369.xml ##
+uid: 1f8a944e-700e-44a7-9789-7ec9418c9d0f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035017a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009370.xml ##
+uid: b7f9c355-8a85-463a-a878-91b0849d7874
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035018a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009371.xml ##
+uid: 5260b277-b6a6-4138-81cf-6baebfd8f31f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035019a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009372.xml ##
+uid: da574776-e75e-4eaa-9122-4cc5d7a9b567
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035020a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009373.xml ##
+uid: 262d3c8e-56eb-44b3-b326-182945d5f082
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035021a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009375.xml ##
+uid: 93542e59-9055-4079-b956-b7005b1ba908
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035023a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009376.xml ##
+uid: e1982724-f0d6-40e2-b0d2-21f16b91c9f7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035024a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008791.xml ##
+uid: 0e9ecbe6-f4d9-4d7a-a37f-e3d22b7d2930
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034380a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009381.xml ##
+uid: dccc0f60-f525-406f-a1cf-b98c175d7d2f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035029a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009382.xml ##
+uid: 4a8394d2-5eae-4252-865d-38c5bbd5c991
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035030a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009383.xml ##
+uid: 02008bb7-5f38-4e16-9ee8-54f3f9261e13
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035031a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008796.xml ##
+uid: 2f197233-6ffb-4151-84f3-d57514d6cf69
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034385a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009384.xml ##
+uid: 1118a981-6d4a-497f-b98d-224cf3cd4e74
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035032a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009385.xml ##
+uid: 2369c587-4d2d-4f6b-aafc-bcfa3c5c36a4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035033a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009392.xml ##
+uid: 79d1cec7-a2e0-49d9-a8d8-7458a6929633
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035040a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00007523.xml ##
+uid: 41308be6-618f-4049-884b-ba6264727235
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007523
+uid: 3d8d2a2a-44f6-4767-9755-7379991f3924
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007523/cum_6_1_00033032a.tif
+uid: 399a7853-d373-431c-aa89-0a682f80bcb9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007523/cum_6_1_00033033a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009397.xml ##
+uid: be6f9cf5-4f96-4c4a-a20a-0b59ddd521a0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035045a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008810.xml ##
+uid: b70486c7-2d02-4023-aeb2-575a285b6cbe
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034399a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008811.xml ##
+uid: c1e5c8d4-ad7f-4ae9-9c7f-f2f336f9f7e0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034400a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008821.xml ##
+uid: 627fc9fb-639a-4912-88ba-d14c43bdd466
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034410a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008826.xml ##
+uid: 337ddd63-d8f2-43be-9daa-55976a9ddeba
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034415a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008832.xml ##
+uid: b9b6780c-f8eb-47be-a238-eb442f1c1c8e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034421a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009422.xml ##
+uid: 0def8a00-e542-4a8f-bbb4-328318339962
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035070a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008835.xml ##
+uid: b68a9a0b-85d0-429f-a2d2-1bf0677c3394
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034424a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009423.xml ##
+uid: fe0979b9-4ca6-4d2f-8fd4-c1c3a90f939a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035073a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008836.xml ##
+uid: b00c1e84-9654-450c-86fb-964cdc060242
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034425a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009424.xml ##
+uid: b30e7510-67e1-4de9-8f3d-c4b563023c12
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035074a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008837.xml ##
+uid: cadd2d5c-4747-463d-9537-f666dd07e39c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034426a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008838.xml ##
+uid: bbc85f2a-cbbc-4da5-99b0-bd4f44cb6f15
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034427a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009426.xml ##
+uid: d283322b-6476-40dc-9ae9-22011204f9bc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009426
+uid: 9b7b4d99-f937-41c3-850d-61118c201ecd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009426/cum_6_1_00035077a.tif
+uid: 6c918fc6-fff0-4850-a3a5-787af169b2c1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009426/cum_6_1_00035078a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008839.xml ##
+uid: 1357a2a5-b256-4f53-9ed4-b023cd5ccb23
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034428a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009427.xml ##
+uid: 684b3e44-ad07-43c6-be08-e359678d8601
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009427
+uid: bb53f333-f64e-477e-a016-a37f33488f21
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009427/cum_6_1_00035080a.tif
+uid: ab5630b7-8e2d-455f-8c03-33f38baff4d6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009427/cum_6_1_00035081a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009428.xml ##
+uid: a9d4c56c-8326-41b2-a00f-cb10e39af4be
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035082a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008840.xml ##
+uid: 72466061-3e77-4cca-8212-3871d178ab57
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034429a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009429.xml ##
+uid: 7cbe7985-e716-4406-b145-b95b5cac1f66
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035083a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008841.xml ##
+uid: 2b97a7be-7bf3-402e-b1c9-0d542f6da0a6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034430a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009430.xml ##
+uid: 8e49b389-8e24-44bf-9ba9-59ddfa5a9484
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035084a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008843.xml ##
+uid: 46574f78-26bf-4e55-82e9-6c1636f294ca
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034432a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009431.xml ##
+uid: f2e87b25-4bac-494b-8245-8328c9b51562
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035085a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008844.xml ##
+uid: a1707b22-cffc-423a-a739-27969dec3ce8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034433a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009432.xml ##
+uid: 6ef26f7c-1c61-40e4-918b-44caacdc3667
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035086a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008845.xml ##
+uid: d9f08265-5e3f-4d9c-ac99-fc23e6d9b2f8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034434b.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008846.xml ##
+uid: 538a40f0-67d4-4a94-8532-ea16c7acd485
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034435a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009434.xml ##
+uid: 633f81db-c75f-4174-98f1-0bb9185c1b0a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035088a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009435.xml ##
+uid: 07caf07e-6979-45f8-b927-2598b848bff7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035089a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009436.xml ##
+uid: 0d8d528e-1fbc-48d5-bb58-473eaa907cf8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035090a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009437.xml ##
+uid: c0bdf790-d193-414e-90f4-6333c6c22f9b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035091a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009438.xml ##
+uid: 16594811-3521-475a-9567-6421943fb593
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035092a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009439.xml ##
+uid: 18471fe9-a34a-468a-92cf-9b2cf846f2bd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035093a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009440.xml ##
+uid: 0f2d96df-e621-4158-a36a-5b310e85995c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035094a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009441.xml ##
+uid: a8dc754e-db98-4770-8e4d-98b8d62c7eae
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035095a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009442.xml ##
+uid: 2c0fe9a9-cd30-4c32-8f91-338f170cfeee
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035096a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009443.xml ##
+uid: 05e887ce-cfc5-4379-9e44-4ce99defed53
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035097a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009444.xml ##
+uid: 740120f5-eb5a-4157-841a-9972f9ff097f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035098a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008857.xml ##
+uid: a5df2928-46f7-403d-8760-0cf03c93aa85
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034446a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009445.xml ##
+uid: 8b055556-c6fc-4914-9a3b-8909f2f78279
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035099a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008858.xml ##
+uid: 5d8606fd-a957-4934-b6be-765aba88e0b3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034447a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009446.xml ##
+uid: 7da45737-2cb2-4a64-9489-ae4fe03d6539
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035100a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008859.xml ##
+uid: d4f57fcf-98d7-43f1-8f6f-5c35dceada4e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034448a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009447.xml ##
+uid: bcdcfb81-f259-4995-9dca-f0e31f1af263
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035104a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008861.xml ##
+uid: d5d23fba-33b8-43fd-9c69-74245da433d2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034450a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008862.xml ##
+uid: 8aeca1b8-e638-4c06-9856-85ef54cde1a7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034451a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008863.xml ##
+uid: 3b0a1335-b386-45d5-8d19-6c0a4753db38
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034452a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008864.xml ##
+uid: fb861169-2306-4702-9a95-c12c93b172e2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034453a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008865.xml ##
+uid: 505ededd-cf94-40a7-b602-c968a94ae5d3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034454a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008866.xml ##
+uid: f95897b6-89fc-439a-9095-68ac48a2b68a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034455a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008867.xml ##
+uid: e7c739a6-ab01-4163-8f10-6ddb307d3fbf
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034456a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008868.xml ##
+uid: 70fa1452-0d06-4b5c-b852-002fd483d621
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034457a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008869.xml ##
+uid: 978bfc93-4a4d-43cc-bc21-83e6813fde7d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034458a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008870.xml ##
+uid: 32a8a94a-f95e-4a03-b965-2bcc264300a9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034459a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008871.xml ##
+uid: a82c95b9-4e37-40cf-b567-65d71154a10e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034460a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008873.xml ##
+uid: e3c64a50-e4aa-479b-92be-a50ebf12a3b0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034462a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008874.xml ##
+uid: d6c6704d-04d7-4556-a7b7-471b71387071
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034463a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008875.xml ##
+uid: 27b50a3a-9476-4ade-997a-ab875c1e2d9a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034464a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008876.xml ##
+uid: ef0132ce-4f7d-4c86-a66c-83871d49ef76
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034465a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008877.xml ##
+uid: 375f9235-25ce-4ed5-a432-e0ea65fd389c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034466a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008878.xml ##
+uid: eea81d06-aca3-4b93-b8d9-052d9ff0598a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034467a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008891.xml ##
+uid: d211a4b2-721f-4354-b3b7-89c8e71d3fcc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008891
+uid: 8c8250e5-4d38-4a09-9eef-c5a9514e6a51
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008891/cum_6_1_00034482a.tif
+uid: 3dfb87b0-b73c-4d01-bc63-4480decc479b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008891/cum_6_1_00034483a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008896.xml ##
+uid: 6bfdca48-b48c-43a1-aff8-a852cede6dd3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034487a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00007681.xml ##
+uid: 6a6f11fc-8029-445e-9e7a-f1b3cce4c6d1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033243a.tif
+uid: not in nuxeo
+path: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033243a.tif/cum_6_1_00007681
+uid: not in nuxeo
+path: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033243a.tif/cum_6_1_00007681
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00007682.xml ##
+uid: 1bc85da2-0325-49d9-b30d-ce92497f371a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007682
+uid: 26c45cb0-2c71-4b2f-a7ce-b4d8c2b72ec4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007682/cum_6_1_00033246a.tif
+uid: 0a0716df-c955-414d-9545-8b6ed752f14b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007682/cum_6_1_00033247a.tif
+uid: 7a1c753e-1151-49a9-85c3-03398d4c9258
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007682/cum_6_1_00033248a.tif
+uid: 6e987e9e-c0ef-41a2-981e-2e573a0a086f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00007682/cum_6_1_00033249a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009564.xml ##
+uid: da0f7947-ceec-4277-99ba-08fb36a96a80
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035249a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009569.xml ##
+uid: 87aeea83-5070-4f1a-9124-de268ab0fc92
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035257a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009570.xml ##
+uid: 47fa8e24-d1ec-41c4-8c87-959ab598ec41
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035258a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009572.xml ##
+uid: bd77c5a3-1252-4eeb-a29b-2df02a713261
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035260a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009573.xml ##
+uid: 2050d076-05f0-439d-bb7c-61318800c396
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035261a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009574.xml ##
+uid: 336ba1f1-498c-442e-ada8-98370eabdc52
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035262a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009575.xml ##
+uid: 9e469678-dff4-44f8-8269-9b2de69a0be6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035263a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009576.xml ##
+uid: 4e1165f0-f9da-4499-90d8-5d937085e5b8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035264a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009577.xml ##
+uid: c2980385-26d2-4606-8775-f4c3921fbd4c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035265a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009578.xml ##
+uid: 6a942aff-8986-4adf-ae02-ea53b32c93d9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035266a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009579.xml ##
+uid: 24404d96-ed02-44b6-98e9-9f3d65427963
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035267a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009580.xml ##
+uid: 53460877-c3a5-417b-b908-9ad519ef01c6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035268a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009581.xml ##
+uid: b12c5d8d-74f9-436d-aa66-09e860082ba0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035269a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009582.xml ##
+uid: a8a4f975-f867-494d-adf4-f0ad805e2ab3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035270a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009583.xml ##
+uid: ccbf56c6-a536-487e-90cd-47a873d6d2cc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035271a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009584.xml ##
+uid: 8fce59f1-ac8f-4503-998c-f03585342f49
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035272a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009585.xml ##
+uid: 80acd165-0ce0-46ab-b8cc-a79375a65d19
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035273a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009586.xml ##
+uid: f2640f28-a1d1-405f-87c1-c22f950983b4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035274a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009587.xml ##
+uid: 55f362c2-908a-42e3-a628-871ec128f206
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035275a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009588.xml ##
+uid: faf103fe-02b1-43bc-9a57-267658411cae
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035276a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009589.xml ##
+uid: 1a253e69-9659-436c-94a6-9b02f2dd0e26
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035277a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009590.xml ##
+uid: de9e9f03-0b79-493d-8ef9-57c858bd2c6e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035278a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008320.xml ##
+uid: 9754ab07-5066-4813-b773-caa3b75843e7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033890a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008322.xml ##
+uid: 13366fee-8c28-4987-966c-a757f3b79db3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008322
+uid: 95baf6ee-760e-4b54-85be-c12240a96e45
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008322/cum_6_1_00033897a.tif
+uid: fcb59bcd-a348-4d1b-a473-644a000ffbb4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008322/cum_6_1_00033898a.tif
+uid: 050f6840-a388-4e04-8747-e1c538459d5b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008322/cum_6_1_00033899a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008325.xml ##
+uid: db7582c7-637f-4eb6-8d3f-db5c9957cb76
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033901a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008326.xml ##
+uid: ecd45a79-743a-4f5e-a50a-aae723de9eaa
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033902a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008327.xml ##
+uid: 4292af39-9344-45f3-ae87-50659eea7121
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008327
+uid: 2f68e50f-b450-4ac0-a64d-a90b0558a049
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008327/cum_6_1_00033904a.tif
+uid: 999eb7c5-27bc-44e3-aa0b-ba997b8b7c0a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00008327/cum_6_1_00033905a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008328.xml ##
+uid: 36a3e1cd-4fc5-4a98-9195-07bd81dd88ac
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033906a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008329.xml ##
+uid: 6f11960a-6002-444b-95aa-b6a308cd2a32
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00033907a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009005.xml ##
+uid: ca57aaff-90b7-4d2a-8633-a2c24610a15c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034605a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009010.xml ##
+uid: 8c92cdb2-2242-4658-b24f-af5e3ade4f4c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034610a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009012.xml ##
+uid: 8bf63c4a-6fc5-45d1-850c-2fd55c00845c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034612a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009701.xml ##
+uid: bf6e9b9a-bc95-474a-9652-a559be7ef871
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035389a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009702.xml ##
+uid: 70514337-599e-492a-a800-14e75d66f828
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035390a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009016.xml ##
+uid: 4fc875b5-7c46-4f3a-9e37-385c8b63551e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034616a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009704.xml ##
+uid: b73370f1-7927-4d3b-83a5-623fc782ae8c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035392a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009705.xml ##
+uid: d8261d05-c789-467d-9b5c-b10e17e59c05
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035393a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009707.xml ##
+uid: f44b9c53-f19d-4455-bb92-495021ba74f7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035395a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009709.xml ##
+uid: 421ab810-aa0c-4604-b37b-fdaf15b67adc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035399a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009021.xml ##
+uid: 0643be63-98f1-4c37-b8ff-b69f252f353e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034621a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009710.xml ##
+uid: bec5ff86-acad-4f14-a8e2-4d0e7354b18d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035400a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009711.xml ##
+uid: 26b80e9c-014e-47c9-98e6-c194e217ff49
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035401a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009024.xml ##
+uid: 2c716066-1362-4e21-85b7-886dacc6eb6f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034624a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009712.xml ##
+uid: d8469f97-ec5a-41e4-9a35-686f7cb07592
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035402a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009713.xml ##
+uid: 7a288204-a557-4feb-942a-8a57df08b0b6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035403a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009714.xml ##
+uid: 2627b4f2-5b2a-419d-9e60-f5343be4e75f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035404a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009715.xml ##
+uid: 42d4f49b-e13c-4977-87f3-39df6baa904a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035405a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009028.xml ##
+uid: f44eed54-24bf-4fd5-932d-686c5dd2eecf
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034628a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009716.xml ##
+uid: 2bccb5b4-a29a-4d27-becc-fdf77136fbbd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035406a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009029.xml ##
+uid: 1c809e9b-18ec-487e-862a-81840fc9c7e3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034629a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009717.xml ##
+uid: cf90c95a-711f-444e-ac26-25263645a210
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009717
+uid: 6466e903-ad4a-4951-8515-5e9ca81d617c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009717/cum_6_1_00035408a.tif
+uid: 6d566d6c-95c6-4301-b880-b3683ee91b19
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009717/cum_6_1_00035409a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009718.xml ##
+uid: cd2a2d14-32fa-4626-b6de-50d8e57eb0ea
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035410a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009719.xml ##
+uid: 3d6b8a5c-caa1-43c3-a65b-dad6ed2ca9ce
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035411a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009720.xml ##
+uid: 8636635c-3bd8-42f5-b692-9dc2b30d6e45
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009720
+uid: 6905ed3c-9493-4fd7-9da0-31e47188efb3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009720/cum_6_1_00035415a.tif
+uid: 25af8192-af17-4c1e-9363-0b2cd8c74f1f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009720/cum_6_1_00035416a.tif
+uid: not in nuxeo
+path: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009720/cum_6_1_00009720
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009033.xml ##
+uid: d96247b8-b1cb-4f90-b82c-9b4e1715842d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034633a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009034.xml ##
+uid: d30e0860-0cae-463b-8d59-fb4cbee7a68c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034634a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009722.xml ##
+uid: edf21b06-a11c-4b15-9513-7239fb456add
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035414a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009035.xml ##
+uid: b518e8eb-9128-48fb-a2e1-d7053ce48965
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034635a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009723.xml ##
+uid: fa7aa3c2-9986-4c78-82c0-45bc841cff5e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035418a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009037.xml ##
+uid: da8e19b5-0979-4fc8-8a99-39c6988b7d75
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034637a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009725.xml ##
+uid: 8ad475a4-0ae5-41e7-bd9a-263f73196a0c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035420a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009038.xml ##
+uid: f34b6146-610f-439b-9983-0fbd8d927be8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034638a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009726.xml ##
+uid: 9084e98d-8d41-4a71-bfc8-101b6e1f38f9
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035421a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009039.xml ##
+uid: b361bc28-fdd5-4669-945a-21a8d2abf71f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034639a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009727.xml ##
+uid: 272f98b6-e7b9-4090-a4d2-420644efec3d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727
+uid: 9d40ca06-9c72-43f1-8fd6-16376d6e82d5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035423a.tif
+uid: 8d5d79d2-a811-4f35-aea8-2c1085b23474
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035424a.tif
+uid: 5e2b3a7a-5f92-46a8-b29d-a53735d49c48
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035425a.tif
+uid: 57b2320a-f5d3-44ab-85f3-1d3b708fe1b6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035426a.tif
+uid: 1b9634cd-492c-42e1-adb6-d674a0a61c1b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035427a.tif
+uid: 4ee62a41-5226-4417-a132-aae5e52682d1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035428a.tif
+uid: e4d49d3e-22df-4419-bcf5-b0eab7bd1199
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035429a.tif
+uid: 0a1a1743-5609-40b1-a260-7c9a8e92dc94
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035430a.tif
+uid: 04d3a84c-807f-4a3b-b5a1-a7e2c4b97fd3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035431a.tif
+uid: 2ff4b541-424e-4d39-8ba5-5aeca97e7b4e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035432a.tif
+uid: 67a86be9-0a8a-4775-b4f8-c8e7111557a1
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035433a.tif
+uid: ea1136a5-cbe7-4172-ab62-c88c14d8bf55
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035434a.tif
+uid: c57afe59-5d43-4659-aa38-57594a5b016a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035435a.tif
+uid: 20bb2683-2caa-4870-b106-c97a9872848c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035436a.tif
+uid: 06ef0df3-a6ca-4870-9a56-2f8c689c4693
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035437a.tif
+uid: 37153ba6-ca2a-4b43-b4a1-61dcfd3a9b81
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035438a.tif
+uid: 83aafb5a-a27f-4d96-9b6d-a11012a94641
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035439a.tif
+uid: afe08f17-2c9d-4cd5-9624-2caed3eba499
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035440a.tif
+uid: 2ee2edfb-9b5d-43f7-9ff2-f56e3f017121
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009727/cum_6_1_00035441a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009728.xml ##
+uid: 01581c46-0f6e-4ef0-aef3-cad10481671f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035442a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009040.xml ##
+uid: fc244827-5cb7-4a84-9675-841e793dfc4c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034640a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009729.xml ##
+uid: f80fc206-92b1-45f5-ac20-a453f276d828
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035443a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009041.xml ##
+uid: ab23fc06-5a54-4b79-8e3c-34e0190f2315
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034641a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009730.xml ##
+uid: b1d510cb-f0c8-4fb5-b38c-d7e2bb21b379
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035444a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009731.xml ##
+uid: 34577315-e730-4c69-8df5-e95c923525f4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035445a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009044.xml ##
+uid: 73920618-e547-4bb6-9325-4a4590a6f64b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034644a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009732.xml ##
+uid: 6894f2f5-415c-4fd5-a500-53c975112f21
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035446a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009733.xml ##
+uid: 15d95959-0894-4100-94c4-96021dd23474
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035447a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009046.xml ##
+uid: 47cf25a6-1ea1-42e9-b7d3-d037d2909458
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034646a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009734.xml ##
+uid: 1801c15a-9a12-4a4c-89cd-fccf0a6e69e6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035448a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009735.xml ##
+uid: cd488abb-55f9-4a41-85e9-7f6b7cb8c52a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035449a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009048.xml ##
+uid: 361d7023-0e44-4cfc-9412-2ade5df543d8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034648a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009736.xml ##
+uid: 2861ad17-f2ac-406f-ae67-9b452092dcbc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035450a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009737.xml ##
+uid: 9a2cc79d-c9b1-4136-ac85-e63666cb4980
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035451a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009738.xml ##
+uid: e4f201ad-4f11-4c92-8560-c2b55678bda5
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009738
+uid: 6dcfedf1-9b72-4a33-a3cf-c0189419893f
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009738/cum_6_1_00035453a.tif
+uid: d29d650b-d8fb-4e33-ac37-74065d4a24af
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009738/cum_6_1_00035454a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009051.xml ##
+uid: d03fd199-c487-4370-9141-37a4dcd1a714
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034651a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009052.xml ##
+uid: 5f099d5f-06bf-47f6-8d8f-1d524f254fba
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034652a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009053.xml ##
+uid: c77e285f-9ad3-446c-9a88-0622f6b1ef61
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034653a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009741.xml ##
+uid: c34f1966-ad37-4ff3-b2c5-6a01dc2829af
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035463a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009054.xml ##
+uid: dc4ac93e-93fd-406b-9642-c0de8a53cf31
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034654a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009055.xml ##
+uid: d2550ab7-3e98-46bf-ab66-899fb5ddbb20
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034655a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009743.xml ##
+uid: d4f000ea-d356-477d-b898-5bc7ccfe82db
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009743
+uid: df8bbe44-12e3-49b7-945e-7a620fdd9f79
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009743/cum_6_1_00035470a.tif
+uid: 4ce03d58-ab53-43da-ac59-d80807324a56
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009743/cum_6_1_00035471a.tif
+uid: 19e5c254-9e5e-4f02-a9e8-588bc9893f98
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009743/cum_6_1_00035472a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009056.xml ##
+uid: a76aab5a-7c2c-404c-af97-94518521a797
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034656a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009057.xml ##
+uid: 5d4335b1-f8de-46ce-b511-321f2ed3f101
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034657a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009745.xml ##
+uid: 5325d013-d4dc-4fc7-b227-1a00bd848332
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035474a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009058.xml ##
+uid: bce0306b-5e63-4ddd-8a5b-f8caee423b59
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034658a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009746.xml ##
+uid: 7de74dec-011b-4a30-beda-88a73cc1ba99
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009746
+uid: 2e52b60e-a7a2-4887-99b5-71388fd03378
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009746/cum_6_1_00035476a.tif
+uid: c39083b5-4b16-4b85-829f-6c482a3c9ce3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009746/cum_6_1_00035477a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009059.xml ##
+uid: 55bbe0ec-5f63-4d80-bba2-3d6107b5a8fa
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034659a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009747.xml ##
+uid: 89f3cf70-944d-49de-b7a3-08c2f988b434
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009747
+uid: b7fbb8e1-dbd4-497a-a9d4-55a5146a58ed
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009747/cum_6_1_00035479a.tif
+uid: d7dfe423-8829-4022-95cf-0aab066fd93b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009747/cum_6_1_00035480a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009748.xml ##
+uid: a33d0d8d-e1e8-467e-944a-379fd5d0b93e
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009748
+uid: 0cc6dce3-7151-427e-ae75-313c32c2366b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009748/cum_6_1_00035482a.tif
+uid: 29576c1e-3091-48dd-82df-308acc8e71e4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00009748/cum_6_1_00035483a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009060.xml ##
+uid: e1107331-d75d-45b4-8983-20bb741e3603
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034663a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009061.xml ##
+uid: c807415c-ff22-4296-bd0a-86211ff4373b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034666a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009063.xml ##
+uid: f7415d80-3106-432f-ac8a-80fcfcb3191c
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034668a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009064.xml ##
+uid: 5d62d2a4-4481-4578-a329-3f22b76b762d
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034669a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009065.xml ##
+uid: bd1d94da-0d47-41c4-b9a7-2db9b71f1212
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034670a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009066.xml ##
+uid: de9d34be-39f1-4d9a-9601-8807ca733a5b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034671a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009067.xml ##
+uid: 85c24f01-69d1-410d-88e5-87c80776d256
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034672a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009068.xml ##
+uid: bea99060-5554-4e4a-8bbc-c83be5229bf7
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034673a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009069.xml ##
+uid: 24fa4bb2-b08e-4e6d-8742-e53e414d0a78
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034674a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009070.xml ##
+uid: 8a26256c-9a6c-4e44-89d6-6b7a3b1a53a6
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034675a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009071.xml ##
+uid: 5bd02163-f768-4a7a-ad8a-42565bac5182
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034676a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009118.xml ##
+uid: 0888e62c-69ad-4bf0-baef-45905db90aff
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034723a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009120.xml ##
+uid: 447af49f-5910-465b-a37d-5348f7877fe8
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034725a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009122.xml ##
+uid: 6cd5a203-027a-4ea8-9ad7-62e0b84a9668
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034727a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009124.xml ##
+uid: a4e05d12-547c-4028-873a-ba6392ad52cd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034729a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009127.xml ##
+uid: 09907bc5-46aa-4d58-a1e6-30edbc9e51d3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034732a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009129.xml ##
+uid: b02e03ef-ef55-4477-b3dc-89180a2a6771
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034734a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009131.xml ##
+uid: 267d41b6-5709-438a-a67f-ace47b6ee3aa
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034736a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009132.xml ##
+uid: 52f3668e-cc95-47fa-ae1e-079783d19dca
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034737a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009138.xml ##
+uid: 4f1369c1-7eca-488f-b222-7a4785cfec90
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034743a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009139.xml ##
+uid: e5d8ce0f-f5ad-4299-b0ac-c96545e42ea3
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034744a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009142.xml ##
+uid: 99deb5ea-7e5f-4936-85ce-7267905bfe66
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034747a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009144.xml ##
+uid: c65c016b-abe6-4d59-824a-2b611322df48
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034749a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009147.xml ##
+uid: ea3859cd-b7b8-42d9-a4c8-516763232278
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034752a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009148.xml ##
+uid: 76107d65-754d-44b7-a99a-52f0a256f6b4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034753a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009149.xml ##
+uid: 197c5b68-7aed-4ea5-aa61-a027f201b4ad
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034754a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009153.xml ##
+uid: b377f3d5-eb4d-445c-bc9f-89eebdb391f4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034758a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009155.xml ##
+uid: 6c4a22e3-efe1-4fbc-b16d-27d454579308
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034760a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009157.xml ##
+uid: 4eaeda6d-a9d3-4b83-a111-e7bd5bb1ad8a
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034762a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008578.xml ##
+uid: 47806d70-4d04-4dc0-b690-b6c15992bfcd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034158a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008579.xml ##
+uid: e541dda8-5e90-4ff7-9862-f2e7a2546dd4
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034159a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008581.xml ##
+uid: 4a05d019-0db9-4eb3-81a8-c2ee79941b80
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034161a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008582.xml ##
+uid: 7aa94365-1b32-4006-8ca6-83122104101b
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034162a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008583.xml ##
+uid: 86d261be-7928-4e58-adf5-1588ea3d1787
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034163a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008585.xml ##
+uid: 1a3506f2-a1a9-4e2a-a48e-6488bffb8bd0
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034165a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008586.xml ##
+uid: aef8b199-2b17-47c2-9fc8-b319b22cb592
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034166a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008587.xml ##
+uid: 81559b1d-eeec-4a19-8aab-95700b7a0407
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034167a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008588.xml ##
+uid: 792b038d-f134-44c3-ba6c-3976b821af47
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034168a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00008589.xml ##
+uid: b83f3f8d-c7be-4063-a212-b81f85f32377
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00034169a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009865.xml ##
+uid: de13c9a0-43b5-4f83-b47b-08a1756c8110
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035606a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009866.xml ##
+uid: 8fe69b5d-5902-427d-98af-d6386ed97ffc
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035607a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009867.xml ##
+uid: 781a5c13-f22c-4c86-9722-380986489fe2
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035608a.tif
+
+## /apps/content/metadata/UCSF/JapaneseWoodblocks/ucb/cum_6_1_00009868.xml ##
+uid: 4bc31b83-4342-43e2-8abe-42f1aef5e5cd
+updated: /asset-library/UCSF/JapaneseWoodblocks/cum_6_1_00035609a.tif

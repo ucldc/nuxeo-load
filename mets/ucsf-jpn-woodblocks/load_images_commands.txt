@@ -1,0 +1,33 @@
+
+## PARENTS ##
+
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/parents --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture --skip_root_folder_creation
+
+## CHILDREN ##
+
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00007523 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00007682 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00008322 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00008327 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00008891 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009298 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009322 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009323 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009324 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009325 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009326 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009337 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009338 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009339 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009340 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009426 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009427 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009717 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009720 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009727 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009738 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009743 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009746 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009747 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009748 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
+pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCSF/JapaneseWoodblocks/children/cum_6_1_00009872 --target_path asset-library/UCSF/JapaneseWoodblocks --folderish_type SampleCustomPicture 
