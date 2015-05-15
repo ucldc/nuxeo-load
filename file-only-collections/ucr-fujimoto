@@ -2,9 +2,9 @@ dirs=$(find /apps/content/new_path/UCR/FujimotoDiaries/* -type d)
 
 for folder in ${dirs[*]}
 do
-  echo pifolder \
+  pifolder \
     --leaf_type SampleCustomPicture \
     --input_path $folder \
-    --target_path asset-library/UCR/FujimotoDiaries \
+    --target_path /asset-library/UCR/FujimotoDiaries \
     --folderish_type SampleCustomPicture
 done

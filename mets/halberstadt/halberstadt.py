@@ -5,7 +5,8 @@ from lxml import etree
 import pprint
 from pynux import utils
 
-metadata_dir = "/apps/content/raw_files/UCD/halberstadt/METS/"
+#metadata_dir = "/apps/content/raw_files/UCD/halberstadt/METS/"
+metadata_dir = "/apps/content/metadata/UCD/halberstadt"
 pp = pprint.PrettyPrinter()
 nx = utils.Nuxeo()
 nuxeo_limit = 24

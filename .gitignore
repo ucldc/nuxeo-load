@@ -1,2 +1,7 @@
 /out
 .Python
+*.pyc
+bin
+lib
+include
+lib64

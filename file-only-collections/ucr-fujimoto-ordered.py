@@ -5,7 +5,7 @@ import pprint
 """ Batch load UCR Fujimoto sub-components with workaround so that they appear in Nuxeo in lexical order. """
 
 content_dir = "/apps/content/new_path/UCR/FujimotoDiaries/"
-collection_name = "FujimotoDiaries"
+collection_name = "Fujimoto"
 temp_dir = os.path.join("/apps/nuxeo/code/nuxeo-load/file-only-collections/temp-for-loading/", collection_name)
 target_base_path = os.path.join("/asset-library/UCR", collection_name)
 

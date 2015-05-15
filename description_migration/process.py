@@ -9,7 +9,7 @@ import json
 from pynux import utils
 
 
-BASE1 = u'/apps/nuxeo/workspace/migration/output/'
+BASE1 = u'/apps/nuxeo/workspace/description-migration/output'
 
 
 def main(argv=None):

@@ -37,6 +37,10 @@ def main(argv=None):
 
         count = count + 1
 
+    # delete the temp collection folder
+    shutil.rmtree(temp_dir)
+
+
 
 # http://code.activestate.com/recipes/82465-a-friendly-mkdir/
 def _mkdir(newdir):

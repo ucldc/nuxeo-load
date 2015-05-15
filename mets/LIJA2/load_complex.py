@@ -11,9 +11,9 @@ nuxeo_base = 'asset-library/UCM/LIJA2'
 def main(argv=None):
 
     # create LIJA2 folder with a dummy file. just for testing.
-    print "\n## LIJA2 with dummy file ##\n"
-    pifolder_command = "pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCM/LIJA2/complex/LIJA2 --target_path asset-library/UCM --folderish_type Organization"
-    print pifolder_command
+    #print "\n## LIJA2 with dummy file ##\n"
+    #pifolder_command = "pifolder --leaf_type SampleCustomPicture --input_path /apps/content/new_path/UCM/LIJA2/complex/LIJA2 --target_path asset-library/UCM --folderish_type Organization"
+    #print pifolder_command
     #subprocess.call(pifolder_command, shell=True)
 
     # PARENTS #
@@ -23,7 +23,7 @@ def main(argv=None):
     skip_root_creation = 1
     pifolder_command =  get_pifolder_cmd(input_path, target_path, skip_root_creation)
     print pifolder_command
-    #subprocess.call(pifolder_command, shell=True) 
+    subprocess.call(pifolder_command, shell=True) 
       
     # get list of root folders that will be created
     nuxeo_folders_created = [files for root, dirs, files in os.walk(input_path)][0]
@@ -46,7 +46,7 @@ def main(argv=None):
 
         pifolder_command = get_pifolder_cmd(input_path, target_path, skip_root_creation)
         print pifolder_command
-        #subprocess.call(pifolder_command, shell=True)
+        subprocess.call(pifolder_command, shell=True)
 
         # add mid-level dirs to list of Nuxeo folders that will be created 
         mid_folders = [files for root, dirs, files in os.walk(input_path)][0]

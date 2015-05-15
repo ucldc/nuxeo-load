@@ -53,7 +53,7 @@ def main():
       # transform and load
       for item in items_metadata:
         payload = omnux.transform_omeka_to_ucldc(item, collection_id, omnux_fieldmap_json, collection_mapping_json, links, corpnames)
-        pp.pprint(payload)
+        #pp.pprint(payload)
         try:
           uid = nx.get_uid(payload['path'])
           nx.update_nuxeo_properties(payload, path=payload['path'])

@@ -4,7 +4,7 @@ import pprint
 
 """ Batch load UCM Nightingale sub-components with workaround so that they appear in Nuxeo in lexical order. """
 
-content_dirs = ("/apps/content/new_path/UCM/Nightingale/1864_k_tiffs/1864", "/apps/content/new_path/UCM/Nightingale/1865")
+content_dirs = ("/apps/content/new_path/UCM/Nightingale/1864", "/apps/content/new_path/UCM/Nightingale/1865")
 object_name = "NightingaleDiaries"
 temp_dir = os.path.join("/apps/nuxeo/code/nuxeo-load/file-only-collections/temp-for-loading/", object_name)
 target_base_path = os.path.join("/asset-library/UCM", object_name)
@@ -16,7 +16,7 @@ def main(argv=None):
     # create UCM/NightingaleDiaries folder
     _mkdir(temp_dir)
     pifolder_cmd = "pifolder --leaf_type SampleCustomPicture --input_path {} --target_path {} --folderish_type Organization".format(temp_dir, "/asset-library/UCM")
-    subprocess.call(pifolder_cmd, shell=True)
+    #subprocess.call(pifolder_cmd, shell=True)
 
     # load objects
     for content_dir in content_dirs:
