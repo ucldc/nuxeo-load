@@ -80,7 +80,7 @@ def get_object_id(dir):
     id = [title.text for title in root.findall('{http://purl.org/dc/elements/1.1/}title')][0]
     return id
 
-
+# http://code.activestate.com/recipes/82465-a-friendly-mkdir/
 def _mkdir(newdir):
     """works the way a good mkdir should :)
         - already exists, silently complete

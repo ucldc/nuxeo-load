@@ -363,7 +363,7 @@ def format_properties(properties_list):
     """ format values per property """
     properties = {}
 
-    repeatables = ("ucldc_schema:alternativetitle", "ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:place", "ucldc_schema:publisher", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder")
+    repeatables = ("ucldc_schema:alternativetitle", "ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:place", "ucldc_schema:publisher", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder", "ucldc_schema:description")
 
     # get list of unique property names
     property_names = [p[0] for p in properties_list]
@@ -432,7 +432,7 @@ def extract_properties(mods):
                 typeShort = 'persname'
             elif nameType == 'corporate':
                 typeShort = 'corpname'
-            creator_properties.append(['type', typeShort])
+            creator_properties.append(['nametype', typeShort])
             # role
             roleTerm = creatorName.find('mods:role/mods:roleTerm', namespaces=nsmap)
             role = roleTerm.text
@@ -446,10 +446,14 @@ def extract_properties(mods):
         properties_raw.append(['ucldc_schema:type', 'image'])
         # genre
         for genre in mods.iterfind('mods:genre', namespaces=nsmap):
-            properties_raw.append(['ucldc_schema:formgenre', [['heading', genre.text]]])
+            properties_raw.append(['ucldc_schema:formgenre', [['heading', genre.text], ['source', genre.get('authority')]]])
         # place
+        # FIXME we might have to delete what's currently in 'place' since we're putting it in 'publisher' now?
+        # publication/origination info
         for place in mods.iterfind('mods:originInfo/mods:place/mods:placeTerm', namespaces=nsmap):
-            properties_raw.append(['ucldc_schema:place', [['name', place.text]]])
+            properties_raw.append(['ucldc_schema:publisher', place.text])
+            properties_raw.append(['ucldc_schema:place', []])
+            #properties_raw.append(['ucldc_schema:place', [['name', place.text]]])
         # date created
         date_properties = []
         for date in mods.iterfind('mods:originInfo/mods:dateCreated', namespaces=nsmap):
@@ -483,13 +487,17 @@ def extract_properties(mods):
         for identifier in mods.iterfind('mods:identifier', namespaces=nsmap):
             if identifier.get('type') == "local" and identifier.text:
                 properties_raw.append(['ucldc_schema:localidentifier', identifier.text])
-        # physical description 
-        desc = ''
-        for physDesc in mods.iterfind('mods:physicalDescription', namespaces=nsmap):
-            descParts = [part.text for part in physDesc]
-            desc = ' '.join(descParts) 
-        if desc:
-            properties_raw.append(['ucldc_schema:physdesc', desc])
+        # physical description - extent
+        for extent in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
+            properties_raw.append(['ucldc_schema:physdesc', extent.text])
+        # physical description - note 
+        for phys_desc_note in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
+            pd_note_type = phys_desc_note.get('type')
+            properties_raw.append(['ucldc_schema:description', [['item', phys_desc_note.text], ['type', pd_note_type]]]) 
+        # notes
+        for note in mods.iterfind('mods:note', namespaces=nsmap):
+            note_type = note.get('type')
+            properties_raw.append(['ucldc_schema:description', [['item', note.text], ['type', note_type]]]) 
         # geographic subject
         for place in mods.iterfind('mods:subject/mods:geographic', namespaces=nsmap):
             place_properties = []
@@ -497,29 +505,46 @@ def extract_properties(mods):
             place_properties.append(['name', place.text])
             properties_raw.append(['ucldc_schema:place', place_properties])
         # biographical note???
-        # subjecttopic
-        for subjecttopic in mods.iterfind('mods:subject/mods:topic', namespaces=nsmap):
-            properties_raw.append(['ucldc_schema:subjecttopic', [['heading', subjecttopic.text], ['headingtype', 'topic']]])
+        # subject
+        for subject in mods.iterfind('mods:subject', namespaces=nsmap):
+            subject_source = subject.get('authority')
+            # subjecttopic
+            for subjecttopic in subject.iterfind('mods:topic', namespaces=nsmap):
+                subjecttopic_properties = []
+                subjecttopic_properties.append(['source', subject_source])
+                subjecttopic_properties.append(['heading', subjecttopic.text])
+                subjecttopic_properties.append(['headingtype', 'topic'])
+                properties_raw.append(['ucldc_schema:subjecttopic', subjecttopic_properties])
+            # subjecttopic - name
+            for subjectname in subject.iterfind('mods:name', namespaces=nsmap):
+                subjectname_source = subjectname.get('authority')
+                for namepart in subjectname.iterfind('mods:namePart', namespaces=nsmap):
+                    subjectname_properties = []
+                    subjectname_properties.append(['source', subjectname_source])
+                    subjectname_properties.append(['heading', namepart.text])
+                    subjectname_properties.append(['headingtype', 'topic'])
+                    properties_raw.append(['ucldc_schema:subjecttopic', subjectname_properties])
         # relatedItem - concatenate various values into Source field.
         desc_parts = []
         for related_item in mods.iterfind('mods:relatedItem', namespaces=nsmap):
-            for related_title_info in related_item.iterfind('mods:titleInfo/mods:title', namespaces=nsmap):
-                desc_parts.append(related_title_info.text.strip())
-            for identifier in related_item.iterfind('mods:identifier', namespaces=nsmap):
-                if (identifier.get('type') == 'local' or identifier.get('type') == 'uri') and identifier.text:
-                    desc_parts.append(identifier.text.strip())
-            for related_physloc in related_item.iterfind('mods:location/mods:physicalLocation', namespaces=nsmap):
-                desc_parts.append(related_physloc.text.strip())
-            for related_url in related_item.iterfind('mods:url', namespaces=nsmap):
-                desc_parts.append(related_url.text.strip()) 
+            if related_item.get('type') == 'original':
+                for related_title_info in related_item.iterfind('mods:titleInfo/mods:title', namespaces=nsmap):
+                    desc_parts.append(related_title_info.text.strip())
+                for identifier in related_item.iterfind('mods:identifier', namespaces=nsmap):
+                    if (identifier.get('type') == 'local' or identifier.get('type') == 'uri') and identifier.text:
+                        desc_parts.append(identifier.text.strip())
+                for related_physloc in related_item.iterfind('mods:location/mods:physicalLocation', namespaces=nsmap):
+                    desc_parts.append(related_physloc.text.strip())
+                for related_loc_url in related_item.iterfind('mods:location/mods:url', namespaces=nsmap):
+                    desc_parts.append(related_loc_url.text.strip()) 
         properties_raw.append(['ucldc_schema:source', '. '.join(desc_parts)])
         # physical location
         for location in mods.iterfind('mods:location/mods:physicalLocation', namespaces=nsmap):
             properties_raw.append(['ucldc_schema:physlocation', location.text])
-        # physical location URL?
+
         # source
-        for source in mods.iterfind('mods:recordInfo/mods:recordContentSource', namespaces=nsmap):
-            properties_raw.append(['ucldc_schema:source', source.text])
+        #for source in mods.iterfind('mods:recordInfo/mods:recordContentSource', namespaces=nsmap):
+        #   properties_raw.append(['ucldc_schema:source', source.text])
 
         return properties_raw
 
