@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """ Update collection in Nuxeo """
 import sys, os, requests
+import argparse
 from lxml import etree
 import pprint
 from pynux import utils
@@ -10,7 +11,6 @@ from urlparse import urlparse
 
 metadata_dir = "/apps/content/metadata/UCM/LIJA2/CDL"
 pp = pprint.PrettyPrinter()
-nx = utils.Nuxeo()
 nsmap = {'mets': 'http://www.loc.gov/METS/', 'mods': 'http://www.loc.gov/mods/v3', 'rts': 'http://cosimo.stanford.edu/sdr/metsrights/'}
 nuxeo_basepath = '/asset-library/UCM/LIJA2/'
 nuxeo_limit = 24 
@@ -19,13 +19,20 @@ toolong = []
 
 def main(argv=None):
     
+    parser = argparse.ArgumentParser(description='Import metadata into Nuxeo for LIJA2 (mets) collection.')
+    utils.get_common_options(parser)
+    if argv is None:
+        argv = parser.parse_args()
+
+    nx = utils.Nuxeo(rcfile=argv.rcfile, loglevel=argv.loglevel.upper())
+
     naans = [dirs for root, dirs, files in os.walk(metadata_dir)][0]
     for naan in naans:
         naan_dir = os.path.join(metadata_dir, naan)
         arks = [dirs for root, dirs, files in os.walk(naan_dir)][0]
         for ark in arks:
             filepath = os.path.join(metadata_dir, naan, ark, ark + '.mets.xml')
-            process_object(filepath)
+            process_object(filepath, nx)
 
     print "\n\nPath components over Nuxeo length limit (" + str(nuxeo_limit) + "):"
     print "TOTAL:", len(toolong)
@@ -34,7 +41,7 @@ def main(argv=None):
 
 
 
-def process_object(filepath):
+def process_object(filepath, nx):
 
     print "\n##", filepath, "##"
 
@@ -48,23 +55,23 @@ def process_object(filepath):
     parent = struct['parent']
     properties = get_properties(document, parent['label'], 1)
     payload = assemble_payload(parent['path'], properties)
-    update_nuxeo(payload)
+    update_nuxeo(payload, nx)
 
     # update child objects
     for child in parent['children']:
         properties = get_properties(document, child['label'], 0)
         payload = assemble_payload(child['path'], properties) 
-        update_nuxeo(payload)
+        update_nuxeo(payload, nx)
 
         # update grandchild objects
         for grandchild in child['grandchildren']:
             properties = get_properties(document, grandchild['label'], 0)
             payload = assemble_payload(grandchild['path'], properties)
-            update_nuxeo(payload)
+            update_nuxeo(payload, nx)
 
 
 
-def update_nuxeo(payload):
+def update_nuxeo(payload, nx):
 
     path = payload['path']
     print "Nuxeo Path:", path
