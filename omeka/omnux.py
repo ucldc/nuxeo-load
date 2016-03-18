@@ -25,8 +25,15 @@ def extract_collection(api_baseurl, collection_id):
 
 def get_item_count(api_baseurl, collection_id):
   """ get item count for a collection """
-  collection_metadata = extract_collection(api_baseurl, collection_id)
-  count = collection_metadata["items"]["count"]
+  # Omeka-Total-Results header
+  if collection_id == 0:
+      url = api_baseurl + 'items'
+      r = requests.get(url)
+      count = int(r.headers['Omeka-Total-Results'])
+  else:
+      collection_metadata = extract_collection(api_baseurl, collection_id)
+      count = collection_metadata["items"]["count"]
+
   return count
 
 
@@ -37,7 +44,9 @@ def extract_items(api_baseurl, collection_id):
   page_count = int(math.ceil(item_count/float(per_page)))
   i = 1
   while i <= page_count:
-    url = ''.join([api_baseurl, 'items?collection=', str(collection_id), '&page=', str(i)])
+    url = "{}items?page={}".format(api_baseurl, i)
+    if collection_id:
+        url = "{}&collection={}".format(url, collection_id)
     i = i + 1
     page_metadata = call_omeka_api(url) # returns a list of dicts
     for item in page_metadata: # each item is a dict with 13 elements
@@ -51,6 +60,14 @@ def extract_items(api_baseurl, collection_id):
       metadata.append(item)
   return metadata
 
+
+def extract_single_item(api_baseurl, item_id):
+    """ get metadata for an omeka item """
+    metadata = []
+    url = "{}items/{}".format(api_baseurl, item_id)
+    metadata = call_omeka_api(url)
+
+    return metadata
 
 def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json_file, collection_json_file, hardlinks={}, corpnames=[]):
   """ transform dict of items metadata from omeka api into nuxeo-friendly format """
