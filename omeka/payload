@@ -1,0 +1,153 @@
+Loading metadata for objects at Nuxeo path: /asset-library/UCSF/AR 2015-4 School of Dentistry
+
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_6_faculty1882.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_6_faculty1882.tif',
+    'properties': {   u'dc:title': u'First faculty of the University of California Dental Department',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1882',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'Portraits of the first faculty members of the Dental Department/ College of Dentistry, UC Affiliated Colleges  (later UC San Francisco School of Dentistry): Goddard, McLain, Lewitt, Dennis, Fish, Perry, Taylor',
+                      u'ucldc_schema:localidentifier': [   u'ar20154_box1_6_faculty1882'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of Califoria'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'AR 2015-14 School of Dentistry records, box 1, folder 6',
+                      u'ucldc_schema:type': u'image'}}
+Will update 7d4f80e6-671f-487b-b8ef-f69f19636e92
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_6_faculty1882.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_anatomytest1891.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_anatomytest1891.tif',
+    'properties': {   u'dc:title': u'University of California College of Dentistry Final Examination in Anatomy ',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:creator': [   {   'name': u'Lewitt, W.B.',
+                                                       'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1891',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'Dentistry anatomy test written by W.B. Lewitt in 1891 for the UC College of Dentistry (later University of California, San Francisco School of Dentistry).',
+                      u'ucldc_schema:language': [   {   'language': u'English',
+                                                        'languagecode': 'eng'}],
+                      u'ucldc_schema:localidentifier': [   u'ar20154_box1_8_anatomytest1891'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'School of Dentistry records, AR 2015-4, box 1, folder 8',
+                      u'ucldc_schema:type': u'image'}}
+Will update 18ab72fd-2008-433a-abf1-1eb40f7f58e0
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_anatomytest1891.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_freshmanwork.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_freshmanwork.tif',
+    'properties': {   u'dc:title': u'Course requirements for University of California College of Dentistry freshman students',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:creator': [   {   'name': u'Boxton, Chas',
+                                                       'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'circa 1891',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'Course requirements for freshman students in the Chas Boxton course in  Mechanical Dentistry.',
+                      u'ucldc_schema:language': [   {   'language': u'English',
+                                                        'languagecode': 'eng'}],
+                      u'ucldc_schema:localidentifier': [   u'ar20154_box1_8_freshmanwork'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'School of Dentistry records, AR 2015-4, box 1, folder 8',
+                      u'ucldc_schema:type': u'image'}}
+Will update 915337a4-56a0-4fa7-90fa-d146a82a60cd
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_box1_8_freshmanwork.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906key.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906key.tif',
+    'properties': {   u'dc:title': u'Key to the University of California College of Dentistry "Earthquake Class" of 1906 photograph',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:creator': [   {   'name': u'Millberry, Guy S.',
+                                                       'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1906',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'Key to the UC Affiliated Colleges, College of Dentistry / Dental Department class of 1906 photograph. The class graduated after the San Francisco earthquake of 1906.',
+                      u'ucldc_schema:localidentifier': [   u'ar20154_OS1_4_earthquakeclass1906key'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'AR 2015-4 School of Dentistry records, oversize box 1, folder 4',
+                      u'ucldc_schema:type': u'image'}}
+Will update 3fa18abe-14e4-4ffa-936f-8b42d8ce3003
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906key.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906.tif',
+    'properties': {   u'dc:title': u'University of California College of Dentistry "Earthquake Class" of 1906',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1906',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'UC Affiliated Colleges, College of Dentistry / Dental Department class of 1906. The class graduated after the San Francisco earthquake of 1906.',
+                      u'ucldc_schema:formgenre': [   {   'heading': u'Photographic print'}],
+                      u'ucldc_schema:localidentifier': [   u'ar20154_OS1_4_earthquakeclass1906'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'AR 2015-4 School of Dentistry records, oversize box 1, folder 4',
+                      u'ucldc_schema:type': u'image'}}
+Will update 0e3a8ead-b0c4-4c7d-bf99-212977628292
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_OS1_4_earthquakeclass1906.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter1.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter1.tif',
+    'properties': {   u'dc:title': u'Dentistry recruitment poster with group',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1971',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'UCSF School of Dentistry Minority Admissions recruitment poster, offering professional careers in dentistry and dental hygiene. Photo by Bob Vogel.',
+                      u'ucldc_schema:localidentifier': [   u'ar20154_os2_recruitmentposter1'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California '],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California '}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'School of Dentistry records, AR 2015-4, oversized box 2',
+                      u'ucldc_schema:type': u'image'}}
+Will update 1d003004-0d97-462b-9632-627863a24f36
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter1.tif
+
+/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter2.tif
+{   'path': u'/asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter2.tif',
+    'properties': {   u'dc:title': u'Dentistry recruitment poster with two people',
+                      u'ucldc_schema:campusunit': [   'https://registry.cdlib.org/api/v1/repository/159/'],
+                      u'ucldc_schema:collection': [   'https://registry.cdlib.org/api/v1/collection/26300/'],
+                      u'ucldc_schema:contributor': [   {   'name': u'UCSF Archives and Special Collections',
+                                                           'nametype': 'persname'}],
+                      u'ucldc_schema:date': [   {   'date': u'1971',
+                                                    'datetype': 'created'}],
+                      u'ucldc_schema:description': u'UCSF School of Dentistry Minority Admissions recruitment poster, offering professional careers in dentistry and dental hygiene. Photo by Bob Vogel.',
+                      u'ucldc_schema:localidentifier': [   u'ar20154_os2_recruitmentposter2'],
+                      u'ucldc_schema:publisher': [   u'Regents of the University of California'],
+                      u'ucldc_schema:rightsholder': [   {   'name': u'Regents of the University of California'}],
+                      u'ucldc_schema:rightsstatement': 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.',
+                      u'ucldc_schema:rightsstatus': 'Copyrighted',
+                      u'ucldc_schema:source': u'School of Dentistry records, AR 2015-4, oversized box 2',
+                      u'ucldc_schema:type': u'image'}}
+Will update e1a8a597-1844-46de-b7af-0e506fc38bee
+No uid found or there was a problem with the payload. Not updated: /asset-library/UCSF/AR 2015-4 School of Dentistry/ar20154_os2_recruitmentposter2.tif

@@ -41,6 +41,62 @@
                "name" : "Speck_cholera_collection",
                "type" : "text",
                "campusunit" : "25"
+           },
+           "/asset-library/UCSF/AR 2015-4 School of Dentistry": {
+               "ucldc_id": "26300",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "AR 2015-4 School of Dentistry",
+               "type": "image",
+               "campusunit": "159"
+           },
+           "/asset-library/UCSF/AR 90-60 UCSF 125th Anniversary": {
+               "ucldc_id": "26303",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "AR 90-60 UCSF 125th Anniversary",
+               "type": "image",
+               "campusunit": "159"
+           },
+           "/asset-library/UCSF/Archives Classification": {
+               "ucldc_id": "26301",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "Archives Classification",
+               "type": "image",
+               "campusunit": "159"
+           },
+           "/asset-library/UCSF/MSS 2009-01 Eddie Leong Way": {
+               "ucldc_id": "26059",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2009-01 Eddie Leong Way",
+               "type": "image",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 2013-4 Grande Vista Sanatorium": {
+               "ucldc_id": "26302",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2013-4 Grande Vista Sanatorium",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 26-32 Saxton T. Pope": {
+               "ucldc_id": "26304",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 26-32 Saxton T. Pope",
+               "type": "image",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 0085-38 Black Caucus": {
+               "ucldc_id": "2280",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 0085-38 Black Caucus",
+               "type": "image",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 0098-64 Mary B. Olney": {
+               "ucldc_id": "26305",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 0098-64 Mary B. Olney",
+               "type": "image",
+               "campusunit": "25"
            }
         }
     }

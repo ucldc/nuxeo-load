@@ -13,6 +13,7 @@ OMEKA_API = u'https://digital.library.ucsf.edu/api/'
 OMEKA_ID_MAP_FILE = "./ucsf2/map-omeka-to-local-id.json"
 CAMPUSUNIT = u'https://registry.cdlib.org/api/v1/repository/25/'
 FIELDMAP = u'./omnux.json'
+COLLECTION_MAP = u'./ucsf_map.json'
 REGISTRY_ID_MAP = {
                       "/asset-library/UCSF/AR 2015-4 School of Dentistry": 0,
                       "/asset-library/UCSF/AR 90-60 UCSF 125th Anniversary": 0, 
@@ -23,6 +24,23 @@ REGISTRY_ID_MAP = {
                       "/asset-library/UCSF/MSS 0085-38 Black Caucus": 0,
                       "/asset-library/UCSF/MSS 0098-64 Mary B. Olney": 0
                   }
+CORPNAMES = [
+  u'UCSF Archives and Special Collections',
+  u'Bass Photo Co.',
+  u'Bear Photo Service',
+  u'Board of Health',
+  u'Boyé Studios',
+  u'Brooks Photographers Bethesda, Md.',
+  u'California State Board of Pharmacy',
+  u'Johnson and Johnson Limited, Montreal Canada',
+  u'Johnson and Johnson, New Brunswick, NJ and Chicago, IL',
+  u'Kappa Lambda Society',
+  u'Sanitory Committee',
+  u'School of Pharmacy, University of California San Francisco',
+  u'The Medical Examiner',
+  u'UCSF School of Pharmacy',
+  u'University of California, College of Pharmacy Press Club'
+]
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description='batch load metadata from Omeka onto existing collection of objects in Nuxeo')
@@ -32,7 +50,7 @@ def main(argv=None):
         argv = parser.parse_args()
 
     nuxeo_path = argv.path
-    print "Loading metadata for objects at Nuxeo path: {}".format(nuxeo_path)
+    print "Loading metadata for objects at Nuxeo path: {}\n".format(nuxeo_path)
 
     with open(OMEKA_ID_MAP_FILE) as mapfile:
         omeka_id_map = json.load(mapfile)
@@ -40,7 +58,7 @@ def main(argv=None):
     with open(FIELDMAP) as fieldmapfile:
         omeka_field_map = json.load(fieldmapfile)
 
-    nx = utils.Nuxeo(rcfile=open(expanduser('~/.pynuxrc'),'r'))
+    nx = utils.Nuxeo()
     children = nx.children(nuxeo_path)
 
     ucldc_collection_id = REGISTRY_ID_MAP[nuxeo_path]
@@ -48,10 +66,8 @@ def main(argv=None):
 
     for child in children:
         nxpath = child['path']
-        print nxpath 
-        print child['title'] 
+        print "\n", nxpath 
         dc_identifier = splitext(child['title'])[0]
-        print dc_identifier
 
         try:
             omeka_id = omeka_id_map[dc_identifier]['omeka_id']
@@ -59,49 +75,34 @@ def main(argv=None):
             print "No corresponding Omeka ID found for {}. Skipping.".format(dc_identifier)
             continue
 
-        print omeka_id
         omeka_md = omnux.extract_single_item(OMEKA_API, omeka_id)
+        payload = omnux.transform_omeka_to_ucldc(omeka_md, nuxeo_path, FIELDMAP, COLLECTION_MAP)
 
-        item_properties = {}
-        for key, value in omeka_md.iteritems():
-            if key == 'element_texts':
-                for item in value:
-                    text, element_set_name, element_name = omnux.get_element_text(item) 
-                    nuxeo_fieldname = omeka_field_map["element_texts"]["element_set"][element_set_name][element_name]["name"]
-                    item_properties[nuxeo_fieldname] = text
-            # tags?
-        
-        print item_properties
- 
-        #print omeka_md 
+        payload['path'] = nxpath
 
-        
-    '''
-      # get items metadata 
-      items_metadata = omnux.extract_items(api_url, collection_id)
-      print 'Number of items in items_metadata', collection_id, ':', len(items_metadata)
- 
-      # transform and load
-      for item in items_metadata:
-        payload = omnux.transform_omeka_to_ucldc(item, collection_id, omnux_fieldmap_json, collection_mapping_json, links, corpnames)
+        import pprint
+        pp = pprint.PrettyPrinter(indent=4)
         pp.pprint(payload)
-        try:
-          uid = nx.get_uid(payload['path'])
-          nx.update_nuxeo_properties(payload, path=payload['path'])
-          print 'updated:', payload['path']
+
+        #try:
+        uid = nx.get_uid(payload['path'])
+        print "Will update {}".format(uid)
+        nx.update_nuxeo_properties(payload, path=payload['path'])
+        print 'updated: {}'.format(payload['path'])
+        '''
         except:
-          print "No uid found or there was a problem with the payload. Not updated:", payload['path']
-    '''
+          print "No uid found or there was a problem with the payload. Not updated: {}".format(payload['path'])
+        '''
 
 def get_collection_properties(ucldc_collection_id):
 
     properties = {}
 
-    properties['ucldc_schema:collection'] = 'https://registry.cdlib.org/api/v1/collection/{}/'.format(ucldc_collection_id)
-    properties['ucldc_schema:campusunit'] = 'https://registry.cdlib.org/api/v1/repository/25/'
-    properties['ucldc_schema:type'] = 'image'
-    properties['ucldc_schema:rightsstatus'] = 'Copyrighted'
-    properties['ucldc_schema:rightsstatement'] = 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'
+    properties[u'ucldc_schema:collection'] = [u'https://registry.cdlib.org/api/v1/collection/{}/'.format(ucldc_collection_id)]
+    properties[u'ucldc_schema:campusunit'] = [u'https://registry.cdlib.org/api/v1/repository/25/']
+    properties[u'ucldc_schema:type'] = u'image'
+    properties[u'ucldc_schema:rightsstatus'] = u'Copyrighted'
+    properties[u'ucldc_schema:rightsstatement'] = u'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'
     
     return properties
 

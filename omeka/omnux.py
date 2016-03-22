@@ -63,11 +63,23 @@ def extract_items(api_baseurl, collection_id):
 
 def extract_single_item(api_baseurl, item_id):
     """ get metadata for an omeka item """
-    metadata = []
     url = "{}items/{}".format(api_baseurl, item_id)
     metadata = call_omeka_api(url)
-
+    filenames = get_item_filenames(api_baseurl, item_id)
+    metadata['filenames'] = filenames
+  
     return metadata
+
+def get_item_filenames(api_baseurl, omeka_item_id):
+    ''' get filenames associated with given Omeka item id '''
+    filenames = []
+
+    url = "{}files?item={}".format(api_baseurl, omeka_item_id)    
+    files_metadata = call_omeka_api(url)
+    for fm in files_metadata:
+        filenames.append(fm["filename"])
+    
+    return filenames
 
 def transform_omeka_to_ucldc(omeka_item_dict, collection_id, omnux_fieldmap_json_file, collection_json_file, hardlinks={}, corpnames=[]):
   """ transform dict of items metadata from omeka api into nuxeo-friendly format """
