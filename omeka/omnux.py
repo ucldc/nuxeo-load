@@ -220,7 +220,7 @@ def format_properties(properties_list, collection_type, corpnames=[]):
 
 def get_formatted_value(nuxeo_fieldname, value_list, collection_type="", corpnames=[]):
   """ format list of values for nuxeo """
-  repeatables = ("ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:publisher", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder")
+  repeatables = ("ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:description", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:publisher", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder")
 
   # format values
   if nuxeo_fieldname in repeatables:
@@ -228,8 +228,6 @@ def get_formatted_value(nuxeo_fieldname, value_list, collection_type="", corpnam
     for item in value_list:
       formatted = format_fieldvalue(nuxeo_fieldname, item, collection_type, corpnames)
       value.append(formatted)
-  elif nuxeo_fieldname == "ucldc_schema:description":
-    value = "\r\n\r\n".join(value_list)
   else:
     value = ". ".join(value_list)
 
@@ -256,6 +254,8 @@ def format_fieldvalue(nuxeo_fieldname, text, collection_type="", corpnames=[]):
     else:
       value = {'date': text, 'datetype': 'created'}
       print "WARNING: unrecognized collection_type:", collection_type
+  elif nuxeo_fieldname == 'ucldc_schema:description':
+    value = {'item': text, 'type': 'scopecontent'}
   elif nuxeo_fieldname == 'ucldc_schema:formgenre':
     value = {'heading': text}
   elif nuxeo_fieldname == 'ucldc_schema:language':
