@@ -56,7 +56,14 @@
                "type": "image",
                "campusunit": "159"
            },
-           "/asset-library/UCSF/Archives Classification": {
+           "/asset-library/UCSF/Archives Classification/H": {
+               "ucldc_id": "26301",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "Archives Classification",
+               "type": "image",
+               "campusunit": "159"
+           },
+           "/asset-library/UCSF/Archives Classification/N-S": {
                "ucldc_id": "26301",
                "nuxeo_folder": "/asset-library/UCSF",
                "name": "Archives Classification",

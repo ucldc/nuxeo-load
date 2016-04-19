@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding=utf-8
 import omnux
+import os
 import argparse
 from pynux import utils
 from os.path import expanduser
@@ -14,16 +15,6 @@ OMEKA_ID_MAP_FILE = "./ucsf2/map-omeka-to-local-id.json"
 CAMPUSUNIT = u'https://registry.cdlib.org/api/v1/repository/25/'
 FIELDMAP = u'./omnux.json'
 COLLECTION_MAP = u'./ucsf_map.json'
-REGISTRY_ID_MAP = {
-                      "/asset-library/UCSF/AR 2015-4 School of Dentistry": 0,
-                      "/asset-library/UCSF/AR 90-60 UCSF 125th Anniversary": 0, 
-                      "/asset-library/UCSF/Archives Classification": 0,
-                      "/asset-library/UCSF/MSS 2009-01 Eddie Leong Way": 0,
-                      "/asset-library/UCSF/MSS 2013-4 Grande Vista Sanatorium": 0,
-                      "/asset-library/UCSF/MSS 26-32 Saxton T. Pope": 0,
-                      "/asset-library/UCSF/MSS 0085-38 Black Caucus": 0,
-                      "/asset-library/UCSF/MSS 0098-64 Mary B. Olney": 0
-                  }
 CORPNAMES = [
   u'UCSF Archives and Special Collections',
   u'Bass Photo Co.',
@@ -61,28 +52,27 @@ def main(argv=None):
     nx = utils.Nuxeo()
     children = nx.children(nuxeo_path)
 
-    ucldc_collection_id = REGISTRY_ID_MAP[nuxeo_path]
-    collection_properties = get_collection_properties(ucldc_collection_id)
-
     for child in children:
         nxpath = child['path']
         print "\n", nxpath 
-        dc_identifier = splitext(child['title'])[0]
+        dc_identifier = os.path.splitext(os.path.basename(nxpath))[0] 
 
         try:
             omeka_id = omeka_id_map[dc_identifier]['omeka_id']
         except KeyError:
-            print "No corresponding Omeka ID found for {}. Skipping.".format(dc_identifier)
+            print "No corresponding Omeka ID found for {} -- Skipping.".format(dc_identifier)
             continue
 
         omeka_md = omnux.extract_single_item(OMEKA_API, omeka_id)
-        payload = omnux.transform_omeka_to_ucldc(omeka_md, nuxeo_path, FIELDMAP, COLLECTION_MAP)
+        payload = omnux.transform_omeka_to_ucldc(omeka_md, nuxeo_path, FIELDMAP, COLLECTION_MAP, {}, CORPNAMES)
 
         payload['path'] = nxpath
 
+        '''
         import pprint
         pp = pprint.PrettyPrinter(indent=4)
         pp.pprint(payload)
+        '''
 
         #try:
         uid = nx.get_uid(payload['path'])
@@ -93,18 +83,6 @@ def main(argv=None):
         except:
           print "No uid found or there was a problem with the payload. Not updated: {}".format(payload['path'])
         '''
-
-def get_collection_properties(ucldc_collection_id):
-
-    properties = {}
-
-    properties[u'ucldc_schema:collection'] = [u'https://registry.cdlib.org/api/v1/collection/{}/'.format(ucldc_collection_id)]
-    properties[u'ucldc_schema:campusunit'] = [u'https://registry.cdlib.org/api/v1/repository/25/']
-    properties[u'ucldc_schema:type'] = u'image'
-    properties[u'ucldc_schema:rightsstatus'] = u'Copyrighted'
-    properties[u'ucldc_schema:rightsstatement'] = u'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'
-    
-    return properties
 
 if __name__ == '__main__':
   main()  
