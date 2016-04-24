@@ -26,13 +26,16 @@ WHERE id=%s;
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('parentid')
+    parser.add_argument('--connection_string', '-cs', default='')
 
     if argv is None:
         argv = parser.parse_args()
 
-    conn = psycopg2.connect("")
+    conn = psycopg2.connect(argv.connection_string)
     cur = conn.cursor()
     cur.execute(GET_COMPONENTS, (argv.parentid,))
+    assert cur.rowcount > 0, \
+        'parentid {0} not found in database'.format(argv.parentid)
     for i, row in enumerate(cur):
         myid = row[0]
         print(row)
