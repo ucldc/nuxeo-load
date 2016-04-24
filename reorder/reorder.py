@@ -10,28 +10,29 @@ import psycopg2
 GET_COMPONENTS = u'''
 SELECT id, name
 FROM hierarchy
-WHERE parentid=%s AND primarytype=%s
+WHERE parentid=%s
+  AND primarytype
+    IN ('SampleCustomPicture', 'CustomFile', 'CustomVideo', 'CustomAudio')
 ORDER BY name;
 '''
 
 REORDER = u'''
 UPDATE hierarchy
 SET pos=%s
-WHERE id=%s
+WHERE id=%s;
 '''
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('parentid')
-    parser.add_argument('primarytype')
 
     if argv is None:
         argv = parser.parse_args()
 
     conn = psycopg2.connect("")
     cur = conn.cursor()
-    cur.execute(GET_COMPONENTS, (argv.parentid, argv.primarytype))
+    cur.execute(GET_COMPONENTS, (argv.parentid,))
     for i, row in enumerate(cur):
         myid = row[0]
         print(row)
