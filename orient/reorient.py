@@ -5,6 +5,7 @@
 import argparse
 import imghdr
 import os
+import subprocess
 import sys
 
 def is_dir(dirname):
@@ -25,20 +26,40 @@ def main(argv=None):
     if argv is None:
         argv = parser.parse_args()
 
+    summary = {
+        'tiffs': 0,
+        'rotate': 0,
+    }
+
     for dirpath, dirnamed, filenames in os.walk(argv.path):
         for f in filenames:
             fullpath = os.path.join(dirpath, f)
             if imghdr.what(fullpath) == 'tiff':
-                orient(fullpath, argv.do_it)
+                summary['tiffs'] = summary['tiffs'] + 1
+                orient(fullpath, argv.do_it, summary)
+
+    print(summary)
 
 
-def orient(tiffpath, do_it):
-    print(tiffpath)
-    # run `identify -format "%[orientation]" ` via subprocess
-    # check for a value other than "RightTop"
-    # if not RightTop and do_it:
-        # copy the file (preserving metadata)
-        # `convert` with -auto-orient set
+def orient(tiffpath, do_it, summary):
+    ''' identify orientation of image '''
+    output = subprocess.check_output([
+        'identify',
+        '-format',
+        '%[orientation]',
+        tiffpath
+    ])
+    if not 'TopLeft' in output:
+        summary['rotate'] = summary['rotate'] + 1
+        if do_it:
+            auto_orient(tiffpath)
+
+
+def auto_orient(tiffpath):
+    ''' rotate image '''
+    pass
+    # copy the file (preserving metadata)
+    # `convert` with -auto-orient set
 
 
 # main() idiom for importing into REPL for debugging
