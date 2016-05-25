@@ -104,6 +104,48 @@
                "name": "MSS 0098-64 Mary B. Olney",
                "type": "image",
                "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 2003-12 Eric Berne papers": {
+               "ucldc_id": "2111",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2003-12 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 2005-08 Eric Berne papers": {
+               "ucldc_id": "2110",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2005-08 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 2013-18 Eric Berne papers": {
+               "ucldc_id": "2113",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2013-18 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 2013-19 Eric Berne papers": {
+               "ucldc_id": "2109",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 2013-19 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 82-0 Eric Berne papers": {
+               "ucldc_id": "25533",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 82-0 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
+           },
+           "/asset-library/UCSF/MSS 89-12 Eric Berne papers": {
+               "ucldc_id": "2112",
+               "nuxeo_folder": "/asset-library/UCSF",
+               "name": "MSS 89-12 Eric Berne papers",
+               "type": "text",
+               "campusunit": "25"
            }
         }
     }
