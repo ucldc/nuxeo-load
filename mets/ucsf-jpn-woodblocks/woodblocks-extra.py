@@ -35,25 +35,29 @@ def process_object(filepath, doc_id):
     struct = get_struct(document, doc_id)
 
     parent = struct['parent']
-    properties = get_properties(document, parent['label'], 1)
-    objid = document.get('OBJID')
-    properties['ucldc_schema:identifier'] = objid
+    properties = {}
+    mods = get_mods_element(document, parent['label'])
+    localid = mods.xpath('mods:identifier[@type="local"]/text()', namespaces=nsmap)[0]
+    properties['ucldc_schema:localidentifier'] = [ localid ]
     #pp.pprint(properties)
     payload = assemble_payload(parent['path'], properties)
     update_nuxeo(payload)
 
     # update child objects
     for child in parent['children']:
-        properties = get_properties(document, child['label'], 0)
+        properties = {}
+        mods = get_mods_element(document, child['label'])
+        localid = mods.xpath('mods:identifier[@type="local"]/text()', namespaces=nsmap)[0]
+        print(localid)
+        properties['ucldc_schema:localidentifier'] = [ localid ]
         #pp.pprint(properties)
         payload = assemble_payload(child['path'], properties)
         update_nuxeo(payload)    
 
 
 def update_nuxeo(payload):
-
     path = payload['path']
-    #pp.pprint(payload['properties'])
+    pp.pprint(payload['properties'])
 
     # are any path parts too long? if so, capture that info so we can fix it b/c it'll cause problems.
     path_parts = path.split('/')
@@ -69,7 +73,6 @@ def update_nuxeo(payload):
         print "path:", path
 
 
-
 def assemble_payload(folder, properties):
     payload = {}
     payload['path'] = os.path.join(nuxeo_basepath, folder)
@@ -77,28 +80,11 @@ def assemble_payload(folder, properties):
     return payload
 
 
-
-def get_properties(document, label, is_parent):
-    """ get properties (metadata) for adding to object component in Nuxeo """
-
-    # get properties
-    item_dict = {}
-    mods = get_mods_element(document, label)
-    if mods is not None:
-        item_dict = xml_to_dict(mods)
-    else:
-        item_dict['dc:title'] = label
-
-    return item_dict
-
-
-
 def get_mods_element(document, label):
     for mdwrap in document.iterfind('mets:dmdSec/mets:mdWrap', namespaces=nsmap):
         if mdwrap.get('LABEL') == label:
             mods = mdwrap.find('mets:xmlData/mods:mods', namespaces=nsmap)
             return mods
-
 
 
 def get_struct(document, doc_id):
@@ -193,21 +179,26 @@ def get_local_filepath(ucb_url):
     content_dir = "/apps/content/raw_files/UCSF/JapaneseWoodblocks/"
 
     # example: http://nma.berkeley.edu/ark:/28722/bk0000m7z5r
+    real_url = ucb_url.replace('nma.berkeley.edu', 'vm172.lib.berkeley.edu:8080/resolver')
     parsed_url = urlparse(ucb_url)
     ark = parsed_url.path.split('/ark:/')[1]
     dir = os.path.join(content_dir, ark)
     try:
+        # look in the local cache of ARK->filename
         filename = [files for root, dirs, files in os.walk(dir)][0][0]
     except:
-        r = requests.get(ucb_url, allow_redirects=True)
-        path, filename = os.path.split(urlparse(r.url).path)
+        # do the lookup
+        r = requests.head(real_url, allow_redirects=False)
+        url_we_want = r.headers['Location']
+        path, filename = os.path.split(urlparse(url_we_want).path)
         dest_dir = os.path.join(content_dir, ark)
         dest_path = os.path.join(dest_dir, filename)
         _mkdir(dest_dir)
-        with open(dest_path, 'wb') as fd:
-            fd.write(r.content)
-            print "Grabbed file:", filename
-
+        # just touch the files; no need to download
+        # (in fact, some are fobidden from download)
+        with open(dest_path, 'a'):  # http://stackoverflow.com/a/1160227/1763984
+            os.utime(dest_path, None)
+            print "Touched file:", filename
     return dir, filename
 
 # http://code.activestate.com/recipes/82465-a-friendly-mkdir/
@@ -229,165 +220,6 @@ def _mkdir(newdir):
         #print "_mkdir %s" % repr(newdir)
         if tail:
             os.mkdir(newdir)
-
-def xml_to_dict(mods):
-    """ convert mods XML to Nuxeo-friendly python dict """
-    properties = {}
-    properties_raw = extract_properties(mods) 
-    properties = format_properties(properties_raw)
-    return properties
-
-
-def format_properties(properties_list):
-    """ format values per property """
-    properties = {}
-
-    repeatables = ("ucldc_schema:alternativetitle", "ucldc_schema:collection", "ucldc_schema:campusunit", "ucldc_schema:subjecttopic", "ucldc_schema:contributor", "ucldc_schema:creator", "ucldc_schema:date", "ucldc_schema:formgenre", "ucldc_schema:localidentifier", "ucldc_schema:language", "ucldc_schema:place", "ucldc_schema:relatedresource", "ucldc_schema:rightsholder", "ucldc_schema:subjectname", "ucldc_schema:publisher")
-
-    # get list of unique property names
-    property_names = [p[0] for p in properties_list]
-    property_names_set = set(property_names)
-    property_names_unique = list(property_names_set)
-
-    # aggregate and format values for each property name
-    for name in property_names_unique:
-        property_values = []
-        formatted_property = {}
-        # aggregate
-        for sublist in properties_list:
-            if sublist[0] == name:
-                property_values.append(sublist[1])
-        # format
-        if name in repeatables:
-            formatted_value = []
-            for values in property_values:
-                formatted_value.append(get_formatted_value(values))
-        else:
-            formatted_value = '. '.join(property_values)
-        # put it all together
-        formatted_property[name] = formatted_value
-        properties.update(formatted_property)
-
-    return properties
-
-
-def get_formatted_value(values):
-    """ format values for nuxeo. values can be string or list. convert lists to dicts. probably could've just captured this data as a dict in the first place! """
-    if isinstance(values, list):
-        value_dict = {}
-        for item in values:
-            value_dict[item[0]] = item[1]
-        formatted = value_dict
-    else:
-        formatted = values
-
-    return formatted
-
-
-def extract_properties(mods):
-    """ extract a list of properties from the XML """
-    properties_raw = []
-
-    # type
-    properties_raw.append(['ucldc_schema:type', 'image']) 
-    # campusunit
-    properties_raw.append(['ucldc_schema:campusunit', 'https://registry.cdlib.org/api/v1/repository/25/'])
-    # collection
-    properties_raw.append(['ucldc_schema:collection', 'https://registry.cdlib.org/api/v1/collection/108/'])
-
-    # get metadata from MODS
-    # title
-    for title_info in mods.iterfind('mods:titleInfo', namespaces=nsmap):
-        if title_info.get('type') == 'alternative':
-            for title in title_info.iterfind('mods:title', namespaces=nsmap):
-                properties_raw.append(['ucldc_schema:alternativetitle', title.text])
-        else:
-            for title in title_info.iterfind('mods:title', namespaces=nsmap):
-                properties_raw.append(['dc:title', title.text])
-    # creator
-    for name in mods.iterfind('mods:name', namespaces=nsmap):
-        for roleTerm in name.iterfind('mods:role/mods:roleTerm', namespaces=nsmap):
-            if roleTerm.get('type') == 'text':
-                role = roleTerm.text
-        for namePart in name.iterfind('mods:namePart', namespaces=nsmap):
-            name_text = namePart.text
-        creator_properties = []
-        creator_properties.append(['role', role])
-        creator_properties.append(['nametype', 'persname']) # all personal
-        creator_properties.append(['name', name_text])
-        properties_raw.append(['ucldc_schema:creator', creator_properties])
-    # place
-    for place_term in mods.iterfind('mods:originInfo/mods:place/mods:placeTerm', namespaces=nsmap):
-        place = place_term.text
-        properties_raw.append(['ucldc_schema:publisher', place]) 
-    # date created
-    date_properties = []
-    for date in mods.iterfind('mods:originInfo/mods:dateCreated', namespaces=nsmap):
-        if len(date.attrib) == 0:
-            date_properties.append(['date', date.text])
-        elif date.get('keyDate') == 'yes':
-            date_properties.append(['single', date.text])
-    if len(date_properties) > 0:
-        date_properties.append(['datetype', 'created'])
-        properties_raw.append(['ucldc_schema:date',  date_properties])        
-    # form/genre
-    for genre in mods.iterfind('mods:genre', namespaces=nsmap):
-        source = genre.get('authority')
-        properties_raw.append(['ucldc_schema:formgenre', [['heading', genre.text], ['source', source]]])
-    # language
-    for language_term in mods.iterfind('mods:language/mods:languageTerm', namespaces=nsmap):
-        language_code = language_term.text
-        if language_code == 'jpn':
-            language = 'Japanese'
-        elif language_code == 'eng':
-            language = 'English'
-        elif language_code == 'chi':
-            language = 'Chinese'
-        language_properties = []
-        language_properties.append(['language', language]) 
-        language_properties.append(['languagecode', language_code])
-        properties_raw.append(['ucldc_schema:language', language_properties])
-    # physical description
-    for physDesc in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
-        properties_raw.append(['ucldc_schema:physdesc', physDesc.text])
-    # description 
-    for abstract in mods.iterfind('mods:abstract', namespaces=nsmap):
-        properties_raw.append(['ucldc_schema:description', abstract.text])
-    # subject
-    for subject in mods.iterfind('mods:subject', namespaces=nsmap):
-        subject_source = subject.get('authority')
-        # topic
-        for topic in subject.iterfind('mods:topic', namespaces=nsmap):
-            topic_heading = topic.text
-            properties_raw.append(['ucldc_schema:subjecttopic', [['heading', topic.text], ['headingtype', 'topic'], ['source', subject_source]]])
-        # name
-        for subjectname in subject.iterfind('mods:name', namespaces=nsmap):
-            for name_part in subjectname.iterfind('mods:namePart', namespaces=nsmap):
-                name = name_part.text
-                if subjectname.get('type') == 'personal':
-                    nametype = 'persname'
-                elif subjectname.get('type') == 'corporate':
-                    nametype = 'corpname'
-                name_source = subjectname.get('authority') 
-                name_properties = []
-                name_properties.append(['name', name])
-                name_properties.append(['nametype', nametype])
-                name_properties.append(['source', name_source])
-                #properties_raw.append(['ucldc_schema:subjectname', name_properties]) 
-        # places
-        for geographic in subject.iterfind('mods:geographic', namespaces=nsmap):
-            place = geographic.text
-            geo_properties = []
-            geo_properties.append(['name', place]) 
-            geo_properties.append(['source', subject_source])
-            properties_raw.append(['ucldc_schema:place', geo_properties])
-    
-    # rights status
-    properties_raw.append(['ucldc_schema:rightsstatus', 'copyrighted'])
-    # rights statement
-    properties_raw.append(['ucldc_schema:rightsstatement', 'Transmission or reproduction of materials protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. Works not in the public domain cannot be commercially exploited without permission of the copyright owner. Responsibility for any use rests exclusively with the user.'])
-
-    return properties_raw 
 
 
 if __name__ == "__main__":
