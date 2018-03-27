@@ -11,12 +11,12 @@ CONTENT = [
     '/apps/content/UCR/western_waters_merritt'
     ]
 
-METS = [
-    '/apps/content/dsc_mets/9c2e65e471a83a104c2720d21da95ec3', # Tomas Rivera
-    '/apps/content/dsc_mets/5a7ca55e2a4b2ac5c61f4691bd641299', # Huber
-    '/apps/content/dsc_mets/43bfea40ac8775b512acf633b698306d', # Charles Lee Papers
-    '/apps/content/dsc_mets/8ba98e66c2ce3e99cd1263a66744eebe' # Lippincott
-    ]
+METS = { 
+    'rivera': '/apps/content/dsc_mets/9c2e65e471a83a104c2720d21da95ec3', # Tomas Rivera
+    'huber': '/apps/content/dsc_mets/5a7ca55e2a4b2ac5c61f4691bd641299', # Huber
+    'lee': '/apps/content/dsc_mets/43bfea40ac8775b512acf633b698306d', # Charles Lee Papers
+    'lippincott': '/apps/content/dsc_mets/8ba98e66c2ce3e99cd1263a66744eebe' # Lippincott
+    }
 
 def main():
 
@@ -37,16 +37,16 @@ def main():
 
     #print content
 
-    for dir in METS:
-        for root, dirs, files in os.walk(dir):
+    for entry in METS:
+        for root, dirs, files in os.walk(METS[entry]):
             for file in files:
                 id = file.split('.')[0]
                 if id not in content:
                     print 'Content missing: {}/{}'.format(dir, file)
                 else:
-                    get_content(id, content[id])
+                    get_content(id, content[id], entry)
 
-def get_content(id, path):
+def get_content(id, path, dest):
     print path
     output = subprocess.check_output(
         [
@@ -55,7 +55,7 @@ def get_content(id, path):
         stderr = subprocess.STDOUT
     )
 
-    moveto = '/apps/content/UCR/extracted_images/{}.tiff'.format(id) 
+    moveto = '/apps/content/UCR/extracted_images/{}/{}.tiff'.format(dest, id) 
     shutil.move('/apps/content/UCR/tmp/FID1.tiff', moveto)
 
          
