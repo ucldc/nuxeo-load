@@ -54,7 +54,7 @@ def main():
             print 'upfile', nxpath, sourcefile 
             subprocess.check_output(
                 [
-                    'nx', 'upfile', '-doc', nxpath, sourcefile
+                    'nx', 'upfile', '-doc', nxpath, sourcefile, '-f'
                 ]
             )  
         else:
