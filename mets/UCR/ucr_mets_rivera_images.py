@@ -9,9 +9,9 @@ import csv
 from lxml import etree
 from pynux import utils
 
-#metadata_dir = "/apps/content/dsc_mets/9c2e65e471a83a104c2720d21da95ec3"
+metadata_dir = "/apps/content/dsc_mets/9c2e65e471a83a104c2720d21da95ec3"
 #metadata_dir = "/apps/content/rescue/ucr/digitalassets.lib.berkeley.edu/calcultures/ucr/mets/"
-metadata_dir = "/apps/registry/nuxeo-load/mets/UCR/test"
+#metadata_dir = "/apps/registry/nuxeo-load/mets/UCR/test"
 
 pp = pprint.PrettyPrinter()
 nx = utils.Nuxeo()
@@ -35,27 +35,23 @@ def main(argv=None):
       tree = etree.parse(filepath)
       root = tree.getroot()
       thiscollection = extract_collection(root)
-      #if thiscollection == 'Walter L. Huber Photograph Collection, 1911-1953':
-      #if thiscollection == 'Joseph Barlow Lippincott Papers, 1882-1942':
       if thiscollection is not None:
           item_dict = xml_to_dict(root)
 
-          # pp.pprint(item_dict)
           print item_dict['ucldc_schema:type']
-          if item_dict['ucldc_schema:type'] == 'image':
-              print "\n##", filepath, "##"  
-              dictlist.append(item_dict)
-              payload = {}
-              imagefile = file.split('.')[0] + '.tif' 
-              payload['path'] = os.path.join('/asset-library/UCOP/barbaratest/rivera', imagefile)
-              payload['properties'] = item_dict
+          print "\n##", filepath, "##'
+          dictlist.append(item_dict)
+          payload = {}
+          imagefile = file
+          payload['path'] = os.path.join('/asset-library/UCOP/barbaratest/rivera3', imagefile)
+          payload['properties'] = item_dict
 
-              print payload 
-              # FOR LOAD: uncomment the next and third line below to load on registry-stg.
-              uid = nx.get_uid(payload['path'])
-              print "uid:", uid
-              nx.update_nuxeo_properties(payload, path=payload['path'])
-              print 'updated:', payload['path']
+          print payload
+          # FOR LOAD: uncomment the next and third line below to load on registry-stg.
+          uid = nx.get_uid(payload['path'])
+          print "uid:", uid
+          nx.update_nuxeo_properties(payload, path=payload['path'])
+          print 'updated:', payload['path']
 
 # FOR LOAD: comment next 8 lines.
 #          csvkeys = list(item_dict.keys())
