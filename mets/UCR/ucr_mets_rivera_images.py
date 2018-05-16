@@ -39,7 +39,7 @@ def main(argv=None):
           item_dict = xml_to_dict(root)
 
           print item_dict['ucldc_schema:type']
-          print "\n##", filepath, "##'
+          print "\n##", filepath, "##'"
           dictlist.append(item_dict)
           payload = {}
           imagefile = file
@@ -98,7 +98,7 @@ def format_properties(properties_list):
       trace('Formatting: %s -> %s\n' % (name, values), 5)
 
       if values:
-         if isinstance(values, str):
+         if isinstance(values, str) or isinstance(values, unicode):
             # remove extraneous line breaks
             values = values.split('\n')
             values = [v.strip() for v in values]
