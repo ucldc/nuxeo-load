@@ -13,7 +13,7 @@ from pynux import utils
 # metadata_dir = "/Users/chrishoffman/Documents/workspace/UCLDC/UCRMETS"
 # metadata_dir = "./METS/"
 # metadata_dir = "/Users/elayem/ucldc/mets/Huber/TEST/data"
-metadata_dir = "/home/lvoong/huber/data"
+metadata_dir = "/apps/content/dsc_mets/5a7ca55e2a4b2ac5c61f4691bd641299"
 
 pp = pprint.PrettyPrinter()
 nx = utils.Nuxeo()
@@ -44,10 +44,9 @@ def main(argv=None):
           # pp.pprint(item_dict)
           dictlist.append(item_dict)
           payload = {}
-          imagefile = os.path.splitext(file)[0] + '.jpg'
+          imagefile = file.split('.')[0] + '.tiff'
           imagefile = imagefile[:nuxeo_limit]
-          #payload['path'] = os.path.join('/asset-library/UCR/Huber/', imagefile)
-          payload['path'] = os.path.join('/asset-library/UCOP/lvoong/Huber/', imagefile)
+          payload['path'] = os.path.join('/asset-library/UCOP/dsc_mets3/UCR/huber', imagefile)
           payload['properties'] = item_dict
 
           print payload
@@ -188,7 +187,6 @@ def extract_properties(document):
          if role_term:
             name_part = name.find('mods:namePart', namespaces=nsmap)
             full_name = name_part.text
-
          if full_name:
             creator_count += 1
             creator_items = {'nametype': name_type,
@@ -200,7 +198,7 @@ def extract_properties(document):
       trace('creatorItems(ALL): %s\n' % creator_items, 3)
       trace('ucldc_schema:creator: %s\n' % creator_items, 3)
 
-      properties_raw.append(['ucldc_schema:creator', creator_items])
+      properties_raw.append(['ucldc_schema:creator', [creator_items]])
 
       # ucldc_schema:type
       for type in mods.iterfind('mods:typeOfResource', namespaces=nsmap):
@@ -216,13 +214,15 @@ def extract_properties(document):
                                 local_id.text])
 
       # ucldc_schema:physdescription
+      description_items = []
       for physical_description in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
          description_type = physical_description.get('type')
          description_item = physical_description.text
+         description_items.append({'item': description_item,
+                                        'type': description_type})
          #properties_raw.append(['ucldc_schema:description', [['item', description_item], ['type', description_type]]])
 
       # ucldc_schema:description
-      description_items = []
       for description in mods.iterfind('mods:abstract', namespaces=nsmap):
          #description_items.append(['item', description.text])
          #description_items.append(['type', 'scopecontent'])
