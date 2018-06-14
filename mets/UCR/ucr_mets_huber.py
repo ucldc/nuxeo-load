@@ -198,7 +198,8 @@ def extract_properties(document):
       trace('creatorItems(ALL): %s\n' % creator_items, 3)
       trace('ucldc_schema:creator: %s\n' % creator_items, 3)
 
-      properties_raw.append(['ucldc_schema:creator', [creator_items]])
+      if creator_items:
+          properties_raw.append(['ucldc_schema:creator', [creator_items]])
 
       # ucldc_schema:type
       for type in mods.iterfind('mods:typeOfResource', namespaces=nsmap):
