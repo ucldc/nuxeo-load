@@ -267,9 +267,11 @@ def extract_properties(document):
                                          namespaces=nsmap):
          #displayLabel = related_title.getparent().getparent().get('displayLabel')
          #if displayLabel == 'Metacollection':
-         related_titles.append(['item', related_title.text])
+         related_titles.append(related_title.text)
 
-         #properties_raw.append(['ucldc_schema:relatedresource', related_titles])
+      if related_titles:
+          related_titles = ",".join(related_titles) # well this is ugly
+          properties_raw.append(['ucldc_schema:relatedresource', related_titles])
 
    # rights
    for rights_md in document.iterfind('mets:amdSec/mets:rightsMD/mets:mdWrap/mets:xmlData/rts:RightsDeclarationMD',
