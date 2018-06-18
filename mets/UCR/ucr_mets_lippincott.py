@@ -32,9 +32,7 @@ def main(argv=None):
       tree = etree.parse(filepath)
       root = tree.getroot()
       thiscollection = extract_collection(root)
-      #if thiscollection == 'Walter L. Huber Photograph Collection, 1911-1953':
       if thiscollection == 'Joseph Barlow Lippincott Papers, 1882-1942':
-      #if thiscollection == 'Charles H. Lee Papers, bulk 1912-1955':
           print "\n##", filepath, "##"
           print thiscollection
           item_dict = xml_to_dict(root)
@@ -42,26 +40,25 @@ def main(argv=None):
           # pp.pprint(item_dict)
           dictlist.append(item_dict)
           payload = {}
-          imagefile = file.split('.')[0] + '.tiff' 
-          payload['path'] = os.path.join('/asset-library/UCOP/barbaratest/lippincott', imagefile)
+          imagefile = file.split('.')[0] + '.tiff'
+          imagefile = imagefile[:nuxeo_limit]
+          payload['path'] = os.path.join('/asset-library/UCOP/dsc_mets3/UCR/lippincott', imagefile)
           payload['properties'] = item_dict
 
           print payload
-# FOR LOAD: uncomment the next and third line below to load on registry-stg.
           uid = nx.get_uid(payload['path'])
           print "uid:", uid
           nx.update_nuxeo_properties(payload, path=payload['path'])
           print 'updated:', payload['path']
 
-# FOR LOAD: comment next 8 lines.
-#          csvkeys = list(item_dict.keys())
-#          with open('/Users/elayem/ucldc/mets/Test/Lee/lee.csv', 'wab') as output_file:
-#              dict_writer = csv.DictWriter(output_file, csvkeys)
-#              dict_writer.writeheader()
-#              # Uncomment next three lines to create an output dict and print to standard output
-#              for data in dictlist:
-#                  dict_writer.writerow(data)
-#          print dictlist
+          #csvkeys = list(item_dict.keys())
+          #with open('/home/lvoong/huber/huber.csv', 'wab') as output_file:
+              #dict_writer = csv.DictWriter(output_file, csvkeys)
+              #dict_writer.writeheader()
+              # Uncomment next three lines to create an output dict and print to standard output
+              #for data in dictlist:
+                  #dict_writer.writerow(data)
+          #print dictlist
 
 def xml_to_dict(document):
    """ convert mets XML to Nuxeo-friendly python dict """
@@ -137,11 +134,11 @@ def extract_properties(document):
    nsmap = {'mets': 'http://www.loc.gov/METS/',
             'mods': 'http://www.loc.gov/mods/v3',
             'rts': 'http://cosimo.stanford.edu/sdr/metsrights/'}
-   # ARK -- ucldc_schema:identifier
+   # ARK
    objid = document.get('OBJID')
    properties_raw.append(['ucldc_schema:identifier', objid])
 
-   # Collection -- ucldc_schema:collection
+   # Collection
    # Huber: https://registry.cdlib.org/api/v1/collection/10422/
    # Charles Lee: https://registry.cdlib.org/api/v1/collection/88/
    # Lippincott: https://registry.cdlib.org/api/v1/collection/13109/
@@ -170,9 +167,9 @@ def extract_properties(document):
       for title in mods.iterfind('mods:titleInfo/mods:title', namespaces=nsmap):
          properties_raw.append(['dc:title', title.text])
 
-#      # ucldc_schema:extent !!! SKIP !!! NOT MAPPED, so should not have a value !!!
-#      for extent in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
-#         properties_raw.append(['ucldc_schema:extent', extent.text])
+      # ucldc_schema:extent
+         for extent in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
+            properties_raw.append(['ucldc_schema:extent', extent.text])
 
       # ucldc_schema:creator
       creator_items = []
@@ -190,7 +187,6 @@ def extract_properties(document):
          if role_term:
             name_part = name.find('mods:namePart', namespaces=nsmap)
             full_name = name_part.text
-
          if full_name:
             creator_count += 1
             creator_items = {'nametype': name_type,
@@ -202,22 +198,54 @@ def extract_properties(document):
       trace('creatorItems(ALL): %s\n' % creator_items, 3)
       trace('ucldc_schema:creator: %s\n' % creator_items, 3)
 
-      properties_raw.append(['ucldc_schema:creator', creator_items])
+      if creator_items:
+          properties_raw.append(['ucldc_schema:creator', [creator_items]])
 
       # ucldc_schema:type
       for type in mods.iterfind('mods:typeOfResource', namespaces=nsmap):
          resource_type = 'image' if type.text == 'still image' else type.text
          properties_raw.append(['ucldc_schema:type', resource_type])
 
-#      # uclcd_schema:formgenre !!!SKIP!!!
-#      formgenre_items = []
-#      for formgenre in mods.iterfind('mods:genre', namespaces=nsmap):
-#         heading = formgenre.text
-#         formgenre_items.append({'heading': heading})
-#
-#      formgenre_items = ['ucldc_schema:formgenre', formgenre_items]
-#      trace('formgenreItems: %s\n' % formgenre_items)
-#      properties_raw.append(formgenre_items)
+      # ucldc_schema:description
+      desc_items = []
+      for descnote in mods.iterfind('mods:note', namespaces=nsmap):
+         descnote_item = descnote.text
+         descnote_type = descnote.get('type')
+         descnoteitem_type = 'scopecontent' if descnote_type == 'content' else 'marks'
+         desc_items.append({'item': descnote_item, 'type': descnoteitem_type})
+
+      for descscale in mods.iterfind('mods:subject/mods:cartographics/mods:scale', namespaces=nsmap):
+         descscale_item = descscale.text
+         descscaleitem_type = 'scopecontent'
+         desc_items.append({'item': descscale_item, 'type': descscaleitem_type})
+
+      description_items = ['ucldc_schema:description', desc_items]
+      trace('descriptionItems: %s\n' % description_items)
+      properties_raw.append(description_items)
+
+   # ucldc_schema:date
+   date_items = []
+   datestart = ''
+   dateend = ''
+   try:
+       date = mods.find('mods:originInfo/mods:dateCreated', namespaces=nsmap).text
+   except AttributeError as e:
+       date = False
+   for startdate in mods.iterfind('mods:originInfo/mods:dateCreated[@point="start"]', namespaces=nsmap):
+      datestart = startdate.text
+   for enddate in mods.iterfind('mods:originInfo/mods:dateCreated[@point="end"]', namespaces=nsmap):
+      dateend = enddate.text
+   if date:
+      datetype = "created"
+      if datestart is None:
+         datestart = ''
+      if dateend is None:
+         dateend = ''
+      date_items.append({'date': date, 'datetype': datetype, 'inclusivestart': datestart, 'inclusiveend': dateend})
+      date_items = ['ucldc_schema:date', date_items]
+      trace('dateItems: %s\n' % date_items)
+
+      properties_raw.append(date_items)
 
       # uclcd_schema:localidentifier
       local_id_properties = []
@@ -227,36 +255,25 @@ def extract_properties(document):
          properties_raw.append(['ucldc_schema:localidentifier',
                                 local_id.text])
 
-#      # ucldc_schema:physdescription
-#      for physical_description in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
-#         description_type = physical_description.get('type')
-#         description_item = physical_description.text
-#         #properties_raw.append(['ucldc_schema:description', [['item', description_item], ['type', description_type]]])
+      # ucldc_schema:physdescription
+      description_items = []
+      for physical_description in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
+         description_type = physical_description.get('type')
+         description_item = physical_description.text
+         description_items.append({'item': description_item,
+                                        'type': description_type})
+         #properties_raw.append(['ucldc_schema:description', [['item', description_item], ['type', description_type]]])
 
       # ucldc_schema:description
-      descscope_item = []
-      for descscope in mods.iterfind('mods:abstract', namespaces=nsmap):
+      for description in mods.iterfind('mods:abstract', namespaces=nsmap):
          #description_items.append(['item', description.text])
          #description_items.append(['type', 'scopecontent'])
-         descscopeitem = descscope.text
-         descscopetype = 'scopecontent'
-         descscope_item.append({'item': descscopeitem, 'type': descscopetype})
+         descitem = description.text
+         desctype = 'scopecontent'
+         description_items.append({'item': descitem,
+                                        'type': desctype})
 
-#      descdate_item = []
-#      for descdate in mods.iterfind('mods:note', namespaces=nsmap):
-#         descdateitem = descdate.text
-#         descdatetype = 'date'
-#         descdate_item.append({'item': descdateitem, 'type': descdatetype})
-
-      desccons_item = []
-      for desccons in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
-         descconsitem = desccons.text
-         descconstype = 'conservation'
-         desccons_item.append({'item': descconsitem, 'type': descconstype})
-
-#      description_items = ['ucldc_schema:description', descscope_item, descdate_item]
-      description_items = ['ucldc_schema:description', descscope_item, desccons_item]
-#      description_items = ['ucldc_schema:description', descscope_item]
+      description_items = ['ucldc_schema:description', description_items]
       trace('descriptionItems: %s\n' % description_items)
       properties_raw.append(description_items)
 
@@ -266,7 +283,6 @@ def extract_properties(document):
          heading = subject_topic.text
          heading_type = 'topic'
          source = subject_topic.getparent().get("authority")
-#         source = 'lctgm'
          topic_items.append({'heading': heading,
                                         'headingtype': heading_type,
                                         'source': source})
@@ -287,19 +303,22 @@ def extract_properties(document):
       properties_raw.append(place_items)
 
       # ucldc_schema:relatedresource
-      rel_resources = []
-#      for related_title in mods.iterfind('mods:relatedItem[@displayLabel="Metacollection"]/mods:titleInfo/mods:title',
-#                                         namespaces=nsmap):
-      for rel_resource in mods.iterfind('mods:identifier[@type="uri"]', namespaces=nsmap):
+      related_titles = []
+      for related_title in mods.iterfind('mods:relatedItem[@displayLabel="Metacollection"]/mods:titleInfo/mods:title',
+                                         namespaces=nsmap):
          #displayLabel = related_title.getparent().getparent().get('displayLabel')
          #if displayLabel == 'Metacollection':
-         related_resources.append(['item', rel_resource.text])
-         properties_raw.append(['ucldc_schema:relatedresource', related_resources])
+         related_titles.append(related_title.text)
 
-      # rights
-      for rights_md in document.iterfind('mets:amdSec/mets:rightsMD/mets:mdWrap/mets:xmlData/rts:RightsDeclarationMD', namespaces=nsmap):
-         rights_category = rights_md.get("RIGHTSCATEGORY").lower()
-         properties_raw.append(['ucldc_schema:rightsstatus', rights_category])
+      if related_titles:
+          related_titles = ", ".join(related_titles) # well this is ugly
+          properties_raw.append(['ucldc_schema:relatedresource', related_titles])
+
+   # rights
+   for rights_md in document.iterfind('mets:amdSec/mets:rightsMD/mets:mdWrap/mets:xmlData/rts:RightsDeclarationMD',
+                                      namespaces=nsmap):
+      rights_category = rights_md.get("RIGHTSCATEGORY").lower()
+      properties_raw.append(['ucldc_schema:rightsstatus', rights_category])
 
       # rights statement
       for rights_description in rights_md.iterfind('rts:Context/rts:Constraints/rts:ConstraintDescription',
@@ -318,8 +337,8 @@ def extract_properties(document):
          properties_raw.append(['ucldc_schema:rightscontact', rights_contact.text])
 
 
-   # ucldc_schema:campusunit
-   properties_raw.append(['ucldc_schema:campusunit', 'https://registry.cdlib.org/api/v1/repository/21/'])
+   # campusunit
+   properties_raw.append(['ucldc_schema:campusunit', 'https://registry.cdlib.org/api/v1/repository/12/'])
 
    # collection
    # collection = 'https://registry.cdlib.org/api/v1/collection/10422/'
