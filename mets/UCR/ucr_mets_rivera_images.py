@@ -36,17 +36,15 @@ def main(argv=None):
       root = tree.getroot()
       thiscollection = extract_collection(root)
       if thiscollection is not None:
-          item_dict = xml_to_dict(root)
-
-          print item_dict['ucldc_schema:type']
           print "\n##", filepath, "##'"
+          item_dict = xml_to_dict(root)
           dictlist.append(item_dict)
           payload = {}
           imagefile = file
-          payload['path'] = os.path.join('/asset-library/UCOP/barbaratest/rivera3', imagefile)
+          payload['path'] = os.path.join('/asset-library/UCOP/dsc_mets3/UCR/rivera3', imagefile)
           payload['properties'] = item_dict
 
-          print payload
+          pp.pprint(payload)
           # FOR LOAD: uncomment the next and third line below to load on registry-stg.
           uid = nx.get_uid(payload['path'])
           print "uid:", uid
@@ -193,10 +191,10 @@ def extract_properties(document):
 
          if full_name:
             creator_count += 1
-            creator_items = {'nametype': name_type,
+            creator_items.append({'nametype': name_type,
                                   'name': full_name,
                                   'role': role_term,
-                                  'authorityid': authority_id}
+                                  'authorityid': authority_id})
             trace('creatorItem %d: %s\n' % (creator_count, creator_items))
 
       trace('creatorItems(ALL): %s\n' % creator_items, 3)
