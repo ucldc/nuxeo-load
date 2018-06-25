@@ -143,22 +143,9 @@ def extract_properties(document):
    # Huber: https://registry.cdlib.org/api/v1/collection/10422/
    # Charles Lee: https://registry.cdlib.org/api/v1/collection/88/
    # Lippincott: https://registry.cdlib.org/api/v1/collection/13109/
-   METSDMDSECDMR1 = 'mets:dmdSec[@ID="DMR1"]/mets:mdRef'
-   for metsdmr1label in document.iterfind(METSDMDSECDMR1, namespaces=nsmap):
-       ucldccollection = 'x'
-       collection_name = metsdmr1label.attrib['LABEL']
-       trace(collection_name, 10)
-       # for collection_name in metsdmr1label.attrib['LABEL']:
-       if collection_name == 'Charles H. Lee Papers, bulk 1912-1955':
-           ucldccollection = 'https://registry.cdlib.org/api/v1/collection/88/'
-       if collection_name == 'Joseph Barlow Lippincott Papers, 1882-1942':
-           ucldccollection = 'https://registry.cdlib.org/api/v1/collection/13109/'
-       if collection_name == 'Walter L. Huber Photograph Collection, 1911-1953':
-           ucldccollection = 'https://registry.cdlib.org/api/v1/collection/10422/'
-       trace(ucldccollection, 10)
-       collection_properties = ['ucldc_schema:collection', ucldccollection]
-       properties_raw.append(collection_properties)
-       trace(collection_properties, 10)
+   collection_properties = ['ucldc_schema:collection', 'https://registry.cdlib.org/api/v1/collection/85/']
+   properties_raw.append(collection_properties)
+   trace(collection_properties, 10)
 
    # get metadata from MODS
    MODSMODS = 'mets:dmdSec/mets:mdWrap/mets:xmlData/mods:mods'
@@ -168,9 +155,9 @@ def extract_properties(document):
       for title in mods.iterfind('mods:titleInfo/mods:title', namespaces=nsmap):
          properties_raw.append(['dc:title', title.text])
 
-#      # ucldc_schema:extent !!! SKIP !!! NOT MAPPED, so should not have a value !!!
-#      for extent in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
-#         properties_raw.append(['ucldc_schema:extent', extent.text])
+      # ucldc_schema:extent
+         for extent in mods.iterfind('mods:physicalDescription/mods:extent', namespaces=nsmap):
+            properties_raw.append(['ucldc_schema:extent', extent.text])
 
       # ucldc_schema:creator
       creator_items = []
@@ -207,15 +194,15 @@ def extract_properties(document):
          resource_type = 'image' if type.text == 'still image' else type.text
          properties_raw.append(['ucldc_schema:type', resource_type])
 
-#      # uclcd_schema:formgenre !!!SKIP!!!
-#      formgenre_items = []
-#      for formgenre in mods.iterfind('mods:genre', namespaces=nsmap):
-#         heading = formgenre.text
-#         formgenre_items.append({'heading': heading})
-#
-#      formgenre_items = ['ucldc_schema:formgenre', formgenre_items]
-#      trace('formgenreItems: %s\n' % formgenre_items)
-#      properties_raw.append(formgenre_items)
+      # uclcd_schema:formgenre 
+      formgenre_items = []
+      for formgenre in mods.iterfind('mods:genre', namespaces=nsmap):
+         heading = formgenre.text
+         formgenre_items.append({'heading': heading})
+
+      formgenre_items = ['ucldc_schema:formgenre', formgenre_items]
+      trace('formgenreItems: %s\n' % formgenre_items)
+      properties_raw.append(formgenre_items)
 
       # uclcd_schema:localidentifier
       local_id_properties = []
@@ -239,6 +226,30 @@ def extract_properties(document):
          descscopeitem = descscope.text
          descscopetype = 'scopecontent'
          descscope_item.append({'item': descscopeitem, 'type': descscopetype})
+
+      # ucldc_schema:date
+      date_items = []
+      datestart = ''
+      dateend = ''
+      try:
+          date = mods.find('mods:originInfo/mods:dateCreated', namespaces=nsmap).text
+      except AttributeError as e:
+          date = False
+      for startdate in mods.iterfind('mods:originInfo/mods:dateCreated[@point="start"]', namespaces=nsmap):
+         datestart = startdate.text
+      for enddate in mods.iterfind('mods:originInfo/mods:dateCreated[@point="end"]', namespaces=nsmap):
+         dateend = enddate.text
+      if date:
+         datetype = "created"
+         if datestart is None:
+            datestart = ''
+         if dateend is None:
+            dateend = ''
+         date_items.append({'date': date, 'datetype': datetype, 'inclusivestart': datestart, 'inclusiveend': dateend})
+         date_items = ['ucldc_schema:date', date_items]
+         trace('dateItems: %s\n' % date_items)
+
+         properties_raw.append(date_items)
 
 #      descdate_item = []
 #      for descdate in mods.iterfind('mods:note', namespaces=nsmap):
@@ -285,14 +296,16 @@ def extract_properties(document):
       properties_raw.append(place_items)
 
       # ucldc_schema:relatedresource
-      rel_resources = []
-#      for related_title in mods.iterfind('mods:relatedItem[@displayLabel="Metacollection"]/mods:titleInfo/mods:title',
-#                                         namespaces=nsmap):
-      for rel_resource in mods.iterfind('mods:identifier[@type="uri"]', namespaces=nsmap):
+      related_titles = []
+      for related_title in mods.iterfind('mods:relatedItem[@displayLabel="Metacollection"]/mods:titleInfo/mods:title',
+                                         namespaces=nsmap):
          #displayLabel = related_title.getparent().getparent().get('displayLabel')
          #if displayLabel == 'Metacollection':
-         related_resources.append(['item', rel_resource.text])
-         properties_raw.append(['ucldc_schema:relatedresource', related_resources])
+         related_titles.append(related_title.text)
+
+      if related_titles:
+          related_titles = ", ".join(related_titles) # well this is ugly
+          properties_raw.append(['ucldc_schema:relatedresource', related_titles])
 
       # rights
       for rights_md in document.iterfind('mets:amdSec/mets:rightsMD/mets:mdWrap/mets:xmlData/rts:RightsDeclarationMD', namespaces=nsmap):
