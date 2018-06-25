@@ -1,4 +1,4 @@
-__author__ = 'chris'
+_author__ = 'chris'
 
 """ Update collection in Nuxeo """
 
@@ -218,15 +218,6 @@ def extract_properties(document):
 #         description_item = physical_description.text
 #         #properties_raw.append(['ucldc_schema:description', [['item', description_item], ['type', description_type]]])
 
-      # ucldc_schema:description
-      descscope_item = []
-      for descscope in mods.iterfind('mods:abstract', namespaces=nsmap):
-         #description_items.append(['item', description.text])
-         #description_items.append(['type', 'scopecontent'])
-         descscopeitem = descscope.text
-         descscopetype = 'scopecontent'
-         descscope_item.append({'item': descscopeitem, 'type': descscopetype})
-
       # ucldc_schema:date
       date_items = []
       datestart = ''
@@ -251,23 +242,28 @@ def extract_properties(document):
 
          properties_raw.append(date_items)
 
-#      descdate_item = []
-#      for descdate in mods.iterfind('mods:note', namespaces=nsmap):
-#         descdateitem = descdate.text
-#         descdatetype = 'date'
-#         descdate_item.append({'item': descdateitem, 'type': descdatetype})
+      # ucldc_schema:description
+      desc_items = []
+      for descnote in mods.iterfind('mods:note', namespaces=nsmap):
+         descnote_item = descnote.text
+         descnote_type = descnote.get('type')
+         descnoteitem_type = 'scopecontent' if descnote_type == 'content' else 'marks'
+         desc_items.append({'item': descnote_item, 'type': descnoteitem_type})
 
-      desccons_item = []
-      for desccons in mods.iterfind('mods:physicalDescription/mods:note', namespaces=nsmap):
-         descconsitem = desccons.text
-         descconstype = 'conservation'
-         desccons_item.append({'item': descconsitem, 'type': descconstype})
+      for descscale in mods.iterfind('mods:subject/mods:cartographics/mods:scale', namespaces=nsmap):
+         descscale_item = descscale.text
+         descscaleitem_type = 'scopecontent'
+         desc_items.append({'item': descscale_item, 'type': descscaleitem_type})
 
-#      description_items = ['ucldc_schema:description', descscope_item, descdate_item]
-      description_items = ['ucldc_schema:description', descscope_item, desccons_item]
-#      description_items = ['ucldc_schema:description', descscope_item]
+      description_items = ['ucldc_schema:description', desc_items]
       trace('descriptionItems: %s\n' % description_items)
       properties_raw.append(description_items)
+
+      # ucldc_schema:subjectname
+      subject_names = []
+      for namePart in mods.iterfind('mods:subject/mods:name/mods:namePart', namespaces=nsmap):
+          subject_names.append({'name': namePart.text})
+      properties_raw.append(['ucldc_schema:subjectname', subject_names])
 
       # uclcd_schema:subjecttopic
       topic_items = []
