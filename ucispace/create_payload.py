@@ -230,7 +230,7 @@ def main():
 
         # created date
         # for some sets, coverage field contains date created
-        if record.get('coverage'):
+        if record.get('coverage') and setid != 'hdl_10575_10877':
             coverage = record.get('coverage')[0]
             coverage = coverage[:10]
             properties['ucldc_schema:date'] = [{'date': coverage, 'datetype': 'created'}]
