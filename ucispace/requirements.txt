@@ -1,0 +1,8 @@
+lxml
+requests >= 2.12.2
+setuptools >= 30.3.0
+Sickle
+urllib3
+authlib
+jwt
+nuxeo

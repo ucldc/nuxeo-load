@@ -1,0 +1,18 @@
+{
+    "entity-type": "document",
+    "name": "barbaraTestAPIUpload",
+    "properties": {
+        "dc:title": "Barbara test API upload doc",
+        "file:content": {
+            "upload-batch": "batchId-07120dcf-623d-4494-8933-271b21f82f43",
+            "upload-fileId": "0"
+        },
+        "ucldc_schema:campusunit": [
+            "https://registry.cdlib.org/api/v1/repository/159/"
+        ],
+        "ucldc_schema:collection": [
+            "https://registry.cdlib.org/api/v1/collection/26300/"
+        ]
+    },
+    "type": "SampleCustomPicture"
+}
