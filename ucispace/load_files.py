@@ -7,6 +7,8 @@ from nuxeo.models import Document, FileBlob
 from nuxeo.exceptions import UploadError
 import json
 import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 from urllib.parse import urljoin
 
 API_BASE = 'https://nuxeo.cdlib.org/Nuxeo/site'
@@ -60,7 +62,19 @@ def create_doc_with_content(content_dict, properties, nuxeo_type, nuxeo, doc_url
         "properties": properties,
         "type": nuxeo_type}
 
-    res = requests.post(
+    # implement retry strategy
+    # https://findwork.dev/blog/advanced-usage-python-requests-timeouts-retries-hooks/#retry-on-failure
+    retry_strategy = Retry(
+        total=3,
+        status_forcelist=[54, 104, 429],
+    )
+
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    http = requests.Session()
+    http.mount("https://", adapter)
+    http.mount("http://", adapter)
+
+    res = http.post(
         doc_url,
         headers=headers,
         auth=auth,
