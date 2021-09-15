@@ -176,6 +176,8 @@ TYPES = {
     }
 }
 
+RIGHTS_BOILERPLATE = 'This material is provided for private study, scholarship, or research. Transmission or reproduction of any material protected by copyright beyond that allowed by fair use requires the written permission of the copyright owners. The authors or their heirs retain their copyrights to the material. Contact the University of California, Irvine Libraries, Special Collections and Archives for more information (spcoll@uci.edu).'
+
 def main():
     parser = argparse.ArgumentParser(
         description='Map metadata to ucldc schema and write to jsonl file')
@@ -230,7 +232,27 @@ def main():
 
         # created date
         # for some sets, coverage field contains date created
-        if record.get('coverage') and setid != 'hdl_10575_10877':
+        if setid == 'hdl_10575_11955':
+            if record.get('identifier')[0] == 'http://hdl.handle.net/10575/11963':
+                start_date = '1973-05-21'
+                end_date = '1973-11-20'
+            elif record.get('identifier')[0] == 'http://hdl.handle.net/10575/11965':
+                start_date = '1974-07-21'
+                end_date = '1974-12-20'
+            else:
+                print(f"{record.get('identifier')[0]=}")
+                coverage = record.get('coverage')[0]
+                start_date = coverage[6:16]
+                end_date = coverage[22:32]
+            properties['ucldc_schema:date'] = [
+                {
+                    'date': start_date,
+                    'datetype': 'created',
+                    'inclusivestart': start_date,
+                    'inclusiveend': end_date
+                }
+            ]
+        elif setid != 'hdl_10575_10877' and record.get('coverage'):
             coverage = record.get('coverage')[0]
             coverage = coverage[:10]
             properties['ucldc_schema:date'] = [{'date': coverage, 'datetype': 'created'}]
@@ -288,20 +310,20 @@ def main():
                     )
             properties['ucldc_schema:language'] = languages
 
-        # publisher
-        if record.get('publisher'):
-            publishers = [publisher for publisher in record.get('publisher')]
-            properties['ucldc_schema:publisher'] = publishers
-
         # add OAI-PMH set title to relatedresource field
         set_title = SETS[setid]['title']
         properties['ucldc_schema:relatedresource'] = [set_title]
 
-        # rights
-        rights_statements = [rights for rights in record.get('rights')]
-        if len(rights_statements) > 0:
-            rights_statement = '\n'.join(rights_statements)
-            properties['ucldc_schema:rightsstatement'] = rights_statement
+        # publisher
+        if setid in ['hdl_10575_1597', 'hdl_10575_1598', 'hdl_10575_1599', 'hdl_10575_1594'] and record.get('publisher'):
+            publishers = [publisher for publisher in record.get('publisher')]
+            properties['ucldc_schema:publisher'] = publishers
+
+        # rights statement
+        properties['ucldc_schema:rightsstatement'] = RIGHTS_BOILERPLATE
+
+        # rights status
+        properties['ucldc_schema:rightsstatus'] = 'copyrighted'
 
         # subjects
         if record.get('subject'):
@@ -323,12 +345,6 @@ def main():
         else:
             item_type = get_item_type(record)
             properties['ucldc_schema:type'] = item_type
-
-        '''
-        import pprint
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(properties)
-        '''
         
         # INSERT MIMETYPE AND NUXEO DOC TYPE
         component_count = 0
