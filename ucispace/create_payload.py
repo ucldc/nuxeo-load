@@ -199,7 +199,6 @@ def main():
 
     items = []
     for record in data:
-
         properties = {}
 
         # title
@@ -240,7 +239,6 @@ def main():
                 start_date = '1974-07-21'
                 end_date = '1974-12-20'
             else:
-                print(f"{record.get('identifier')[0]=}")
                 coverage = record.get('coverage')[0]
                 start_date = coverage[6:16]
                 end_date = coverage[22:32]
@@ -334,7 +332,9 @@ def main():
 
         # type - not a repeating field in ucldc_schema, so hopefully there's just one in the source
         valid_types = ['dataset', 'image', 'movingimage', 'physicalobject', 'software', 'sound', 'text']
-        if record.get('type'):
+        if record.get('identifier') == ['http://hdl.handle.net/10575/1371']:
+            properties['ucldc_schema:type'] = 'text'
+        elif record.get('type'):
             for type in record.get('type'):
                 if type in valid_types:
                     properties['ucldc_schema:type'] = type
@@ -358,7 +358,10 @@ def main():
         # if there's a parent object, infer nuxeo doc type from its mimetype
         # elif there are component objects, infer nuxeo doc type from most frequent mimetype
         # else CustomFile ? Or can we get a default type for the collection?
-        nuxeo_doc_type = get_doc_type(record)
+        if record.get('identifier') == ['http://hdl.handle.net/10575/1371']:
+            nuxeo_doc_type = 'CustomFile'
+        else:
+            nuxeo_doc_type = get_doc_type(record)
 
         # ARRANGE CONTENT FILE INFO ACCORDING TO WHETHER SIMPLE OR COMPLEX
         record['content_files'] = {}

@@ -15,6 +15,7 @@ API_BASE = 'https://nuxeo.cdlib.org/Nuxeo/site'
 API_PATH = 'api/v1'
 NUXEO_USER = 'Administrator'
 NUXEO_PASSWORD = os.environ.get('NUXEO_PASS')
+MARK_POSTER = ['hdl_10575_1338', 'hdl_10575_1337', 'hdl_10575_1339', 'hdl_10575_1340']
 
 def create_doc_with_content(content_dict, properties, nuxeo_type, nuxeo, doc_url, logger):
 
@@ -123,10 +124,9 @@ def main():
         doc_name = doc_name.lstrip('http://hdl.handle.net/')
         doc_name = doc_name.replace('/', '_')
 
-
         # CREATE PARENT DOCUMENT
         # load file + metadata
-        if item.get('content_files') and item['content_files'].get('main'):
+        if setid not in MARK_POSTER and item.get('content_files') and item['content_files'].get('main'):
             for main_file in item['content_files']['main']:
                 doc_url = f"{API_BASE}/{API_PATH}/path/{nuxeo_folder}"
                 create_doc_with_content(main_file, properties, nuxeo_type, nuxeo, doc_url, logger)
@@ -146,7 +146,7 @@ def main():
 
         # CREATE COMPONENT DOCUMENTS
         # load file. (no component-level metadata provided)
-        if item.get('content_files') and item['content_files'].get('components'):
+        if setid not in MARK_POSTER and item.get('content_files') and item['content_files'].get('components'):
             for component in item['content_files']['components']:
                 doc_url = f"{API_BASE}/{API_PATH}/path/{nuxeo_folder}/{doc_name}"
                 properties = {}
