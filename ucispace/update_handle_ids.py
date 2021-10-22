@@ -6,6 +6,8 @@ from nuxeo.client import Nuxeo
 from nuxeo.exceptions import HTTPError
 import json
 import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 API_BASE = 'https://nuxeo.cdlib.org/Nuxeo/site'
 API_PATH = 'api/v1'
@@ -120,12 +122,31 @@ def get_nuxeo_doc_by_title(item, nuxeo_folder, nuxeo):
     title = item['title']
     query = f"SELECT * FROM Document WHERE ecm:path STARTSWITH '{item['nuxeo_folder']}' AND dc:title = '{title}' AND ecm:isTrashed = 0"
     url = u'/'.join([API_BASE, API_PATH, "path/@search"])
-    headers = NUXEO_REQUEST_HEADERS
     params = {
         'query': query
     }
-    request = {'url': url, 'headers': headers, 'params': params}
-    response = requests.get(**request)
+
+    retry_strategy = Retry(
+        total=3,
+        status_forcelist=[413, 429, 500, 502, 503, 504],
+    )
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    http = requests.Session()
+    http.mount("https://", adapter)
+    http.mount("http://", adapter)
+
+    # timeouts based on those used by nuxeo-python-client
+    # see: https://github.com/nuxeo/nuxeo-python-client/blob/master/nuxeo/constants.py
+    # but tweaked to be slightly larger than a multiple of 3, which is recommended
+    # in the requests documentation.
+    # see: https://docs.python-requests.org/en/master/user/advanced/#timeouts
+    timeout_connect = 12.05
+    timeout_read = (60 * 10) + 0.05
+    response = http.get(url,
+                headers=NUXEO_REQUEST_HEADERS,
+                params=params,
+                timeout=(timeout_connect, timeout_read)
+                )
     response.raise_for_status()
     json_response = response.json()
 
