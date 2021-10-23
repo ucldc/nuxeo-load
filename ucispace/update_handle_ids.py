@@ -95,22 +95,9 @@ def get_nuxeo_doc_by_filename(item, nuxeo_folder, nuxeo):
     doc = None
     for filename in item['filenames']:
         doc_path = f"{nuxeo_folder}/{filename}"
-        doc_url = f"{API_BASE}/{API_PATH}/path{nuxeo_folder}/{filename}"
-        #handle_id = item['handle_id']
         try:
             doc = nuxeo.documents.get(path=doc_path)
         except HTTPError:
-            '''
-            if setid == 'hdl_10575_5263':
-                try:
-                    alt_filename = f"LH1C215S64_{pdf_filename}"
-                    doc_path = f"{nuxeo_folder}/{alt_filename}"
-                    doc = nuxeo.documents.get(path=doc_path)
-                except HTTPError:
-                    print(f"Nuxeo doc does not exist for {pdf_filename} OR {alt_filename}, {item['title']}, {handle_id}")
-                    return None
-            else:
-            '''
             continue
 
     return doc
@@ -119,6 +106,7 @@ def get_nuxeo_doc_by_title(item, nuxeo_folder, nuxeo):
     
     doc = None
 
+    # try to get doc with same dc:title
     title = item['title']
     query = f"SELECT * FROM Document WHERE ecm:path STARTSWITH '{item['nuxeo_folder']}' AND dc:title = '{title}' AND ecm:isTrashed = 0"
     url = u'/'.join([API_BASE, API_PATH, "path/@search"])
@@ -153,6 +141,14 @@ def get_nuxeo_doc_by_title(item, nuxeo_folder, nuxeo):
     if len(json_response['entries']) == 1:
         path = json_response['entries'][0]['path']
         doc = nuxeo.documents.get(path=path)
+
+    # try to get doc with title as basepath
+    if not doc:
+        doc_path = f"{nuxeo_folder}/{title}"
+        try:
+            doc = nuxeo.documents.get(path=doc_path)
+        except HTTPError:
+            doc = None    
 
     return doc
 
