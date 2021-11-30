@@ -40,7 +40,7 @@ def main():
 
     # https://nuxeo.github.io/nuxeo-python-client/latest/#
     nuxeo = Nuxeo(
-        auth=('Administrator', NUXEO_PASSWORD), 
+        auth=('Administrator', NUXEO_PASSWORD),
         host=API_BASE,
         api_path=API_PATH
         )
@@ -61,7 +61,9 @@ def main():
         doc = get_nuxeo_doc(item, nuxeo_folder, nuxeo)
         if doc is None:
             print(f"Nuxeo doc does not exist for {item['handle_id']}, {item['title']} ")
-            no_matches.append(f"\"{item['handle_id']}\",\"{item['title']}\",\"{item['filenames']}\"")
+            title = item['title']
+            escaped_title = title.replace('"', '""')
+            no_matches.append(f"\"{item['handle_id']}\",\"{escaped_title}\",\"{item['filenames']}\"")
             continue
         local_id = doc.get('ucldc_schema:localidentifier')
         if item['handle_id'] not in local_id:
@@ -131,6 +133,7 @@ def get_nuxeo_doc_by_title(item, nuxeo_folder, nuxeo):
     timeout_connect = 12.05
     timeout_read = (60 * 10) + 0.05
     response = http.get(url,
+                auth=('Administrator', NUXEO_PASSWORD),
                 headers=NUXEO_REQUEST_HEADERS,
                 params=params,
                 timeout=(timeout_connect, timeout_read)
